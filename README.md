@@ -1,4 +1,3 @@
-# mnoha-site
 # Nombre del repositorio
 
 Descripción corta: Sitio web de mnoha.

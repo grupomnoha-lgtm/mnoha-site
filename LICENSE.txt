@@ -1,0 +1,7 @@
+MIT License
+
+Copyright (c) 2025 grupomnoha-lgtm
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+...
+(agrega el texto completo de la licencia MIT si la eliges)
