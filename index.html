@@ -277,6 +277,30 @@
     </div>
    </div>
   </header>
+
+  <section class="photo-banner" aria-label="Galería de fotos">
+  <div class="banner" data-autoplay="true" data-interval="4500">
+    <button class="banner__nav banner__nav--prev" aria-label="Imagen anterior" type="button">‹</button>
+
+    <div class="banner__viewport">
+      <ul class="banner__track">
+        <li class="banner__slide" data-index="0">
+          <img src="assets/banner-1.jpg" alt="Descripción de la imagen 1" loading="lazy" />
+        </li>
+        <li class="banner__slide" data-index="1">
+          <img src="assets/banner-2.jpg" alt="Descripción de la imagen 2" loading="lazy" />
+        </li>
+        <li class="banner__slide" data-index="2">
+          <img src="assets/banner-3.jpg" alt="Descripción de la imagen 3" loading="lazy" />
+        </li>
+      </ul>
+    </div>
+
+    <button class="banner__nav banner__nav--next" aria-label="Siguiente imagen" type="button">›</button>
+
+    <div class="banner__dots" role="tablist" aria-label="Paginación de imágenes"></div>
+  </div>
+</section>
   <main role="main"><!-- Hero Section -->
    <section class="gradient-bg text-white py-16 px-4">
     <div class="container-lg text-center fade-in-up">
