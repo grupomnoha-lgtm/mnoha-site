@@ -1,0 +1,26 @@
+/* Photo banner - simple responsive carousel */
+.photo-banner { padding: 0; background: transparent; }
+.banner { position: relative; max-width: 1200px; margin: 1.5rem auto; overflow: visible; }
+.banner__viewport { overflow: hidden; border-radius: 12px; box-shadow: 0 10px 30px rgba(2,6,23,0.08); }
+.banner__track { display: flex; transition: transform 0.6s cubic-bezier(.22,.9,.32,1); list-style: none; padding: 0; margin: 0; width: 100%; }
+.banner__slide { min-width: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; background: #fff; }
+.banner__slide img { display: block; width: 100%; height: auto; object-fit: cover; }
+
+/* Nav */
+.banner__nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); border: 0; width: 44px; height: 44px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; font-size: 22px; color: #0b1220; cursor: pointer; box-shadow: 0 6px 18px rgba(2,6,23,0.12); }
+.banner__nav--prev { left: 12px; }
+.banner__nav--next { right: 12px; }
+
+/* Dots */
+.banner__dots { display:flex; gap:8px; justify-content:center; margin-top:10px; margin-left: 0; margin-right: 0; }
+.banner__dot { width:10px; height:10px; background: rgba(17,24,39,0.12); border-radius:50%; border: none; cursor:pointer; padding:0; }
+.banner__dot[aria-selected="true"] { background: #1e40af; transform: scale(1.15); }
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  .banner { max-width: 1400px; }
+  .banner__nav { width:48px; height:48px; font-size:24px; }
+}
+
+/* Accessibility focus */
+.banner__nav:focus, .banner__dot:focus { outline: 3px solid rgba(59,130,246,0.25); outline-offset: 2px; }
