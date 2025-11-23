@@ -1,18 +1,86 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mnoha</title>
-  <style>
-    body { font-family: system-ui, Arial; max-width: 800px; margin: 2rem auto; padding: 0 1rem; text-align:center; }
-    header { margin-top: 4rem; }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GRUPO MNOHA — Taxis · Sastrería · Centro · MNOHA GPS</title>
+  <meta name="description" content="GRUPO MNOHA: soluciones locales en transporte, sastrería, atención primaria y gestión de flotas. Contacto y servicios.">
+  <meta property="og:title" content="GRUPO MNOHA — Taxis · Sastrería · Centro · MNOHA GPS">
+  <meta property="og:description" content="Todo lo que tu comunidad necesita: taxis, sastrería, centro primario y gestión GPS para flotas.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Bienvenido a mnoha.com</h1>
-    <p>Tu sitio está activo en GitHub Pages.</p>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="logo-placeholder.png" alt="Logo GRUPO MNOHA" class="logo" width="140" height="60">
+        <h1 class="sr-only">GRUPO MNOHA</h1>
+      </div>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="taxi.html">Taxis</a>
+        <a href="sastreria.html">Sastrería</a>
+        <a href="centro.html">Centro</a>
+        <a href="gps.html">MNOHA GPS</a>
+        <a href="contact.html" class="contact-cta">Contacto</a>
+      </nav>
+    </div>
   </header>
+
+  <main id="main" class="container" role="main">
+    <section class="hero">
+      <h2>Servicios locales confiables para tu día a día</h2>
+      <p>Transporte, sastrería, atención primaria y soluciones GPS para flotas — todo bajo GRUPO MNOHA.</p>
+      <p class="hero-cta">
+        <a class="btn primary" href="contact.html">Contáctanos</a>
+        <a class="btn" href="taxi.html">Reservar Taxi</a>
+      </p>
+    </section>
+
+    <section class="services" aria-label="Unidades de negocio">
+      <article class="card">
+        <h3>Taxis</h3>
+        <p>Flota disponible 24/7 — reserva rápida y llamadas directas.</p>
+        <p><a href="taxi.html" class="link">Ver detalles →</a></p>
+      </article>
+
+      <article class="card">
+        <h3>Sastrería</h3>
+        <p>Arreglos, confección y servicio a medida. Calidad y tradición.</p>
+        <p><a href="sastreria.html" class="link">Ver detalles →</a></p>
+      </article>
+
+      <article class="card">
+        <h3>Centro Primario</h3>
+        <p>Atención primaria, horarios y equipo profesional.</p>
+        <p><a href="centro.html" class="link">Ver detalles →</a></p>
+      </article>
+
+      <article class="card">
+        <h3>MNOHA GPS</h3>
+        <p>Sistemas de rastreo y gestión de flotas para negocios.</p>
+        <p><a href="gps.html" class="link">Ver detalles →</a></p>
+      </article>
+    </section>
+
+    <section class="contact-short" aria-label="Contacto rápido">
+      <h3>Contacto rápido</h3>
+      <p>Teléfono general: <a href="tel:+34123456789">+34 123 456 789</a></p>
+      <p>WhatsApp: <a href="https://wa.me/34123456789" target="_blank" rel="noopener">Enviar mensaje</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© GRUPO MNOHA — <a href="privacy.html">Política de privacidad</a></p>
+      <p>Dirección: Calle Ejemplo 123, Ciudad (completa con tu dirección)</p>
+    </div>
+  </footer>
+
+  <script>
+    (function(){ document.documentElement.classList.remove('no-js'); })();
+  </script>
 </body>
 </html>
