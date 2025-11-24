@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap para tu sitio de GitHub Pages
+Sitemap: https://grupomnoha-lgtm.github.io/mnoha-site/sitemap.xml
