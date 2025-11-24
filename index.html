@@ -1,552 +1,216 @@
 <!doctype html>
 <html lang="es">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GRUPO MNOHA — Inicio</title>
-  <script src="/_sdk/element_sdk.js"></script>
+  <meta name="description" content="GRUPO MNOHA: servicios de transporte, sastrería, centro primario y soluciones GPS. Contacto y soluciones para tu negocio." />
+  <meta property="og:title" content="GRUPO MNOHA — Soluciones integrales" />
+  <meta property="og:description" content="Transporte, sastrería, atención primaria y gestión de flotas con MNOHA. Contacto y reservas." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#1e40af" />
+  <link rel="icon" href="/favicon.ico" />
+
+	
+	
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-
-    body {
-      background-color: #f9fafb;
-      color: #1f2937;
-      line-height: 1.5;
-    }
-
-    /* Layout */
-    .container { max-width: 80rem; margin: 0 auto; padding: 0 1rem; }
-    .container-lg { max-width: 72rem; margin: 0 auto; padding: 0 1rem; }
-    .container-md { max-width: 64rem; margin: 0 auto; padding: 0 1rem; }
-    .flex { display: flex; }
-    .inline-flex { display: inline-flex; }
-    .grid { display: grid; }
-    .items-center { align-items: center; }
-    .justify-center { justify-content: center; }
-    .justify-between { justify-content: space-between; }
-    .text-center { text-align: center; }
-    .flex-col { flex-direction: column; }
-    
-    /* Spacing */
-    .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
-    .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
-    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
-    .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
-    .px-4 { padding-left: 1rem; padding-right: 1rem; }
-    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .px-8 { padding-left: 2rem; padding-right: 2rem; }
-    .px-10 { padding-left: 2.5rem; padding-right: 2.5rem; }
-    .p-8 { padding: 2rem; }
-    .p-12 { padding: 3rem; }
-    .p-16 { padding: 4rem; }
-    
-    .mb-1 { margin-bottom: 0.25rem; }
-    .mb-2 { margin-bottom: 0.5rem; }
-    .mb-3 { margin-bottom: 0.75rem; }
-    .mb-4 { margin-bottom: 1rem; }
-    .mb-6 { margin-bottom: 1.5rem; }
-    .mb-8 { margin-bottom: 2rem; }
-    .mb-10 { margin-bottom: 2.5rem; }
-    .mb-12 { margin-bottom: 3rem; }
-    .mb-16 { margin-bottom: 4rem; }
-    .mt-1 { margin-top: 0.25rem; }
-    .mr-2 { margin-right: 0.5rem; }
-    .mr-3 { margin-right: 0.75rem; }
-    .mx-auto { margin-left: auto; margin-right: auto; }
-    
-    .space-x-4 > * + * { margin-left: 1rem; }
-    .gap-4 { gap: 1rem; }
-    .gap-6 { gap: 1.5rem; }
-    .gap-8 { gap: 2rem; }
-    
-    /* Sizing */
-    .w-16 { width: 4rem; }
-    .w-20 { width: 5rem; }
-    .w-24 { width: 6rem; }
-    .w-7 { width: 1.75rem; }
-    .w-10 { width: 2.5rem; }
-    .h-16 { height: 4rem; }
-    .h-20 { height: 5rem; }
-    .h-1 { height: 0.25rem; }
-    .h-7 { height: 1.75rem; }
-    .h-10 { height: 2.5rem; }
-    
-    /* Border Radius */
-    .rounded-full { border-radius: 9999px; }
-    .rounded-2xl { border-radius: 1rem; }
-    .rounded-3xl { border-radius: 1.5rem; }
-    
-    /* Shadows */
-    .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
-    .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
-    .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
-    .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
-    
-    /* Colors */
-    .text-white { color: #ffffff; }
-    .text-gray-400 { color: #9ca3af; }
-    .text-gray-600 { color: #4b5563; }
-    .text-gray-800 { color: #1f2937; }
-    .bg-white { background-color: #ffffff; }
-    .bg-gray-50 { background-color: #f9fafb; }
-    .bg-gray-900 { background-color: #111827; }
-    .text-blue-50 { color: #eff6ff; }
-    .text-blue-100 { color: #dbeafe; }
-    .text-blue-700 { color: #1d4ed8; }
-    .bg-blue-50 { background-color: #eff6ff; }
-    .bg-blue-600 { background-color: #2563eb; }
-    .text-cyan-700 { color: #0e7490; }
-    .border-gray-700 { border-color: #374151; }
-    .border-t { border-top-width: 1px; }
-    .pt-6 { padding-top: 1.5rem; }
-    
-    /* Typography */
-    .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-    .text-2xl { font-size: 1.5rem; line-height: 2rem; }
-    .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-    .text-5xl { font-size: 3rem; line-height: 1; }
-    .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-    .font-bold { font-weight: 700; }
-    .font-semibold { font-weight: 600; }
-    .tracking-tight { letter-spacing: -0.025em; }
-    .leading-relaxed { line-height: 1.625; }
-    
-    /* Cursor */
-    .cursor-pointer { cursor: pointer; }
-    
-    /* Gradient Backgrounds */
-    .gradient-bg {
-      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
-    }
-    
-    .bg-gradient-to-b {
-      background-image: linear-gradient(to bottom, #f9fafb, #ffffff);
-    }
-    
-    /* Service Card Colors */
-    .bg-gradient-yellow {
-      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-    }
-    
-    .bg-gradient-purple {
-      background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
-    }
-    
-    .bg-gradient-orange {
-      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-    }
-    
-    .bg-gradient-cyan {
-      background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
-    }
-    
-    .text-yellow-600 { color: #d97706; }
-    .text-purple-600 { color: #9333ea; }
-    .text-orange-600 { color: #ea580c; }
-    .text-cyan-600 { color: #0891b2; }
-    
-    .bg-yellow-500 { background-color: #eab308; }
-    .bg-yellow-600 { background-color: #ca8a04; }
-    .bg-purple-600 { background-color: #9333ea; }
-    .bg-purple-700 { background-color: #7e22ce; }
-    .bg-orange-600 { background-color: #ea580c; }
-    .bg-orange-700 { background-color: #c2410c; }
-    .bg-cyan-600 { background-color: #0891b2; }
-    .bg-cyan-700 { background-color: #0e7490; }
-    .bg-green-600 { background-color: #16a34a; }
-    .bg-green-700 { background-color: #15803d; }
-    
-    /* Buttons */
-    button, a {
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-    
-    button:hover, a:hover {
-      transform: scale(1.05);
-    }
-    
-    .bg-yellow-500:hover { background-color: #ca8a04; }
-    .bg-purple-600:hover { background-color: #7e22ce; }
-    .bg-orange-600:hover { background-color: #c2410c; }
-    .bg-cyan-600:hover { background-color: #0e7490; }
-    .bg-green-600:hover { background-color: #15803d; }
-    .bg-blue-50:hover { background-color: #dbeafe; }
-    
-    /* Animations */
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-    }
-
-    .float-animation {
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .fade-in-up {
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-
-    /* Card Hover Effects */
-    .card-hover {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .card-hover:hover {
-      transform: translateY(-12px) scale(1.02);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-    }
-
-    .service-card {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.5s;
-    }
-
-    .service-card:hover::before {
-      left: 100%;
-    }
-    
-    /* Grid */
-    .grid-cols-1 {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-    
-    /* Responsive */
-    @media (min-width: 640px) {
-      .sm-flex-row { flex-direction: row; }
-    }
-    
-    @media (min-width: 768px) {
-      .md-grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .md-text-5xl { font-size: 3rem; line-height: 1; }
-      .md-text-2xl { font-size: 1.5rem; line-height: 2rem; }
-      .md-text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-      .md-p-16 { padding: 4rem; }
-    }
-    
-    @media (min-width: 1024px) {
-      .lg-grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    }
+    /* Diseño base (mantiene el aspecto que trabajaste en Canva) */
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+    body{background-color:#f9fafb;color:#1f2937;line-height:1.5}
+    .container{max-width:80rem;margin:0 auto;padding:0 1rem}
+    .container-lg{max-width:72rem;margin:0 auto;padding:0 1rem}
+    .container-md{max-width:64rem;margin:0 auto;padding:0 1rem}
+    .flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}
+    .items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}
+    .text-center{text-align:center}.flex-col{flex-direction:column}
+    .py-8{padding-top:2rem;padding-bottom:2rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-20{padding-top:5rem;padding-bottom:5rem}
+    .px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.px-10{padding-left:2.5rem;padding-right:2.5rem}
+    .p-8{padding:2rem}.p-12{padding:3rem}.p-16{padding:4rem}
+    .mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}
+    .mt-1{margin-top:.25rem}.mr-2{margin-right:.5rem}.mr-3{margin-right:.75rem}.mx-auto{margin-left:auto;margin-right:auto}
+    .space-x-4>*+*{margin-left:1rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}
+    .w-16{width:4rem}.w-20{width:5rem}.w-24{width:6rem}.w-7{width:1.75rem}.w-10{width:2.5rem}
+    .h-16{height:4rem}.h-20{height:5rem}.h-1{height:.25rem}.h-7{height:1.75rem}.h-10{height:2.5rem}
+    .rounded-full{border-radius:9999px}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}
+    .shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05)}
+    .shadow-xl{box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 10px 10px -5px rgba(0,0,0,.04)}
+    .shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
+    .shadow-md{box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)}
+    .text-white{color:#fff}.text-gray-400{color:#9ca3af}.text-gray-600{color:#4b5563}.text-gray-800{color:#1f2937}
+    .bg-white{background-color:#fff}.bg-gray-50{background-color:#f9fafb}.bg-gray-900{background-color:#111827}
+    .text-blue-50{color:#eff6ff}.text-blue-100{color:#dbeafe}.text-blue-700{color:#1d4ed8}
+    .bg-blue-50{background-color:#eff6ff}.bg-blue-600{background-color:#2563eb}
+    .text-cyan-700{color:#0e7490}.border-gray-700{border-color:#374151}.border-t{border-top-width:1px}.pt-6{padding-top:1.5rem}
+    .text-xl{font-size:1.25rem;line-height:1.75rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}
+    .text-lg{font-size:1.125rem;line-height:1.75rem}.font-bold{font-weight:700}.font-semibold{font-weight:600}.tracking-tight{letter-spacing:-.025em}.leading-relaxed{line-height:1.625}
+    .cursor-pointer{cursor:pointer}
+    .gradient-bg{background:linear-gradient(135deg,#1e40af 0%,#3b82f6 50%,#60a5fa 100%)}
+    .bg-gradient-to-b{background-image:linear-gradient(to bottom,#f9fafb,#fff)}
+    .bg-gradient-yellow{background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 100%)}.bg-gradient-purple{background:linear-gradient(135deg,#a855f7 0%,#7c3aed 100%)}
+    .bg-gradient-orange{background:linear-gradient(135deg,#f97316 0%,#ea580c 100%)}.bg-gradient-cyan{background:linear-gradient(135deg,#06b6d4 0%,#0891b2 100%)}
+    .text-yellow-600{color:#d97706}.text-purple-600{color:#9333ea}.text-orange-600{color:#ea580c}.text-cyan-600{color:#0891b2}
+    .bg-yellow-500{background-color:#eab308}.bg-yellow-600{background-color:#ca8a04}.bg-purple-600{background-color:#9333ea}.bg-purple-700{background-color:#7e22ce}
+    .bg-orange-600{background-color:#ea580c}.bg-orange-700{background-color:#c2410c}.bg-cyan-600{background-color:#0891b2}.bg-cyan-700{background-color:#0e7490}
+    .bg-green-600{background-color:#16a34a}.bg-green-700{background-color:#15803d}
+    button,a{transition:all .3s ease;text-decoration:none;display:inline-block}
+    button:hover,a:hover{transform:scale(1.05)}
+    .bg-yellow-500:hover{background-color:#ca8a04}.bg-purple-600:hover{background-color:#7e22ce}.bg-orange-600:hover{background-color:#c2410c}.bg-cyan-600:hover{background-color:#0e7490}.bg-green-600:hover{background-color:#15803d}.bg-blue-50:hover{background-color:#dbeafe}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}.float-animation{animation:float 6s ease-in-out infinite}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.fade-in-up{animation:fadeInUp .8s ease-out forwards}
+    .card-hover{transition:all .4s cubic-bezier(.4,0,.2,1)}.card-hover:hover{transform:translateY(-12px) scale(1.02);box-shadow:0 25px 50px rgba(0,0,0,.2)}
+    .service-card{position:relative;overflow:hidden}
+    .service-card::before{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .5s}
+    .service-card:hover::before{left:100%}
+    .grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+    @media(min-width:640px){.sm-flex-row{flex-direction:row}}
+    @media(min-width:768px){.md-grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md-text-5xl{font-size:3rem;line-height:1}.md-text-2xl{font-size:1.5rem;line-height:2rem}.md-text-xl{font-size:1.25rem;line-height:1.75rem}.md-p-16{padding:4rem}}
+    @media(min-width:1024px){.lg-grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+    /* small panel for local editor */
+    .editor-toggle{position:fixed;right:18px;bottom:18px;background:#111827;color:#fff;border-radius:9999px;padding:10px 12px;box-shadow:0 10px 30px rgba(2,6,23,0.4);z-index:9999}
+    .editor-panel{position:fixed;right:18px;bottom:76px;background:#fff;color:#111;border-radius:12px;padding:12px;box-shadow:0 10px 30px rgba(2,6,23,0.12);width:320px;z-index:9999;display:none}
+    .editor-panel input[type="text"],.editor-panel input[type="color"]{width:100%;margin-top:6px;margin-bottom:10px;padding:8px;border-radius:8px;border:1px solid #e5e7eb}
+    .editor-panel label{font-size:13px;color:#374151}
+    .editor-panel .row{display:flex;gap:8px}
   </style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
- </head>
- <body><!-- Header -->
+</head>
+<body>
+	
+  <a class="sr-only" href="#main">Saltar al contenido</a>
+
+  <!-- Header -->
   <header class="gradient-bg text-white shadow-2xl py-8 px-4">
-   <div class="container">
-    <div class="flex items-center justify-center space-x-4">
-     <svg class="w-16 h-16 float-animation" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="12" fill="white" fill-opacity="0.2" /> <path d="M32 16L18 28V52H26V38H38V52H46V28L32 16Z" fill="white" /> <circle cx="32" cy="28" r="3" fill="#fbbf24" />
-     </svg>
-     <div>
-      <h1 id="main-title" class="text-4xl md-text-5xl font-bold tracking-tight">GRUPO MNOHA</h1>
-      <p id="main-subtitle" class="text-lg md-text-xl text-blue-100 mt-1">Soluciones integrales para tu negocio</p>
-     </div>
+    <div class="container">
+      <div class="flex items-center justify-center space-x-4">
+        <!-- SVG logo -->
+        <svg class="w-16 h-16 float-animation" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="64" height="64" rx="12" fill="white" fill-opacity="0.16" />
+          <path d="M32 16L18 28V52H26V38H38V52H46V28L32 16Z" fill="white" />
+          <circle cx="32" cy="28" r="3" fill="#fbbf24" />
+        </svg>
+
+        <div>
+          <h1 id="main-title" class="text-4xl md-text-5xl font-bold tracking-tight">GRUPO MNOHA</h1>
+          <p id="main-subtitle" class="text-lg md-text-xl text-blue-100 mt-1">Soluciones integrales para tu negocio</p>
+        </div>
+      </div>
     </div>
-   </div>
   </header>
 
- 
-  <main role="main"><!-- Hero Section -->
-   <section class="gradient-bg text-white py-16 px-4">
-    <div class="container-lg text-center fade-in-up">
-     <p id="hero-description" class="text-xl md-text-2xl text-blue-50 leading-relaxed">Ofrecemos servicios de transporte, sastrería profesional, educación primaria de calidad y tecnología GPS avanzada. Todo lo que necesitas en un solo lugar.</p>
-    </div>
-   </section><!-- Services Section -->
-   <section class="py-20 px-4 bg-gradient-to-b">
-    <div class="container">
-     <h2 id="services-title" class="text-5xl font-bold text-center mb-4 text-gray-800">Nuestros Servicios</h2>
-     <div class="w-24 h-1 bg-blue-600 mx-auto mb-16 rounded-full"></div>
-     <div style="display: flex; flex-direction: column; gap: 2rem; max-width: 1200px; margin: 0 auto;"><!-- Taxis Card -->
-      <article class="service-card bg-white rounded-3xl shadow-lg card-hover cursor-pointer" style="display: flex; align-items: center; padding: 2rem; gap: 2rem;">
-       <div class="w-20 h-20 bg-gradient-yellow rounded-2xl flex items-center justify-center shadow-lg" style="flex-shrink: 0;">
-        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-        </svg>
-       </div>
-       <div style="flex: 1;">
-        <h3 id="taxi-title" class="text-2xl font-bold mb-2 text-gray-800">Taxis</h3>
-        <p id="taxi-desc" class="text-gray-600">Servicio de transporte seguro y confiable las 24 horas</p>
-       </div><button class="bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold shadow-md" style="flex-shrink: 0;"> Ver más → </button>
-      </article><!-- Sastrería Card -->
-      <article class="service-card bg-white rounded-3xl shadow-lg card-hover cursor-pointer" style="display: flex; align-items: center; padding: 2rem; gap: 2rem;">
-       <div class="w-20 h-20 bg-gradient-purple rounded-2xl flex items-center justify-center shadow-lg" style="flex-shrink: 0;">
-        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
-        </svg>
-       </div>
-       <div style="flex: 1;">
-        <h3 id="sastreria-title" class="text-2xl font-bold mb-2 text-gray-800">Sastrería</h3>
-        <p id="sastreria-desc" class="text-gray-600">Arreglos y confección a medida con la mejor calidad</p>
-       </div><button class="bg-purple-600 text-white px-6 py-3 rounded-full font-semibold shadow-md" style="flex-shrink: 0;"> Ver más → </button>
-      </article><!-- Centro Primario Card -->
-      <article class="service-card bg-white rounded-3xl shadow-lg card-hover cursor-pointer" style="display: flex; align-items: center; padding: 2rem; gap: 2rem;">
-       <div class="w-20 h-20 bg-gradient-orange rounded-2xl flex items-center justify-center shadow-lg" style="flex-shrink: 0;">
-        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-        </svg>
-       </div>
-       <div style="flex: 1;">
-        <h3 id="primario-title" class="text-2xl font-bold mb-2 text-gray-800">Centro Primario</h3>
-        <p id="primario-desc" class="text-gray-600">Educación de calidad para los más pequeños</p>
-       </div><button class="bg-orange-600 text-white px-6 py-3 rounded-full font-semibold shadow-md" style="flex-shrink: 0;"> Ver más → </button>
-      </article><!-- GPS Card -->
-      <article class="service-card bg-white rounded-3xl shadow-lg card-hover cursor-pointer" style="display: flex; align-items: center; padding: 2rem; gap: 2rem;">
-       <div class="w-20 h-20 bg-gradient-cyan rounded-2xl flex items-center justify-center shadow-lg" style="flex-shrink: 0;">
-        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-       </div>
-       <div style="flex: 1;">
-        <h3 id="gps-title" class="text-2xl font-bold mb-2 text-gray-800">MNOHA GPS</h3>
-        <p id="gps-desc" class="text-gray-600">Sistema de rastreo en tiempo real para tu flota</p>
-       </div><button class="bg-cyan-600 text-white px-6 py-3 rounded-full font-semibold shadow-md" style="flex-shrink: 0;"> Ver más → </button>
-      </article>
-     </div>
-    </div>
-   </section><!-- Contact CTA Section -->
-   <section class="py-20 px-4 bg-gray-50">
-    <div class="container-md">
-     <div class="gradient-bg rounded-3xl p-12 md-p-16 text-center text-white shadow-2xl">
-      <h2 id="contact-title" class="text-4xl md-text-5xl font-bold mb-4">¿Necesitas más información?</h2>
-      <p id="contact-subtitle" class="text-xl md-text-2xl text-blue-100 mb-10">Estamos aquí para ayudarte con cualquier consulta</p>
-      <div class="flex flex-col sm-flex-row gap-6 justify-center items-center"><a id="phone-link" href="tel:+240555267985" class="bg-white text-blue-700 px-10 py-5 rounded-full text-xl font-bold shadow-xl inline-flex items-center justify-center">
-        <svg class="w-7 h-7 mr-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg><span id="phone-text">+240 555 267 985</span> </a> <a id="whatsapp-link" href="https://wa.me/240555267985" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-10 py-5 rounded-full text-xl font-bold shadow-xl inline-flex items-center justify-center">
-        <svg class="w-7 h-7 mr-3" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-        </svg> WhatsApp </a>
+
+    <!-- Services Section -->
+    <section class="py-20 px-4 bg-gradient-to-b">
+      <div class="container">
+        <h2 id="services-title" class="text-5xl font-bold text-center mb-4 text-gray-800">Nuestros Servicios</h2>
+        <div class="w-24 h-1 bg-blue-600 mx-auto mb-16 rounded-full" aria-hidden="true"></div>
+
+        <div class="grid grid-cols-1 md-grid-cols-2 lg-grid-cols-4 gap-8" role="list">
+          <!-- Taxis Card -->
+          <article class="service-card bg-white rounded-3xl shadow-lg p-8 card-hover text-center cursor-pointer" role="listitem">
+			  
+
+<script>
+function abrirPagina() {
+  window.open("https://www.mnoha/taxi.com", "_blank");
+}
+</script>
+            <div class="w-20 h-20 bg-gradient-yellow rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg" aria-hidden="true">
+              <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 11h18v6a1 1 0 0 1-1 1h-1a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H4a1 1 0 0 1-1-1v-6z" fill="white"/></svg>
+            </div>
+            <h3 id="taxi-title" class="text-2xl font-bold mb-3 text-gray-800">Taxis</h3>
+            <p id="taxi-desc" class="text-gray-600 mb-6">Servicio de transporte seguro y confiable las 24 horas</p>
+            <a href="taxi.html" class="bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold shadow-md" role="button" aria-label="Ver más sobre Taxis">Ver más →</a>
+          </article>
+
+          <!-- Sastrería Card -->
+          <article class="service-card bg-white rounded-3xl shadow-lg p-8 card-hover text-center cursor-pointer" role="listitem">
+            <div class="w-20 h-20 bg-gradient-purple rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg" aria-hidden="true">
+              <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16v2H4V7zm2 4h12v8H6v-8z" fill="white"/></svg>
+            </div>
+            <h3 id="sastreria-title" class="text-2xl font-bold mb-3 text-gray-800">Sastrería</h3>
+            <p id="sastreria-desc" class="text-gray-600 mb-6">Arreglos y confección a medida con la mejor calidad</p>
+            <a href="sastreria.html" class="bg-purple-600 text-white px-6 py-3 rounded-full font-semibold shadow-md" role="button">Ver más →</a>
+          </article>
+
+          <!-- Centro Primario Card -->
+          <article class="service-card bg-white rounded-3xl shadow-lg p-8 card-hover text-center cursor-pointer" role="listitem">
+            <div class="w-20 h-20 bg-gradient-orange rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg" aria-hidden="true">
+              <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7v7c0 5 4 8 10 8s10-3 10-8V7L12 2z" fill="white"/></svg>
+            </div>
+            <h3 id="primario-title" class="text-2xl font-bold mb-3 text-gray-800">Centro Primario</h3>
+            <p id="primario-desc" class="text-gray-600 mb-6">Atención y educación primaria de calidad para la comunidad</p>
+            <a href="centro.html" class="bg-orange-600 text-white px-6 py-3 rounded-full font-semibold shadow-md" role="button">Ver más →</a>
+          </article>
+
+          <!-- GPS Card -->
+          <article class="service-card bg-white rounded-3xl shadow-lg p-8 card-hover text-center cursor-pointer" role="listitem">
+            <div class="w-20 h-20 bg-gradient-cyan rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg" aria-hidden="true">
+              <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="10" r="3" fill="white"/><path d="M12 2a10 10 0 100 20 10 10 0 000-20z" stroke="white" stroke-width="1" fill="none"/></svg>
+            </div>
+            <h3 id="gps-title" class="text-2xl font-bold mb-3 text-gray-800">MNOHA GPS</h3>
+            <p id="gps-desc" class="text-gray-600 mb-6">Sistema de rastreo en tiempo real para tu flota</p>
+            <a href="gps.html" class="bg-cyan-600 text-white px-6 py-3 rounded-full font-semibold shadow-md" role="button">Ver más →</a>
+          </article>
+        </div>
       </div>
-     </div>
-    </div>
-   </section>
-  </main><!-- Footer -->
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="py-20 px-4 bg-gray-50">
+      <div class="container-md">
+        <div class="gradient-bg rounded-3xl p-12 md-p-16 text-center text-white shadow-2xl">
+          <h2 id="contact-title" class="text-4xl md-text-5xl font-bold mb-4">¿Necesitas más información?</h2>
+          <p id="contact-subtitle" class="text-xl md-text-2xl text-blue-100 mb-10">Estamos aquí para ayudarte con cualquier consulta</p>
+
+          <div class="flex flex-col sm-flex-row gap-6 justify-center items-center">
+            <a id="phone-link" href="tel:+240555267978" class="bg-white text-blue-700 px-10 py-5 rounded-full text-xl font-bold shadow-xl inline-flex items-center justify-center" aria-label="Llamar al teléfono">
+              <svg class="w-7 h-7 mr-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5a2 2 0 012-2h3.28l1.5 4.5a1 1 0 01-.5 1.2l-2.26 1.13a11.04 11.04 0 005.52 5.52l1.13-2.26a1 1 0 011.2-.5L21 19.72V23a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" fill="currentColor"/></svg>
+              <span id="phone-text">+240 555 267 985</span>
+            </a>
+
+            <a id="whatsapp-link" href="https://wa.me/240555267978" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-10 py-5 rounded-full text-xl font-bold shadow-xl inline-flex items-center justify-center" aria-label="Abrir WhatsApp">
+              <svg class="w-7 h-7 mr-3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" /></svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
   <footer class="bg-gray-900 text-white py-12 px-4">
-   <div class="container text-center">
-    <div class="mb-6">
-     <h3 class="text-2xl font-bold mb-2">GRUPO MNOHA</h3>
-     <p class="text-gray-400">Soluciones integrales para tu negocio</p>
+    <div class="container text-center">
+      <div class="mb-6">
+        <h3 class="text-2xl font-bold mb-2">GRUPO MNOHA</h3>
+        <p class="text-gray-400">Soluciones integrales para tu negocio</p>
+      </div>
+      <div class="border-t border-gray-700 pt-6">
+        <p class="text-gray-400">© 2025 GRUPO MNOHA — Todos los derechos reservados</p>
+      </div>
     </div>
-    <div class="border-t border-gray-700 pt-6">
-     <p class="text-gray-400">© 2024 GRUPO MNOHA — Todos los derechos reservados</p>
-    </div>
-   </div>
   </footer>
-  <script>
-    const defaultConfig = {
-      background_color: "#1e40af",
-      surface_color: "#ffffff",
-      text_color: "#1f2937",
-      primary_action_color: "#3b82f6",
-      secondary_action_color: "#10b981",
-      font_family: "system-ui, -apple-system, sans-serif",
-      font_size: 16,
-      main_title: "GRUPO MNOHA",
-      main_subtitle: "Soluciones integrales para tu negocio",
-      hero_description: "Ofrecemos servicios de transporte, sastrería profesional, educación primaria de calidad y tecnología GPS avanzada. Todo lo que necesitas en un solo lugar.",
-      services_title: "Nuestros Servicios",
-      taxi_title: "Taxis",
-      taxi_desc: "Servicio de transporte seguro y confiable las 24 horas",
-      sastreria_title: "Sastrería",
-      sastreria_desc: "Arreglos y confección a medida con la mejor calidad",
-      primario_title: "Centro Primario",
-      primario_desc: "Educación de calidad para los más pequeños",
-      gps_title: "MNOHA GPS",
-      gps_desc: "Sistema de rastreo en tiempo real para tu flota",
-      contact_title: "¿Necesitas más información?",
-      contact_subtitle: "Estamos aquí para ayudarte con cualquier consulta",
-      phone_number: "+240 555 267 985",
-      whatsapp_number: "240555267985"
-    };
 
-    async function onConfigChange(config) {
-      const baseFontStack = 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-      const customFont = config.font_family || defaultConfig.font_family;
-      const baseSize = config.font_size || defaultConfig.font_size;
-      
-      const bgColor = config.background_color || defaultConfig.background_color;
-      const surfaceColor = config.surface_color || defaultConfig.surface_color;
-      const textColor = config.text_color || defaultConfig.text_color;
-      const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
-      const secondaryColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+  <!-- Local editor toggle and panel (only visible when toggled) -->
+  <button id="editorToggle" class="editor-toggle" aria-label="Abrir editor">✏️</button>
+  <div id="editorPanel" class="editor-panel" role="dialog" aria-hidden="true">
+    <label for="background_color">Color principal (background)</label>
+    <input id="background_color" type="color" />
+    <label for="primary_action_color">Color acción primaria</label>
+    <input id="primary_action_color" type="color" />
+    <label for="secondary_action_color">Color acción secundaria</label>
+    <input id="secondary_action_color" type="color" />
+    <label for="text_color">Color del texto</label>
+    <input id="text_color" type="color" />
+    <label for="phone_number">Teléfono</label>
+    <input id="phone_number" type="text" />
+    <div class="row" style="display:flex;gap:8px;margin-top:8px">
+      <button id="saveConfig" class="bg-blue-50 px-4 py-2 rounded-full">Guardar</button>
+      <button id="resetConfig" class="bg-gray-50 px-4 py-2 rounded-full">Restablecer</button>
+    </div>
+    <p style="font-size:12px;color:#6b7280;margin-top:8px">Editor local — los cambios se guardan en tu navegador (localStorage) y no afectan el sitio público hasta que se actualice /config.json en el repo.</p>
+  </div>
 
-      // Apply colors
-      document.querySelectorAll('.gradient-bg').forEach(el => {
-        el.style.background = `linear-gradient(135deg, ${bgColor} 0%, ${primaryColor} 50%, ${primaryColor} 100%)`;
-      });
-
-      document.querySelectorAll('.bg-white').forEach(el => {
-        el.style.backgroundColor = surfaceColor;
-      });
-
-      document.querySelectorAll('.text-gray-800').forEach(el => {
-        el.style.color = textColor;
-      });
-
-      document.querySelectorAll('.bg-blue-600, .text-blue-700').forEach(el => {
-        if (el.classList.contains('bg-blue-600')) {
-          el.style.backgroundColor = primaryColor;
-        } else {
-          el.style.color = primaryColor;
-        }
-      });
-
-      document.querySelectorAll('.bg-green-600').forEach(el => {
-        el.style.backgroundColor = secondaryColor;
-      });
-
-      // Apply fonts and sizes
-      document.getElementById('main-title').style.fontFamily = `${customFont}, ${baseFontStack}`;
-      document.getElementById('main-title').style.fontSize = `${baseSize * 2.5}px`;
-      
-      document.getElementById('main-subtitle').style.fontFamily = `${customFont}, ${baseFontStack}`;
-      document.getElementById('main-subtitle').style.fontSize = `${baseSize * 1.25}px`;
-
-      document.getElementById('hero-description').style.fontFamily = `${customFont}, ${baseFontStack}`;
-      document.getElementById('hero-description').style.fontSize = `${baseSize * 1.25}px`;
-
-      document.getElementById('services-title').style.fontFamily = `${customFont}, ${baseFontStack}`;
-      document.getElementById('services-title').style.fontSize = `${baseSize * 3}px`;
-
-      document.querySelectorAll('h3').forEach(el => {
-        el.style.fontFamily = `${customFont}, ${baseFontStack}`;
-        el.style.fontSize = `${baseSize * 1.5}px`;
-      });
-
-      document.querySelectorAll('p, button').forEach(el => {
-        el.style.fontFamily = `${customFont}, ${baseFontStack}`;
-      });
-
-      // Apply text content
-      document.getElementById('main-title').textContent = config.main_title || defaultConfig.main_title;
-      document.getElementById('main-subtitle').textContent = config.main_subtitle || defaultConfig.main_subtitle;
-      document.getElementById('hero-description').textContent = config.hero_description || defaultConfig.hero_description;
-      document.getElementById('services-title').textContent = config.services_title || defaultConfig.services_title;
-      document.getElementById('taxi-title').textContent = config.taxi_title || defaultConfig.taxi_title;
-      document.getElementById('taxi-desc').textContent = config.taxi_desc || defaultConfig.taxi_desc;
-      document.getElementById('sastreria-title').textContent = config.sastreria_title || defaultConfig.sastreria_title;
-      document.getElementById('sastreria-desc').textContent = config.sastreria_desc || defaultConfig.sastreria_desc;
-      document.getElementById('primario-title').textContent = config.primario_title || defaultConfig.primario_title;
-      document.getElementById('primario-desc').textContent = config.primario_desc || defaultConfig.primario_desc;
-      document.getElementById('gps-title').textContent = config.gps_title || defaultConfig.gps_title;
-      document.getElementById('gps-desc').textContent = config.gps_desc || defaultConfig.gps_desc;
-      document.getElementById('contact-title').textContent = config.contact_title || defaultConfig.contact_title;
-      document.getElementById('contact-subtitle').textContent = config.contact_subtitle || defaultConfig.contact_subtitle;
-      
-      const phoneNumber = config.phone_number || defaultConfig.phone_number;
-      const whatsappNumber = config.whatsapp_number || defaultConfig.whatsapp_number;
-      
-      document.getElementById('phone-text').textContent = phoneNumber;
-      document.getElementById('phone-link').href = `tel:${phoneNumber.replace(/\s/g, '')}`;
-      document.getElementById('whatsapp-link').href = `https://wa.me/${whatsappNumber}`;
-    }
-
-    // Initialize Element SDK
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities: (config) => ({
-          recolorables: [
-            {
-              get: () => config.background_color || defaultConfig.background_color,
-              set: (value) => {
-                config.background_color = value;
-                window.elementSdk.setConfig({ background_color: value });
-              }
-            },
-            {
-              get: () => config.surface_color || defaultConfig.surface_color,
-              set: (value) => {
-                config.surface_color = value;
-                window.elementSdk.setConfig({ surface_color: value });
-              }
-            },
-            {
-              get: () => config.text_color || defaultConfig.text_color,
-              set: (value) => {
-                config.text_color = value;
-                window.elementSdk.setConfig({ text_color: value });
-              }
-            },
-            {
-              get: () => config.primary_action_color || defaultConfig.primary_action_color,
-              set: (value) => {
-                config.primary_action_color = value;
-                window.elementSdk.setConfig({ primary_action_color: value });
-              }
-            },
-            {
-              get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
-              set: (value) => {
-                config.secondary_action_color = value;
-                window.elementSdk.setConfig({ secondary_action_color: value });
-              }
-            }
-          ],
-          borderables: [],
-          fontEditable: {
-            get: () => config.font_family || defaultConfig.font_family,
-            set: (value) => {
-              config.font_family = value;
-              window.elementSdk.setConfig({ font_family: value });
-            }
-          },
-          fontSizeable: {
-            get: () => config.font_size || defaultConfig.font_size,
-            set: (value) => {
-              config.font_size = value;
-              window.elementSdk.setConfig({ font_size: value });
-            }
-          }
-        }),
-        mapToEditPanelValues: (config) => new Map([
-          ["main_title", config.main_title || defaultConfig.main_title],
-          ["main_subtitle", config.main_subtitle || defaultConfig.main_subtitle],
-          ["hero_description", config.hero_description || defaultConfig.hero_description],
-          ["services_title", config.services_title || defaultConfig.services_title],
-          ["taxi_title", config.taxi_title || defaultConfig.taxi_title],
-          ["taxi_desc", config.taxi_desc || defaultConfig.taxi_desc],
-          ["sastreria_title", config.sastreria_title || defaultConfig.sastreria_title],
-          ["sastreria_desc", config.sastreria_desc || defaultConfig.sastreria_desc],
-          ["primario_title", config.primario_title || defaultConfig.primario_title],
-          ["primario_desc", config.primario_desc || defaultConfig.primario_desc],
-          ["gps_title", config.gps_title || defaultConfig.gps_title],
-          ["gps_desc", config.gps_desc || defaultConfig.gps_desc],
-          ["contact_title", config.contact_title || defaultConfig.contact_title],
-          ["contact_subtitle", config.contact_subtitle || defaultConfig.contact_subtitle],
-          ["phone_number", config.phone_number || defaultConfig.phone_number],
-          ["whatsapp_number", config.whatsapp_number || defaultConfig.whatsapp_number]
-        ])
-      });
-    }
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a320af01659ef1f',t:'MTc2MzkxNTMzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  <script src="/assets/editor.js" defer></script>
+</body>
 </html>
