@@ -99,36 +99,66 @@
 
 <body class="bg-mnohaDark font-inter text-slate-300 antialiased overflow-x-hidden selection:bg-mnohaBlue selection:text-white">
   
-  <!-- Hero Section (Mobile First focus) -->
-  <header class="relative min-h-screen flex items-center justify-center text-center px-6 overflow-hidden">
-    <!-- Glow Backgrounds (Interactive look) -->
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-mnohaBlue/20 via-mnohaDark to-mnohaDark z-0"></div>
-    <div class="absolute -top-40 -left-20 w-[600px] h-[600px] bg-mnohaBlue/5 blur-[160px] rounded-full animate-pulse-slow"></div>
-    <div class="absolute top-1/2 -right-40 w-[500px] h-[500px] bg-mnohaBlue/10 blur-[180px] rounded-full animate-pulse-slow delay-700"></div>
+  <!-- Hero Banner Section (Modern Tech Hub) -->
+  <header class="relative min-h-[95vh] flex items-center justify-center text-center px-6 overflow-hidden">
+    <!-- Matrix/Circuit Effect Background -->
+    <div class="absolute inset-0 bg-[#020617] z-0">
+      <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#3b82f6 0.5px, transparent 0.5px); background-size: 30px 30px;"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_var(--tw-gradient-stops))] from-mnohaBlue/20 via-transparent to-transparent"></div>
+    </div>
 
-    <div class="container relative z-10 max-w-5xl">
-      <div class="mb-10 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-2.5 text-xs font-black tracking-[0.3em] text-mnohaBlue uppercase backdrop-blur-md">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-mnohaBlue opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-mnohaBlue"></span>
-        </span>
-        Estándar de Élite
+    <!-- Animated Tech Orbs -->
+    <div class="absolute top-20 left-1/4 w-72 h-72 bg-mnohaBlue/10 blur-[100px] rounded-full animate-pulse-slow"></div>
+    <div class="absolute bottom-20 right-1/4 w-96 h-96 bg-cyan-500/10 blur-[120px] rounded-full animate-pulse-slow delay-1000"></div>
+
+    <div class="container relative z-10 max-w-6xl">
+      <!-- Feature Badge -->
+      <div class="mb-10 inline-flex items-center gap-3 rounded-full border border-mnohaBlue/30 bg-mnohaBlue/5 px-6 py-2 backdrop-blur-xl">
+        <span class="flex h-2 w-2 rounded-full bg-mnohaBlue animate-ping"></span>
+        <span class="text-[10px] font-black tracking-[0.4em] text-mnohaBlue uppercase">Nexus Tecnológico v2.0</span>
       </div>
       
-      <h1 class="mb-10 text-6xl font-[900] tracking-tighter sm:text-8xl md:text-9xl bg-gradient-to-b from-white to-slate-500 bg-clip-text text-transparent leading-[0.85] py-4">
-        GRUPO <br> MNOHA
-      </h1>
+      <!-- Main Branding -->
+      <div class="relative inline-block mb-12">
+        <h1 class="text-7xl font-[1000] tracking-tighter sm:text-9xl md:text-[11rem] bg-gradient-to-b from-white via-white to-slate-600 bg-clip-text text-transparent leading-[0.8] py-4 select-none">
+          MNOHA<span class="text-mnohaBlue">.</span>
+        </h1>
+        <div class="absolute -right-8 top-0 text-mnohaBlue font-black text-xl italic opacity-50">HQ</div>
+      </div>
       
-      <p class="mx-auto max-w-3xl text-xl sm:text-2xl md:text-2xl text-slate-400 font-medium leading-relaxed mb-16 px-4">
-        Liderando la vanguardia en <span class="text-white">soluciones integrales</span> de transporte, diseño textil y tecnología satelital.
+      <!-- Tech Features Banner -->
+      <div class="flex flex-wrap justify-center gap-4 sm:gap-8 mb-16 opacity-80">
+        <div class="flex items-center gap-2 text-[10px] font-black tracking-widest text-slate-400 uppercase">
+          <span class="w-2 h-2 rounded-full bg-amber-500"></span> Movilidad VIP
+        </div>
+        <div class="flex items-center gap-2 text-[10px] font-black tracking-widest text-slate-400 uppercase">
+          <span class="w-2 h-2 rounded-full bg-purple-500"></span> Alta Costura
+        </div>
+        <div class="flex items-center gap-2 text-[10px] font-black tracking-widest text-slate-400 uppercase">
+          <span class="w-2 h-2 rounded-full bg-orange-500"></span> Hub Educativo
+        </div>
+        <div class="flex items-center gap-2 text-[10px] font-black tracking-widest text-slate-400 uppercase">
+          <span class="w-2 h-2 rounded-full bg-cyan-500"></span> Telemetría GPS
+        </div>
+      </div>
+
+      <p class="mx-auto max-w-3xl text-xl sm:text-2xl text-slate-400 font-medium leading-relaxed mb-16 px-4">
+        Arquitectura de <span class="text-white border-b-2 border-mnohaBlue/30">servicios multidimensionales</span> impulsada por innovación, precisión y una visión global de excelencia regional.
       </p>
 
-      <!-- Scroll Indicator -->
-      <a href="#proyectos" class="inline-flex flex-col items-center gap-4 text-slate-500 hover:text-mnohaBlue transition-colors group">
-        <span class="text-[10px] uppercase tracking-[0.4em] font-black">Explorar Divisiones</span>
-        <div class="w-px h-16 bg-gradient-to-b from-mnohaBlue to-transparent transition-transform group-hover:scale-y-125"></div>
-      </a>
+      <!-- Advanced CTA -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <a href="#proyectos" class="btn-pill bg-mnohaBlue text-white hover:scale-105 shadow-[0_0_40px_rgba(59,130,246,0.3)]">
+          INICIAR SISTEMA →
+        </a>
+        <div class="text-[10px] font-black text-slate-600 uppercase tracking-[0.3em]">
+          Latencia: 0.1ms <span class="mx-2">|</span> Status: Online
+        </div>
+      </div>
     </div>
+
+    <!-- Background Tech Lines -->
+    <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-mnohaBlue/20 to-transparent"></div>
   </header>
 
   <!-- Seccion Proyectos (Grid Moderno) -->
