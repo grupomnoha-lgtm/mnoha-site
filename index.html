@@ -1,81 +1,175 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GRUPO MNOHA — Portafolio Profesional</title>
+  <title>GRUPO MNOHA — Estandar Global de Servicios</title>
   <meta name="description" content="GRUPO MNOHA: Servicios premium en Transporte, Sastrería, Educación y Rastreo Satelital.">
+  
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Script de Carga de Tailwind (Consistente con Sistema de Diseño) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mnohaDark: '#020617',
+            mnohaBlue: '#3b82f6',
+            mnohaSlate: '#1e293b',
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'float-slow': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style type="text/tailwindcss">
+    @layer components {
+      .glass-card {
+        @apply bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[40px] transition-all duration-700;
+      }
+      .glass-card:hover {
+        @apply -translate-y-6 bg-white/10 border-mnohaBlue/40 shadow-2xl shadow-mnohaBlue/10;
+      }
+      .btn-pill {
+        @apply inline-flex items-center gap-3 px-8 py-5 rounded-full font-black tracking-wide transition-all duration-500 overflow-hidden relative;
+      }
+      .btn-pill::after {
+        @apply content-[''] absolute inset-0 bg-white/10 opacity-0 transition-opacity;
+      }
+      .btn-pill:hover::after {
+        @apply opacity-100;
+      }
+    }
+  </style>
 </head>
-<body>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-content">
-      <div style="background: rgba(59, 130, 246, 0.1); padding: 5px 20px; border-radius: 50px; border: 1px solid rgba(59, 130, 246, 0.3); display: inline-block; margin-bottom: 2rem; color: #3b82f6; font-weight: 700; letter-spacing: 2px;">PRESENCIA GLOBAL</div>
-      <h1>GRUPO MNOHA</h1>
-      <p class="hero-subtitle">Innovación y excelencia en soluciones integrales para potenciar tu mundo. Cuatro divisiones de élite a tu servicio.</p>
+
+<body class="bg-mnohaDark font-inter text-slate-300 antialiased overflow-x-hidden selection:bg-mnohaBlue selection:text-white">
+  
+  <!-- Hero Section (Mobile First focus) -->
+  <header class="relative min-h-screen flex items-center justify-center text-center px-6 overflow-hidden">
+    <!-- Glow Backgrounds (Interactive look) -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-mnohaBlue/20 via-mnohaDark to-mnohaDark z-0"></div>
+    <div class="absolute -top-40 -left-20 w-[600px] h-[600px] bg-mnohaBlue/5 blur-[160px] rounded-full animate-pulse-slow"></div>
+    <div class="absolute top-1/2 -right-40 w-[500px] h-[500px] bg-mnohaBlue/10 blur-[180px] rounded-full animate-pulse-slow delay-700"></div>
+
+    <div class="container relative z-10 max-w-5xl">
+      <div class="mb-10 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-2.5 text-xs font-black tracking-[0.3em] text-mnohaBlue uppercase backdrop-blur-md">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-mnohaBlue opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-mnohaBlue"></span>
+        </span>
+        Estándar de Élite
+      </div>
+      
+      <h1 class="mb-10 text-6xl font-[900] tracking-tighter sm:text-8xl md:text-9xl bg-gradient-to-b from-white to-slate-500 bg-clip-text text-transparent leading-[0.85] py-4">
+        GRUPO <br> MNOHA
+      </h1>
+      
+      <p class="mx-auto max-w-3xl text-xl sm:text-2xl md:text-2xl text-slate-400 font-medium leading-relaxed mb-16 px-4">
+        Liderando la vanguardia en <span class="text-white">soluciones integrales</span> de transporte, diseño textil y tecnología satelital.
+      </p>
+
+      <!-- Scroll Indicator -->
+      <a href="#proyectos" class="inline-flex flex-col items-center gap-4 text-slate-500 hover:text-mnohaBlue transition-colors group">
+        <span class="text-[10px] uppercase tracking-[0.4em] font-black">Explorar Divisiones</span>
+        <div class="w-px h-16 bg-gradient-to-b from-mnohaBlue to-transparent transition-transform group-hover:scale-y-125"></div>
+      </a>
     </div>
-  </section>
+  </header>
 
-  <!-- Services Grid -->
-  <main class="container section">
-    <div class="services-grid">
-      <!-- Portafolio 1: Taxis -->
-      <a href="taxi.html" class="service-card">
-        <div class="icon-wrapper bg-taxis">🚖</div>
-        <h3>Taxis MNOHA</h3>
-        <p>Servicio de transporte VIP y urbano con estándares internacionales de seguridad y puntualidad.</p>
-        <div class="btn-enter">EXPLORAR</div>
+  <!-- Seccion Proyectos (Grid Moderno) -->
+  <main id="proyectos" class="container mx-auto px-6 py-32 relative z-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      
+      <!-- Taxis Division -->
+      <a href="taxi.html" class="glass-card p-12 flex flex-col items-center text-center group">
+        <div class="w-24 h-24 mb-10 rounded-[35%] bg-gradient-to-br from-amber-300 to-amber-600 flex items-center justify-center text-5xl shadow-2xl shadow-amber-500/30 transition-all duration-700 group-hover:rotate-[15deg] group-hover:scale-110">🚖</div>
+        <h3 class="text-2xl font-black mb-4 text-white uppercase tracking-tighter">Taxis MNOHA</h3>
+        <p class="text-slate-400 text-lg mb-10 leading-relaxed font-medium">Logística de transporte inteligente y servicios VIP.</p>
+        <div class="mt-auto flex items-center gap-2 text-mnohaBlue font-black text-xs tracking-widest uppercase transition-all group-hover:gap-4">
+          Entrar Division <span>→</span>
+        </div>
       </a>
 
-      <!-- Portafolio 2: Sastrería -->
-      <a href="sastreria.html" class="service-card">
-        <div class="icon-wrapper bg-sastreria">🧵</div>
-        <h3>Sastrería Premium</h3>
-        <p>Arte textil de alta gama. Confección artesanal y moderna para el estilo de vida actual.</p>
-        <div class="btn-enter">EXPLORAR</div>
+      <!-- Sastrería Division -->
+      <a href="sastreria.html" class="glass-card p-12 flex flex-col items-center text-center group">
+        <div class="w-24 h-24 mb-10 rounded-[35%] bg-gradient-to-br from-purple-400 to-purple-800 flex items-center justify-center text-5xl shadow-2xl shadow-purple-500/30 transition-all duration-700 group-hover:rotate-[-15deg] group-hover:scale-110">🧵</div>
+        <h3 class="text-2xl font-black mb-4 text-white uppercase tracking-tighter">Sastrería</h3>
+        <p class="text-slate-400 text-lg mb-10 leading-relaxed font-medium">Alta costura y diseño exclusivo de vanguardia.</p>
+        <div class="mt-auto flex items-center gap-2 text-mnohaBlue font-black text-xs tracking-widest uppercase transition-all group-hover:gap-4">
+          Entrar Division <span>→</span>
+        </div>
       </a>
 
-      <!-- Portafolio 3: Centro Primario -->
-      <a href="https://pilarmomosale.com/" class="service-card" target="_blank">
-        <div class="icon-wrapper bg-primario">🏫</div>
-        <h3>Centro Primario</h3>
-        <p>Excelencia académica y formación integral para las nuevas generaciones de líderes.</p>
-        <div class="btn-enter">VER SITIO</div>
+      <!-- Educación (Externo) -->
+      <a href="https://pilarmomosale.com/" target="_blank" class="glass-card p-12 flex flex-col items-center text-center group">
+        <div class="w-24 h-24 mb-10 rounded-[35%] bg-gradient-to-br from-orange-400 to-orange-700 flex items-center justify-center text-5xl shadow-2xl shadow-orange-500/30 transition-all duration-700 group-hover:scale-110">🏫</div>
+        <h3 class="text-2xl font-black mb-4 text-white uppercase tracking-tighter">Educación</h3>
+        <p class="text-slate-400 text-lg mb-10 leading-relaxed font-medium">Forjando el futuro académico de la región.</p>
+        <div class="mt-auto flex items-center gap-2 text-mnohaBlue font-black text-xs tracking-widest uppercase transition-all group-hover:gap-4">
+          Ver Portal <span>↗</span>
+        </div>
       </a>
 
-      <!-- Portafolio 4: GPS MNOHA -->
-      <a href="gps.html" class="service-card">
-        <div class="icon-wrapper bg-gps">🛰️</div>
-        <h3>Sistemas GPS</h3>
-        <p>Tecnología de rastreo de precisión y gestión inteligente de flotas en tiempo real.</p>
-        <div class="btn-enter">EXPLORAR</div>
+      <!-- GPS Division -->
+      <a href="gps.html" class="glass-card p-12 flex flex-col items-center text-center group">
+        <div class="w-24 h-24 mb-10 rounded-[35%] bg-gradient-to-br from-cyan-400 to-cyan-700 flex items-center justify-center text-5xl shadow-2xl shadow-cyan-500/30 transition-all duration-700 group-hover:rotate-[10deg] group-hover:scale-110">🛰️</div>
+        <h3 class="text-2xl font-black mb-4 text-white uppercase tracking-tighter">MNOHA GPS</h3>
+        <p class="text-slate-400 text-lg mb-10 leading-relaxed font-medium">Rastreo satelital y control de activos críticos.</p>
+        <div class="mt-auto flex items-center gap-2 text-mnohaBlue font-black text-xs tracking-widest uppercase transition-all group-hover:gap-4">
+          Entrar Division <span>→</span>
+        </div>
       </a>
+
     </div>
   </main>
 
-  <!-- Contact Bar -->
-  <footer class="footer-cta">
-    <div class="container cta-flex">
-      <div>
-        <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">¿Deseas conectar?</h2>
-        <p style="color: #94a3b8; font-size: 1.25rem;">Nuestros expertos están listos para atenderte hoy.</p>
+  <!-- Seccion de Contacto (Mobile Optimized) -->
+  <footer class="bg-black/60 border-t border-white/5 py-40">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col xl:flex-row justify-between items-center gap-20">
+        
+        <div class="max-w-xl text-center xl:text-left">
+          <h2 class="text-5xl font-black text-white mb-6 uppercase tracking-tighter sm:text-7xl leading-none">Conecta con el Futuro.</h2>
+          <p class="text-slate-400 text-xl font-medium">Estamos listos para transformar tus necesidades en soluciones tangibles.</p>
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-8">
+          <a href="tel:+240555267985" class="btn-pill bg-white text-mnohaDark group">
+            <span class="text-2xl transition-transform group-hover:scale-125">📞</span>
+            +240 555 267 985
+          </a>
+          <a href="https://wa.me/240555267985" class="btn-pill border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)] group">
+            <span class="text-2xl transition-transform group-hover:scale-125">💬</span>
+            WhatsApp Directo
+          </a>
+        </div>
       </div>
-      <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
-        <a href="tel:+240555267985" class="contact-pill">
-          <span>📞</span> +240 555 267 985
-        </a>
-        <a href="https://wa.me/240555267985" class="contact-pill" style="border-color: #22c55e;">
-          <span style="color: #22c55e;">●</span> WhatsApp Business
-        </a>
+      
+      <div class="mt-40 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-600 text-[10px] font-black tracking-[0.5em] uppercase text-center md:text-left">
+        <span>© 2026 GRUPO MNOHA</span>
+        <span>Excelencia Operativa • Tecnología Avanzada • Presencia Regional</span>
       </div>
-    </div>
-    <div class="container" style="text-align: center; padding-top: 5rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 5rem; opacity: 0.5; font-size: 0.9rem;">
-      © 2026 GRUPO MNOHA — Estandar Internacional de Servicios
     </div>
   </footer>
+
 </body>
 </html>
