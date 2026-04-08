@@ -1,39 +1,115 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MNOHA Sastrería — Grupo MNOHA</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Sastrería Premium — MNOHA Elite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { mnohaDark: '#020617', mnohaBlue: '#3b82f6' }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer components {
+      .glass-card { @apply bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[40px] overflow-hidden; }
+      .tech-border { @apply border-l-4 border-purple-500 pl-6; }
+    }
+  </style>
 </head>
-<body style="background: white;">
-  <header style="background: linear-gradient(135deg, #a855f7, #7c3aed);">
-    <div class="container">
-      <div style="font-size: 3rem; margin-bottom: 1rem;">🧵</div>
-      <h1>MNOHA Sastrería</h1>
-      <p>Confección a medida y elegancia sin igual</p>
-      <a href="index.html" style="color: white; margin-top: 2rem; display: inline-block; font-weight: 700; text-decoration: underline;">← Volver al Inicio</a>
+<body class="bg-mnohaDark text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-purple-500 selection:text-white">
+
+  <!-- Header Section con Imagen de Fondo Real -->
+  <header class="relative h-[65vh] flex items-end pb-24 px-6 overflow-hidden">
+    <!-- Overlay gradiente de élite -->
+    <div class="absolute inset-0 bg-gradient-to-t from-mnohaDark via-mnohaDark/60 to-transparent z-10"></div>
+    <!-- Imagen real de la carpeta img -->
+    <img src="img/sastrería/listado de servicios.png" alt="Sastrería Background" class="absolute inset-0 w-full h-full object-cover opacity-60 scale-105 animate-pulse-slow">
+    
+    <div class="container mx-auto relative z-20">
+      <nav class="mb-12">
+        <a href="index.html" class="inline-flex items-center gap-3 text-mnohaBlue font-black text-xs tracking-[0.4em] uppercase group">
+          <span class="p-2 border border-mnohaBlue/20 rounded-lg group-hover:bg-mnohaBlue/10 transition-colors">←</span>
+          Volver al Nexus
+        </a>
+      </nav>
+      <div class="max-w-4xl">
+        <h1 class="text-7xl md:text-9xl font-[1000] text-white tracking-tighter uppercase leading-[0.8] py-4">
+          MNOHA <br> <span class="text-purple-500">Sastrería</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-400 font-bold mt-6 tracking-wide">Excelencia textil, diseño artesanal.</p>
+      </div>
     </div>
   </header>
 
-  <main class="container section-padding">
-    <div style="text-align: center; margin-bottom: 4rem;">
-      <h2 style="font-size: 2.5rem; color: #111827; font-weight: 800;">Elegancia y Diseño</h2>
-      <p style="color: #4b5563; margin-top: 15px;">Expertos en transformar telas en piezas únicas de distinción.</p>
-    </div>
+  <!-- Cuerpo de Información Visual -->
+  <main class="container mx-auto px-6 py-32 space-y-32">
+    
+    <!-- GRID DE INFORMACION Y SERVICIOS -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+      
+      <div class="space-y-12">
+        <div class="tech-border">
+          <h2 class="text-xs font-black text-purple-500 tracking-[0.5em] uppercase mb-4">División Textil Premium</h2>
+          <p class="text-4xl text-white font-[900] tracking-tighter leading-none uppercase">Atención y Estilo <br> Sin Concesiones</p>
+        </div>
+        
+        <p class="text-lg text-slate-400 font-medium leading-relaxed">
+          Nuestra sastrería redefine el concepto de elegancia corporativa. Confeccionamos piezas únicas que proyectan seguridad y distinción, utilizando los materiales más finos y técnicas de precisión milimétrica.
+        </p>
 
-    <!-- Espacio para el contenido del portafolio -->
-    <div style="background: #fdf6e3; padding: 4rem; border-radius: 20px; text-align: center; border: 2px dashed #a855f7;">
-      <h3>Página en construcción</h3>
-      <p>Pronto mostraremos los mejores cortes y diseños de nuestra colección.</p>
-    </div>
+        <!-- Stats Visuales -->
+        <div class="grid grid-cols-2 gap-8">
+          <div class="glass-card p-8 group">
+            <div class="text-purple-500 font-black text-5xl mb-3 transition-transform group-hover:scale-110">100%</div>
+            <div class="text-xs uppercase tracking-widest font-black text-slate-500">Hecho a Medida</div>
+          </div>
+          <div class="glass-card p-8 group">
+            <div class="text-purple-500 font-black text-5xl mb-3 transition-transform group-hover:scale-110">NIVEL VIP</div>
+            <div class="text-xs uppercase tracking-widest font-black text-slate-500">Atención Directa</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagen Secundaria - Servicios -->
+      <div class="relative">
+        <!-- Resplandor tecnológico -->
+        <div class="absolute -inset-10 bg-purple-500/10 blur-[120px] rounded-full z-0"></div>
+        <div class="glass-card relative z-10">
+          <img src="img/sastrería/Servicios Sastrería .png" alt="Servicios Reales" class="w-full h-auto opacity-100 hover:scale-105 transition-transform duration-700">
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER DE INFORMACIÓN ESTRUCTURAL -->
+    <section class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h3 class="text-3xl font-black text-white uppercase tracking-tighter mb-4">Información de División</h3>
+        <p class="text-slate-500 font-bold uppercase tracking-[0.2em] text-xs">Estructura Operativa y Logística</p>
+      </div>
+      <div class="glass-card p-4">
+        <img src="img/sastrería/información.png" alt="Estructura de Información" class="w-full h-auto rounded-[32px] opacity-90 shadow-2xl">
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer">
-    <div class="container text-center">
-      <h3>MNOHA Sastrería</h3>
-      <p>© 2026 GRUPO MNOHA</p>
+  <!-- CTA de Contacto Privado -->
+  <footer class="bg-black/80 py-40 border-t border-purple-500/10">
+    <div class="container mx-auto px-6 flex flex-col items-center text-center">
+      <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-10 leading-none">¿Deseas una cita <br> exclusiva?</h2>
+      <a href="https://wa.me/240555267985" class="inline-flex items-center gap-4 bg-purple-600 px-12 py-6 rounded-full font-[900] text-white tracking-widest hover:bg-purple-500 hover:scale-110 hover:shadow-[0_0_50px_rgba(168,85,247,0.4)] transition-all duration-500 uppercase">
+        Contactar Sastre Directo 🧵
+      </a>
+      <div class="mt-40 text-slate-600 text-[10px] font-black tracking-[0.8em] uppercase">
+        © 2026 GRUPO MNOHA — Excelencia en cada división.
+      </div>
     </div>
   </footer>
+
 </body>
 </html>
