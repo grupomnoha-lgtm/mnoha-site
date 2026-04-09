@@ -3,121 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sastrería Premium — MNOHA Elite</title>
+  <title>MNOHA Sastrería — Editorial Collection</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { mnohaDark: '#020617', mnohaBlue: '#3b82f6' }
+          colors: {
+            crema: '#F9F8F6',
+            carbon: '#2D2D2D',
+            muted: '#717171'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
         }
       }
     }
   </script>
   <style type="text/tailwindcss">
-    @layer components {
-      .glass-card { 
-        background-color: rgb(255 255 255 / 0.05);
-        backdrop-filter: blur(40px);
-        border: 1px solid rgb(255 255 255 / 0.1);
-        border-radius: 40px;
-        overflow: hidden;
+    @layer utilities {
+      .fade-in {
+        animation: fadeIn 1.2s ease-out forwards;
       }
-      .tech-border { 
-        border-left-width: 4px;
-        border-color: #a855f7;
-        padding-left: 1.5rem;
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
     }
   </style>
 </head>
-<body class="bg-mnohaDark text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-purple-500 selection:text-white">
+<body class="bg-crema text-carbon font-sans antialiased selection:bg-carbon selection:text-crema overflow-x-hidden">
 
-  <!-- Header Section con Imagen de Fondo Real -->
-  <header class="relative h-[65vh] flex items-end pb-24 px-6 overflow-hidden">
-    <!-- Overlay gradiente de élite -->
-    <div class="absolute inset-0 bg-gradient-to-t from-mnohaDark via-mnohaDark/60 to-transparent z-10"></div>
-    <!-- Imagen real de la carpeta img -->
-    <img src="img/sastrería/listado de servicios.png" alt="Sastrería Background" class="absolute inset-0 w-full h-full object-cover opacity-60 scale-105 animate-pulse-slow">
-    
-    <div class="container mx-auto relative z-20">
-      <nav class="mb-12">
-        <a href="index.html" class="inline-flex items-center gap-3 text-mnohaBlue font-black text-xs tracking-[0.4em] uppercase group">
-          <span class="p-2 border border-mnohaBlue/20 rounded-lg group-hover:bg-mnohaBlue/10 transition-colors">←</span>
-          Volver al Nexus
-        </a>
-      </nav>
-      <div class="max-w-4xl">
-        <h1 class="text-7xl md:text-9xl font-[1000] text-white tracking-tighter uppercase leading-[0.8] py-4">
-          MNOHA <br> <span class="text-purple-500">Sastrería</span>
-        </h1>
-        <p class="text-xl md:text-2xl text-slate-400 font-bold mt-6 tracking-wide">Excelencia textil, diseño artesanal.</p>
-      </div>
+  <!-- Navegación Minimalista -->
+  <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-crema/80 backdrop-blur-sm">
+    <a href="index.html" class="text-[10px] tracking-[0.3em] uppercase font-semibold hover:opacity-50 transition-opacity">← Back to Nexus</a>
+    <div class="text-xl font-serif italic tracking-widest">MNOHA</div>
+    <div class="flex gap-8 text-[10px] tracking-[0.2em] uppercase font-semibold">
+      <a href="#" class="hover:underline underline-offset-4">Colección</a>
+      <a href="#" class="hover:underline underline-offset-4">Atelier</a>
+    </div>
+  </nav>
+
+  <!-- Hero Editorial (Asimétrico) -->
+  <header class="pt-40 pb-20 px-8 md:px-20 grid grid-cols-1 md:grid-cols-12 gap-12 items-center fade-in">
+    <div class="md:col-span-5 space-y-8">
+      <h1 class="text-6xl md:text-8xl font-serif leading-tight">La forma del <br><span class="italic text-muted">carácter.</span></h1>
+      <p class="text-sm tracking-widest uppercase font-semibold text-muted max-w-xs">Artesanía textil contemporánea para el ejecutivo que entiende el silencio como poder.</p>
+    </div>
+    <div class="md:col-span-7 relative group overflow-hidden">
+      <img src="img/sastrería/listado de servicios.png" alt="Main Collection" class="w-full h-[70vh] object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-[2s] ease-out">
+      <div class="absolute bottom-6 right-6 text-[10px] tracking-widest uppercase bg-crema px-4 py-2 border border-carbon/10">01 / Atelier Series</div>
     </div>
   </header>
 
-  <!-- Cuerpo de Información Visual -->
-  <main class="container mx-auto px-6 py-32 space-y-32">
+  <!-- Grid de Productos Estilo Ritarow -->
+  <main class="px-8 md:px-20 py-32 space-y-40">
     
-    <!-- GRID DE INFORMACION Y SERVICIOS -->
-    <section class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-      
-      <div class="space-y-12">
-        <div class="tech-border">
-          <h2 class="text-xs font-black text-purple-500 tracking-[0.5em] uppercase mb-4">División Textil Premium</h2>
-          <p class="text-4xl text-white font-[900] tracking-tighter leading-none uppercase">Atención y Estilo <br> Sin Concesiones</p>
+    <!-- Sección Editorial 1 -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-24">
+      <!-- Tarjeta 1 -->
+      <a href="#" class="group space-y-6 fade-in" style="animation-delay: 0.2s;">
+        <div class="aspect-[3/4] overflow-hidden bg-white">
+          <img src="img/sastrería/Servicios Sastrería .png" alt="Servicio 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.5s] ease-in-out">
         </div>
-        
-        <p class="text-lg text-slate-400 font-medium leading-relaxed">
-          Nuestra sastrería redefine el concepto de elegancia corporativa. Confeccionamos piezas únicas que proyectan seguridad y distinción, utilizando los materiales más finos y técnicas de precisión milimétrica.
-        </p>
+        <div class="flex justify-between items-baseline px-2">
+          <h3 class="text-xs tracking-widest uppercase font-semibold">Corte Signature</h3>
+          <span class="text-[10px] text-muted italic">Consultar</span>
+        </div>
+      </a>
 
-        <!-- Stats Visuales -->
-        <div class="grid grid-cols-2 gap-8">
-          <div class="glass-card p-8 group">
-            <div class="text-purple-500 font-black text-5xl mb-3 transition-transform group-hover:scale-110">100%</div>
-            <div class="text-xs uppercase tracking-widest font-black text-slate-500">Hecho a Medida</div>
+      <!-- Tarjeta 2 (Espaciado Asimétrico) -->
+      <div class="md:mt-32">
+        <a href="#" class="group space-y-6 fade-in" style="animation-delay: 0.4s;">
+          <div class="aspect-[3/4] overflow-hidden bg-white">
+            <img src="img/sastrería/información.png" alt="Atelier Info" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.5s] ease-in-out">
           </div>
-          <div class="glass-card p-8 group">
-            <div class="text-purple-500 font-black text-5xl mb-3 transition-transform group-hover:scale-110">NIVEL VIP</div>
-            <div class="text-xs uppercase tracking-widest font-black text-slate-500">Atención Directa</div>
+          <div class="flex justify-between items-baseline px-2">
+            <h3 class="text-xs tracking-widest uppercase font-semibold">Proceso Handmade</h3>
+            <span class="text-[10px] text-muted italic">New</span>
           </div>
-        </div>
+        </a>
       </div>
 
-      <!-- Imagen Secundaria - Servicios -->
-      <div class="relative">
-        <!-- Resplandor tecnológico -->
-        <div class="absolute -inset-10 bg-purple-500/10 blur-[120px] rounded-full z-0"></div>
-        <div class="glass-card relative z-10">
-          <img src="img/sastrería/Servicios Sastrería .png" alt="Servicios Reales" class="w-full h-auto opacity-100 hover:scale-105 transition-transform duration-700">
+      <!-- Tarjeta 3 -->
+      <a href="#" class="group space-y-6 fade-in" style="animation-delay: 0.6s;">
+        <div class="aspect-[3/4] overflow-hidden bg-white">
+          <div class="w-full h-full bg-carbon/5 flex items-center justify-center p-12">
+             <p class="text-center font-serif italic text-2xl text-muted">"El estilo es una forma de decir quién eres sin tener que hablar."</p>
+          </div>
         </div>
-      </div>
+        <div class="flex justify-between items-baseline px-2">
+          <h3 class="text-xs tracking-widest uppercase font-semibold">Filosofía MNOHA</h3>
+        </div>
+      </a>
     </section>
 
-    <!-- BANNER DE INFORMACIÓN ESTRUCTURAL -->
-    <section class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h3 class="text-3xl font-black text-white uppercase tracking-tighter mb-4">Información de División</h3>
-        <p class="text-slate-500 font-bold uppercase tracking-[0.2em] text-xs">Estructura Operativa y Logística</p>
-      </div>
-      <div class="glass-card p-4">
-        <img src="img/sastrería/información.png" alt="Estructura de Información" class="w-full h-auto rounded-[32px] opacity-90 shadow-2xl">
-      </div>
+    <!-- Banner Central Minimalista -->
+    <section class="py-20 border-y border-carbon/5 text-center fade-in">
+        <h2 class="text-3xl md:text-5xl font-serif italic mb-6">Slow Fashion para mentes rápidas.</h2>
+        <p class="text-[10px] tracking-[0.4em] uppercase font-bold text-muted">Fabricado íntegramente de forma ética.</p>
     </section>
 
   </main>
 
-  <!-- CTA de Contacto Privado -->
-  <footer class="bg-black/80 py-40 border-t border-purple-500/10">
-    <div class="container mx-auto px-6 flex flex-col items-center text-center">
-      <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-10 leading-none">¿Deseas una cita <br> exclusiva?</h2>
-      <a href="https://wa.me/240555267985" class="inline-flex items-center gap-4 bg-purple-600 px-12 py-6 rounded-full font-[900] text-white tracking-widest hover:bg-purple-500 hover:scale-110 hover:shadow-[0_0_50px_rgba(168,85,247,0.4)] transition-all duration-500 uppercase">
-        Contactar Sastre Directo 🧵
-      </a>
-      <div class="mt-40 text-slate-600 text-[10px] font-black tracking-[0.8em] uppercase">
-        © 2026 GRUPO MNOHA — Excelencia en cada división.
-      </div>
+  <!-- Footer Minimalista -->
+  <footer class="px-8 md:px-20 py-20 bg-crema border-t border-carbon/10 grid grid-cols-1 md:grid-cols-4 gap-12 items-end">
+    <div class="md:col-span-2 space-y-4">
+      <div class="text-4xl font-serif italic">MNOHA Sastrería</div>
+      <p class="text-[10px] tracking-widest text-muted uppercase">Edición Limitada — 2026</p>
+    </div>
+    <div class="space-y-2 text-[10px] tracking-widest uppercase font-semibold">
+        <a href="https://wa.me/240555267985" class="block hover:opacity-50 transition-opacity underline underline-offset-8">Agendar Cita Privada</a>
+        <a href="#" class="block hover:opacity-50 transition-opacity">Contacto</a>
+    </div>
+    <div class="text-[9px] text-muted tracking-widest uppercase text-right">
+        © 2026 MNOHA. <br> Editorial Concept.
     </div>
   </footer>
 
