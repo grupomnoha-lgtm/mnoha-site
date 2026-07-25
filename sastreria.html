@@ -11,13 +11,18 @@
       theme: {
         extend: {
           colors: {
+            'brand-dark': '#1a2530',
+            'brand-blue': '#2a5298',
+            'brand-blue-light': '#2a75d3',
+            'brand-orange': '#ff8c00',
+            'slate-light': '#f4f6f9',
             crema: '#F9F8F6',
             carbon: '#2D2D2D',
             muted: '#717171'
           },
           fontFamily: {
             serif: ['"Playfair Display"', 'serif'],
-            sans: ['Inter', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
           }
         }
       }
@@ -35,23 +40,33 @@
     }
   </style>
 </head>
-<body class="bg-crema text-carbon font-sans antialiased selection:bg-carbon selection:text-crema overflow-x-hidden">
+<body class="bg-crema text-carbon font-inter antialiased selection:bg-carbon selection:text-crema overflow-x-hidden">
 
-  <!-- Navegación Minimalista -->
-  <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-crema/80 backdrop-blur-sm border-b border-carbon/5">
-    <a href="index.html" class="text-[10px] tracking-[0.3em] uppercase font-semibold hover:opacity-50 transition-opacity">← Back to Nexus</a>
-    <div class="text-xl font-serif italic tracking-widest text-center flex-1">MNOHA</div>
-    <div class="flex gap-8 text-[10px] tracking-[0.2em] uppercase font-semibold">
-      <a href="#" class="hover:underline underline-offset-4">Colección</a>
-      <a href="#" class="hover:underline underline-offset-4">Atelier</a>
-    </div>
-  </nav>
+  <!-- Header Navigation (Unified) -->
+  <header class="bg-white shadow-lg sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto flex justify-between items-center p-4 px-5">
+          <a href="index.html" class="flex items-center gap-3 no-underline">
+              <div class="w-11 h-11 bg-gradient-to-br from-[#1e3c72] to-[#2a5298] rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">M</div>
+              <div>
+                  <h1 class="text-lg font-extrabold text-brand-dark tracking-wider uppercase">GRUPO MNOHA</h1>
+                  <p class="text-xs text-gray-500 font-medium">Soluciones Integrales</p>
+              </div>
+          </a>
+          <nav class="hidden md:flex items-center list-none gap-6">
+              <li><a href="index.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Inicio</a></li>
+              <li><a href="index.html#proyectos" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Portafolios</a></li>
+              <li><a href="#" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Nosotros</a></li>
+              <li><a href="#" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Contacto</a></li>
+          </nav>
+          <a href="https://wa.me/240555267985" target="_blank" class="hidden md:inline-block bg-brand-dark text-white px-6 py-2.5 rounded-full no-underline font-bold text-xs tracking-widest hover:bg-brand-blue hover:-translate-y-0.5 transition-all shadow-lg">SOLICITAR SERVICIO</a>
+      </div>
+  </header>
 
   <!-- CONTENIDO PRINCIPAL -->
-  <main class="px-8 md:px-20 pt-32 pb-32 space-y-40">
+  <main class="px-8 md:px-20 pt-16 pb-32 space-y-40">
     
     <!-- TÍTULO PRINCIPAL: COLECCIÓN EN VENTA (AL PRINCIPIO DE TODO) -->
-    <header class="pt-20 pb-10 text-center fade-in">
+    <header id="collection" class="pt-20 pb-10 text-center fade-in">
         <h1 class="text-5xl md:text-8xl font-serif italic mb-6">Colección en Venta.</h1>
         <p class="text-[10px] tracking-[0.4em] uppercase font-bold text-muted">Disponibilidad inmediata — Piezas exclusivas para el hombre y la mujer de hoy.</p>
     </header>
@@ -62,42 +77,42 @@
         <h2 class="text-xs tracking-[0.4em] uppercase font-bold text-muted border-b border-carbon/5 pb-4 inline-block">Men's Essentials</h2>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16">
-        <div class="group space-y-4">
+        <figure class="group space-y-4">
           <div class="aspect-[3/4] overflow-hidden bg-white">
-            <img src="img/sastrería/ropa en venta/hombre.jpeg" alt="Traje Hombre" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <img src="img/sastrería/ropa en venta/hombre.jpeg" alt="Traje Executive Blue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           </div>
-          <div class="flex flex-col px-1">
-            <span class="text-[10px] tracking-widest uppercase font-semibold">Traje Executive Blue</span>
-            <span class="text-[9px] text-muted italic mt-1">120.000 FCFA</span>
-          </div>
-        </div>
-        <div class="group space-y-4">
+          <figcaption class="flex flex-col px-1">
+            <span class="text-xs tracking-widest uppercase font-semibold">Traje Executive Blue</span>
+            <span class="text-[10px] text-muted italic mt-1">120.000 FCFA</span>
+          </figcaption>
+        </figure>
+        <figure class="group space-y-4">
           <div class="aspect-[3/4] overflow-hidden bg-white">
-            <img src="img/sastrería/ropa en venta/hombre1.jpeg" alt="Traje Hombre" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <img src="img/sastrería/ropa en venta/hombre1.jpeg" alt="Blazer Charcoal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           </div>
-          <div class="flex flex-col px-1">
-            <span class="text-[10px] tracking-widest uppercase font-semibold">Blazer Charcoal</span>
-            <span class="text-[9px] text-muted italic mt-1">85.000 FCFA</span>
-          </div>
-        </div>
-        <div class="group space-y-4">
+          <figcaption class="flex flex-col px-1">
+            <span class="text-xs tracking-widest uppercase font-semibold">Blazer Charcoal</span>
+            <span class="text-[10px] text-muted italic mt-1">85.000 FCFA</span>
+          </figcaption>
+        </figure>
+        <figure class="group space-y-4">
           <div class="aspect-[3/4] overflow-hidden bg-white">
-            <img src="img/sastrería/ropa en venta/hombre2.jpeg" alt="Traje Hombre" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <img src="img/sastrería/ropa en venta/hombre2.jpeg" alt="Camisa Slim Fit Pure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           </div>
-          <div class="flex flex-col px-1">
-            <span class="text-[10px] tracking-widest uppercase font-semibold">Camisa Slim Fit Pure</span>
-            <span class="text-[9px] text-muted italic mt-1">35.000 FCFA</span>
-          </div>
-        </div>
-        <div class="group space-y-4">
+          <figcaption class="flex flex-col px-1">
+            <span class="text-xs tracking-widest uppercase font-semibold">Camisa Slim Fit Pure</span>
+            <span class="text-[10px] text-muted italic mt-1">35.000 FCFA</span>
+          </figcaption>
+        </figure>
+        <figure class="group space-y-4">
           <div class="aspect-[3/4] overflow-hidden bg-white">
-            <img src="img/sastrería/ropa en venta/hombre3.jpeg" alt="Traje Hombre" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <img src="img/sastrería/ropa en venta/hombre3.jpeg" alt="Pantalón Taylor-Cut" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           </div>
-          <div class="flex flex-col px-1">
-            <span class="text-[10px] tracking-widest uppercase font-semibold">Pantalón Taylor-Cut</span>
-            <span class="text-[9px] text-muted italic mt-1">45.000 FCFA</span>
-          </div>
-        </div>
+          <figcaption class="flex flex-col px-1">
+            <span class="text-xs tracking-widest uppercase font-semibold">Pantalón Taylor-Cut</span>
+            <span class="text-[10px] text-muted italic mt-1">45.000 FCFA</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -107,47 +122,47 @@
         <h2 class="text-xs tracking-[0.4em] uppercase font-bold text-muted border-b border-carbon/5 pb-4 inline-block">Women's Collection</h2>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16">
-        <div class="group space-y-4">
+        <figure class="group space-y-4">
           <div class="aspect-[3/4] overflow-hidden bg-white">
-            <img src="img/sastrería/ropa en venta/mujer .jpeg" alt="Ropa Mujer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <img src="img/sastrería/ropa en venta/mujer.jpeg" alt="Vestido Gala Silk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           </div>
-          <div class="flex flex-col px-1 text-center">
-            <span class="text-[10px] tracking-widest uppercase font-semibold">Vestido Gala Silk</span>
-            <span class="text-[9px] text-muted italic mt-1">95.000 FCFA</span>
-          </div>
-        </div>
-        <div class="group space-y-4">
+          <figcaption class="flex flex-col px-1 text-center">
+            <span class="text-xs tracking-widest uppercase font-semibold">Vestido Gala Silk</span>
+            <span class="text-[10px] text-muted italic mt-1">95.000 FCFA</span>
+          </figcaption>
+        </figure>
+        <figure class="group space-y-4">
           <div class="aspect-[3/4] overflow-hidden bg-white">
-            <img src="img/sastrería/ropa en venta/mujer1.jpeg" alt="Ropa Mujer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <img src="img/sastrería/ropa en venta/mujer1.jpeg" alt="Blusa Satin Ivory" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           </div>
-          <div class="flex flex-col px-1 text-center">
-            <span class="text-[10px] tracking-widest uppercase font-semibold">Blusa Satin Ivory</span>
-            <span class="text-[9px] text-muted italic mt-1">40.000 FCFA</span>
-          </div>
-        </div>
-        <div class="group space-y-4">
+          <figcaption class="flex flex-col px-1 text-center">
+            <span class="text-xs tracking-widest uppercase font-semibold">Blusa Satin Ivory</span>
+            <span class="text-[10px] text-muted italic mt-1">40.000 FCFA</span>
+          </figcaption>
+        </figure>
+        <figure class="group space-y-4">
           <div class="aspect-[3/4] overflow-hidden bg-white">
-            <img src="img/sastrería/ropa en venta/mujer2.jpeg" alt="Ropa Mujer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <img src="img/sastrería/ropa en venta/mujer2.jpeg" alt="Conjunto Office Chic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           </div>
-          <div class="flex flex-col px-1 text-center">
-            <span class="text-[10px] tracking-widest uppercase font-semibold">Conjunto Office Chic</span>
-            <span class="text-[9px] text-muted italic mt-1">110.000 FCFA</span>
-          </div>
-        </div>
-        <div class="group space-y-4">
+          <figcaption class="flex flex-col px-1 text-center">
+            <span class="text-xs tracking-widest uppercase font-semibold">Conjunto Office Chic</span>
+            <span class="text-[10px] text-muted italic mt-1">110.000 FCFA</span>
+          </figcaption>
+        </figure>
+        <figure class="group space-y-4">
           <div class="aspect-[3/4] overflow-hidden bg-white">
-            <img src="img/sastrería/ropa en venta/mujer3.jpeg" alt="Ropa Mujer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <img src="img/sastrería/ropa en venta/mujer3.jpeg" alt="Falda Midi Studio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
           </div>
-          <div class="flex flex-col px-1 text-center">
-            <span class="text-[10px] tracking-widest uppercase font-semibold">Falda Midi Studio</span>
-            <span class="text-[9px] text-muted italic mt-1">55.000 FCFA</span>
-          </div>
-        </div>
+          <figcaption class="flex flex-col px-1 text-center">
+            <span class="text-xs tracking-widest uppercase font-semibold">Falda Midi Studio</span>
+            <span class="text-[10px] text-muted italic mt-1">55.000 FCFA</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
     <!-- Sección Editorial (Atelier) - Movida al final como contexto de marca -->
-    <section class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center pt-20 border-t border-carbon/5 border-dashed fade-in">
+    <section id="atelier" class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center pt-20 border-t border-carbon/5 border-dashed fade-in">
         <div class="md:col-span-5 space-y-8">
           <h2 class="text-4xl md:text-6xl font-serif leading-tight">La esencia del <br><span class="italic text-muted">carácter.</span></h2>
           <p class="text-sm tracking-widest uppercase font-semibold text-muted max-w-xs">Nuestro atelier ofrece servicios exclusivos de confección a medida para quienes buscan la distinción absoluta.</p>
@@ -166,8 +181,8 @@
       <p class="text-[10px] tracking-widest text-muted uppercase">Edición Limitada — 2026</p>
     </div>
     <div class="space-y-2 text-[10px] tracking-widest uppercase font-semibold">
-        <a href="https://wa.me/240555267985" class="block hover:opacity-50 transition-opacity underline underline-offset-8">Agendar Cita Privada</a>
-        <a href="#" class="block hover:opacity-50 transition-opacity">Contacto</a>
+        <a href="https://wa.me/240555267985" target="_blank" rel="noopener noreferrer" class="block hover:opacity-50 transition-opacity underline underline-offset-8">Agendar Cita Privada</a>
+        <a href="mailto:contacto@mnoha.com" class="block hover:opacity-50 transition-opacity">Contacto</a>
     </div>
     <div class="text-[9px] text-muted tracking-widest uppercase text-right">
         © 2026 MNOHA. <br> Editorial Concept.
