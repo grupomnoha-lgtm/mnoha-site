@@ -35,7 +35,7 @@
 
     <!-- Header / Navbar Compacto -->
     <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto flex justify-between items-center p-3 px-5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center p-4 px-5">
             <a href="index.html" class="flex items-center gap-3 no-underline">
                 <div class="w-10 h-10 bg-gradient-to-br from-[#1e3c72] to-[#2a5298] rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">M</div>
                 <div>
@@ -43,21 +43,35 @@
                     <p class="text-xs text-gray-500 font-medium">Soluciones Integrales</p>
                 </div>
             </a>
-            <nav class="hidden md:flex items-center list-none gap-6">
+            <!-- Menú para Escritorio -->
+            <nav class="hidden md:flex items-center gap-6">
                 <li><a href="index.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Inicio</a></li>
                 <li><a href="index.html#proyectos" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Portafolios</a></li>
                 <li><a href="#" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Nosotros</a></li>
                 <li><a href="#" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Contacto</a></li>
             </nav>
+            <!-- Botón de Menú Móvil (Hamburguesa) -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-brand-dark focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
             <a href="https://wa.me/240555267985" target="_blank" class="hidden md:inline-block bg-brand-dark text-white px-6 py-2.5 rounded-full no-underline font-bold text-xs tracking-widest hover:bg-brand-blue hover:-translate-y-0.5 transition-all shadow-lg">SOLICITAR SERVICIO</a>
+        </div>
+        <!-- Menú Desplegable para Móvil -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+            <a href="index.html" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100">Inicio</a>
+            <a href="index.html#proyectos" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100">Portafolios</a>
+            <a href="#" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100">Nosotros</a>
+            <a href="#" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100">Contacto</a>
         </div>
     </header>
 
     <main>
         <!-- Banner de Contratos Escolares & Bordados -->
         <section class="bg-gradient-to-r from-[#1e293b] to-[#0f172a] text-white">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center min-h-[280px]">
-                <div class="flex h-full max-h-[280px] md:max-h-full">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center">
+                <div class="flex h-64 md:h-auto">
                     <!-- Asegúrate de que los nombres de archivo sean correctos -->
                     <img src="img/sastrería/contratos escolares/uniforme1.jpg" alt="Bordado en Blazer Escolar" class="w-1/2 h-full object-cover" onerror="this.style.display='none'">
                     <img src="img/sastrería/contratos escolares/uniforme2.jpg" alt="Escudo Bordado Profesional" class="w-1/2 h-full object-cover" onerror="this.style.display='none'">
@@ -174,6 +188,16 @@
             <p class="text-xs mt-1">Soluciones Integrales: Taxis | Sastrería | Educación | Rastreo GPS</p>
         </div>
     </footer>
+
+    <script>
+        // Script para el menú móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>
