@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KXKTSW3TM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-9KXKTSW3TM');
+  </script>
   <title>SIGS MNOHA — Monitoreo Satelital</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -41,7 +50,7 @@
 </head>
 <body class="bg-slate-light text-brand-dark font-inter antialiased overflow-x-hidden selection:bg-gpsGreen selection:text-black">
 
-  <!-- Header Navigation (Unified) -->
+  <!-- Header Navigation -->
   <header class="bg-white shadow-lg sticky top-0 z-50">
       <div class="max-w-7xl mx-auto flex justify-between items-center p-4 px-5">
           <a href="index.html" class="flex items-center gap-3 no-underline">
@@ -61,10 +70,11 @@
       </div>
   </header>
 
-  <!-- Header Section con Imagen de Fondo Real de la carpeta img -->
+  <!-- Header Section con Imagen de Fondo Real -->
   <section class="relative h-[50vh] flex items-center justify-center text-center px-6 overflow-hidden bg-white">
     <div class="absolute inset-0 bg-gradient-to-t from-slate-light via-transparent to-transparent z-10"></div>
-    <!-- Imagen de fondo real (img/gps/fondo.png) -->
+    
+    <!-- Imagen de fondo principal -->
     <img src="img/gps/fondo.png" alt="SISTEMAS GPS" class="absolute inset-0 w-full h-full object-cover opacity-20">
     
     <div class="container mx-auto relative z-20">
@@ -106,9 +116,11 @@
         </div>
       </div>
 
+      <!-- Imagen Secundaria apuntando a tu carpeta local -->
       <div class="relative">
         <div class="glass-card relative z-10 p-1">
-           <div class="h-96 w-full bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center rounded-[38px]"></div>
+            <!-- Cambia 'mapa.png' o 'interfaz.png' por el nombre exacto de la foto en tu carpeta img/gps/ -->
+            <img src="img/gps/fondo.png" alt="Monitoreo Satelital GPS" class="h-96 w-full object-cover rounded-[38px]">
         </div>
       </div>
     </section>
