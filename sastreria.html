@@ -77,23 +77,56 @@
     </header>
 
     <main>
-        <!-- Banner de Contratos Escolares & Bordados -->
-        <section class="bg-gradient-to-r from-[#1e293b] to-[#0f172a] text-white">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center min-h-[280px]">
-                <div class="flex overflow-x-auto snap-x snap-mandatory h-64 md:h-full">
-                    <!-- Las 5 imágenes de la carpeta de contratos escolares -->
-                    <img src="img/sastrería/contratos_escolares/1.png" alt="Uniforme escolar 1" class="w-full md:w-1/2 flex-shrink-0 snap-center h-full object-cover" onerror="this.style.display='none'">
-                    <img src="img/sastrería/contratos_escolares/2.png" alt="Uniforme escolar 2" class="w-full md:w-1/2 flex-shrink-0 snap-center h-full object-cover" onerror="this.style.display='none'">
-                    <img src="img/sastrería/contratos_escolares/3.png" alt="Uniforme escolar 3" class="w-full md:w-1/2 flex-shrink-0 snap-center h-full object-cover" onerror="this.style.display='none'">
-                    <img src="img/sastrería/contratos_escolares/4.png" alt="Uniforme escolar 4" class="w-full md:w-1/2 flex-shrink-0 snap-center h-full object-cover" onerror="this.style.display='none'">
-                    <img src="img/sastrería/contratos_escolares/5.png" alt="Uniforme escolar 5" class="w-full md:w-1/2 flex-shrink-0 snap-center h-full object-cover" onerror="this.style.display='none'">
+        <!-- Carrusel de Banners de Servicios -->
+        <section class="relative bg-gradient-to-r from-[#1e293b] to-[#0f172a] text-white overflow-hidden">
+            <div class="relative min-h-[600px] md:min-h-[550px]">
+                <!-- Slide 1: Contratos Escolares (1 y 1a) -->
+                <div class="sastreria-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-700 ease-in-out">
+                    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-5 py-8 h-full">
+                        <div class="flex justify-center items-center">
+                            <img src="img/sastrería/contratos_escolares/1.jpg" alt="Uniforme escolar completo" class="max-h-[500px] w-auto object-contain rounded-xl shadow-2xl" onerror="this.src='img/sastrería/contratos_escolares/1.png'">
+                        </div>
+                        <div class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-white/10 group min-h-[380px] md:min-h-[440px] flex items-end">
+                            <img src="img/sastrería/contratos_escolares/1a.png" alt="Uniformes escolares" class="absolute inset-0 w-full h-full object-cover block">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/95 via-[#0f172a]/75 to-[#0f172a]/40"></div>
+                            <div class="relative z-10 p-6 md:p-8 flex flex-col items-start w-full">
+                                <span class="inline-block bg-sky-500/30 backdrop-blur-md text-sky-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 border border-sky-400/30">Servicio Institucional</span>
+                                <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-wide leading-tight mb-2 drop-shadow-md">CONTRATOS ESCOLARES</h2>
+                                <p class="text-gray-200 text-xs md:text-sm mb-5 max-w-lg font-medium drop-shadow-sm">Confección masiva de uniformes y producción de escudos con bordado industrial de alta definición.</p>
+                                <a href="https://wa.me/240555267985?text=Hola,%20quisiera%20cotizar%20uniformes%20escolares" target="_blank" class="inline-block bg-sky-500 text-brand-dark px-5 py-2.5 rounded font-bold text-xs md:text-sm hover:bg-sky-400 transition-colors shadow-lg">COTIZAR UNIFORMES</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-10 md:p-12">
-                    <span class="inline-block bg-sky-500/20 text-sky-400 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Servicio Institucional</span>
-                    <h2 class="text-3xl font-extrabold uppercase tracking-wide leading-tight mb-3">Contratos Escolares</h2>
-                    <p class="text-gray-300 mb-6">Confección masiva de uniformes y producción de escudos con bordado industrial de alta definición.</p>
-                    <a href="https://wa.me/240555267985?text=Hola,%20quisiera%20cotizar%20uniformes%20escolares" target="_blank" class="inline-block bg-sky-500 text-brand-dark px-6 py-2.5 rounded font-bold text-sm hover:bg-sky-400 transition-colors">COTIZAR UNIFORMES</a>
+
+                <!-- Slide 2: Bordado Industrial (2 y 2a) -->
+                <div class="sastreria-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-700 ease-in-out">
+                    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-5 py-8 h-full">
+                        <div class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-white/10 group min-h-[380px] md:min-h-[440px] flex items-end order-last md:order-first">
+                            <img src="img/sastrería/contratos_escolares/2a.png" alt="Detalle de bordado" class="absolute inset-0 w-full h-full object-cover block">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/95 via-[#0f172a]/75 to-[#0f172a]/40"></div>
+                            <div class="relative z-10 p-6 md:p-8 flex flex-col items-start w-full">
+                                <span class="inline-block bg-amber-500/30 backdrop-blur-md text-amber-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 border border-amber-400/30">Diseño y Producción</span>
+                                <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-wide leading-tight mb-2 drop-shadow-md">BORDADO INDUSTRIAL</h2>
+                                <p class="text-gray-200 text-xs md:text-sm mb-5 max-w-lg font-medium drop-shadow-sm">Digitalizamos y producimos escudos institucionales con la más alta fidelidad y durabilidad para todo tipo de prendas.</p>
+                                <a href="https://wa.me/240555267985?text=Hola,%20quisiera%20cotizar%20bordados%20industriales" target="_blank" class="inline-block bg-amber-500 text-brand-dark px-5 py-2.5 rounded font-bold text-xs md:text-sm hover:bg-amber-400 transition-colors shadow-lg">COTIZAR BORDADOS</a>
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <img src="img/sastrería/contratos_escolares/2.png" alt="Catálogo de uniforme escolar" class="max-h-[500px] w-auto object-contain rounded-xl shadow-2xl">
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="slider-btn absolute top-1/2 -translate-y-1/2 left-5 bg-white/25 text-white border-none w-11 h-11 rounded-full cursor-pointer text-xl flex items-center justify-center backdrop-blur-sm hover:bg-white/50 transition-colors z-20" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="slider-btn absolute top-1/2 -translate-y-1/2 right-5 bg-white/25 text-white border-none w-11 h-11 rounded-full cursor-pointer text-xl flex items-center justify-center backdrop-blur-sm hover:bg-white/50 transition-colors z-20" onclick="moveSlide(1)">&#10095;</button>
+
+            <!-- Pagination Dots -->
+            <div class="dots-container absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2.5 z-20">
+                <span class="sastreria-dot w-3 h-3 bg-white/50 rounded-full cursor-pointer transition-all duration-300" onclick="currentSlide(0)"></span>
+                <span class="sastreria-dot w-3 h-3 bg-white/50 rounded-full cursor-pointer transition-all duration-300" onclick="currentSlide(1)"></span>
             </div>
         </section>
 
@@ -209,6 +242,37 @@
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+    </script>
+    
+    <!-- Slider JavaScript -->
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.sastreria-slide');
+        const dots = document.querySelectorAll('.sastreria-dot');
+        let slideTimer;
+
+        function showSlide(index) {
+            if (index >= slides.length) slideIndex = 0;
+            else if (index < 0) slideIndex = slides.length - 1;
+            else slideIndex = index;
+
+            slides.forEach(slide => slide.classList.remove('opacity-100'));
+            dots.forEach(dot => dot.classList.remove('w-7', 'bg-white', 'rounded-lg'));
+
+            slides[slideIndex].classList.add('opacity-100');
+            dots[slideIndex].classList.add('w-7', 'bg-white', 'rounded-lg');
+
+            resetTimer();
+        }
+
+        function moveSlide(step) { showSlide(slideIndex + step); }
+        function currentSlide(index) { showSlide(index); }
+
+        function resetTimer() {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(() => { moveSlide(1); }, 6000);
+        }
+        showSlide(0); // Iniciar el carrusel
     </script>
 
 </body>
