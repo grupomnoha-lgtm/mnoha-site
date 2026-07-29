@@ -48,31 +48,49 @@
             <a href="index.html" class="flex items-center gap-3 no-underline">
                 <div class="w-10 h-10 bg-gradient-to-br from-[#1e3c72] to-[#2a5298] rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">M</div>
                 <div>
-                    <h1 class="text-base font-extrabold text-brand-dark tracking-wider uppercase">GRUPO MNOHA</h1>
-                    <p class="text-xs text-gray-500 font-medium">Soluciones Integrales</p>
+                    <h1 class="text-base font-extrabold text-brand-dark tracking-wider uppercase" data-translate="main_title">GRUPO MNOHA</h1>
+                    <p class="text-xs text-gray-500 font-medium" data-translate="slogan">Soluciones Integrales</p>
                 </div>
             </a>
-            <!-- Menú para Escritorio -->
-            <nav class="hidden md:flex items-center gap-6">
-                <li><a href="index.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Inicio</a></li>
-                <li><a href="index.html#proyectos" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Portafolios</a></li>
-                <li><a href="#" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Nosotros</a></li>
-                <li><a href="#" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Contacto</a></li>
-            </nav>
+            <div class="hidden md:flex items-center gap-6">
+                <nav class="flex items-center gap-6">
+                    <li><a href="index.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_home">Inicio</a></li>
+                    <li><a href="index.html#proyectos" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_portfolios">Portafolios</a></li>
+                    <li><a href="#" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_about">Nosotros</a></li>
+                    <li><a href="#" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_contact">Contacto</a></li>
+                </nav>
+                <!-- Language Switcher -->
+                <div class="relative">
+                    <button id="lang-switcher-btn" class="flex items-center gap-1 text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">
+                        <span id="current-lang-text">ES</span>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                    <div id="lang-dropdown" class="absolute right-0 mt-2 w-28 bg-white rounded-md shadow-lg py-1 z-50 hidden">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="es">Español</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="en">English</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="fr">Français</a>
+                    </div>
+                </div>
+                <a href="https://wa.me/240555267985" target="_blank" class="inline-block bg-brand-dark text-white px-6 py-2.5 rounded-full no-underline font-bold text-xs tracking-widest hover:bg-brand-blue hover:-translate-y-0.5 transition-all shadow-lg" data-translate="cta_button">SOLICITAR SERVICIO</a>
+            </div>
             <!-- Botón de Menú Móvil (Hamburguesa) -->
             <div class="md:hidden">
                 <button id="menu-btn" class="text-brand-dark focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
-            <a href="https://wa.me/240555267985" target="_blank" class="hidden md:inline-block bg-brand-dark text-white px-6 py-2.5 rounded-full no-underline font-bold text-xs tracking-widest hover:bg-brand-blue hover:-translate-y-0.5 transition-all shadow-lg">SOLICITAR SERVICIO</a>
         </div>
         <!-- Menú Desplegable para Móvil -->
         <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
-            <a href="index.html" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100">Inicio</a>
-            <a href="index.html#proyectos" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100">Portafolios</a>
-            <a href="#" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100">Nosotros</a>
-            <a href="#" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100">Contacto</a>
+            <a href="index.html" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav_home_mobile">Inicio</a>
+            <a href="index.html#proyectos" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav_portfolios_mobile">Portafolios</a>
+            <a href="#" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav_about_mobile">Nosotros</a>
+            <a href="#" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav_contact_mobile">Contacto</a>
+            <div class="border-t border-gray-200 my-2"></div>
+            <span class="px-5 text-xs text-gray-400 font-bold uppercase" data-translate="lang_switcher_title_mobile">Idioma</span>
+            <a href="#" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100" data-lang-mobile="es">Español</a>
+            <a href="#" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100" data-lang-mobile="en">English</a>
+            <a href="#" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100" data-lang-mobile="fr">Français</a>
         </div>
     </header>
 
@@ -90,10 +108,10 @@
                             <img src="img/sastrería/contratos_escolares/1a.png" alt="Uniformes escolares" class="absolute inset-0 w-full h-full object-cover block">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/95 via-[#0f172a]/75 to-[#0f172a]/40"></div>
                             <div class="relative z-10 p-6 md:p-8 flex flex-col items-start w-full">
-                                <span class="inline-block bg-sky-500/30 backdrop-blur-md text-sky-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 border border-sky-400/30">Servicio Institucional</span>
-                                <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-wide leading-tight mb-2 drop-shadow-md">CONTRATOS ESCOLARES</h2>
-                                <p class="text-gray-200 text-xs md:text-sm mb-5 max-w-lg font-medium drop-shadow-sm">Confección masiva de uniformes y producción de escudos con bordado industrial de alta definición.</p>
-                                <a href="https://wa.me/240555267985?text=Hola,%20quisiera%20cotizar%20uniformes%20escolares" target="_blank" class="inline-block bg-sky-500 text-brand-dark px-5 py-2.5 rounded font-bold text-xs md:text-sm hover:bg-sky-400 transition-colors shadow-lg">COTIZAR UNIFORMES</a>
+                                <span class="inline-block bg-sky-500/30 backdrop-blur-md text-sky-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 border border-sky-400/30" data-translate="slide1_tag">Servicio Institucional</span>
+                                <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-wide leading-tight mb-2 drop-shadow-md" data-translate="slide1_title">CONTRATOS ESCOLARES</h2>
+                                <p class="text-gray-200 text-xs md:text-sm mb-5 max-w-lg font-medium drop-shadow-sm" data-translate="slide1_desc">Confección masiva de uniformes y producción de escudos con bordado industrial de alta definición.</p>
+                                <a href="https://wa.me/240555267985?text=Hola,%20quisiera%20cotizar%20uniformes%20escolares" target="_blank" class="inline-block bg-sky-500 text-brand-dark px-5 py-2.5 rounded font-bold text-xs md:text-sm hover:bg-sky-400 transition-colors shadow-lg" data-translate="slide1_button">COTIZAR UNIFORMES</a>
                             </div>
                         </div>
                     </div>
@@ -106,10 +124,10 @@
                             <img src="img/sastrería/contratos_escolares/2a.png" alt="Detalle de bordado" class="absolute inset-0 w-full h-full object-cover block">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/95 via-[#0f172a]/75 to-[#0f172a]/40"></div>
                             <div class="relative z-10 p-6 md:p-8 flex flex-col items-start w-full">
-                                <span class="inline-block bg-amber-500/30 backdrop-blur-md text-amber-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 border border-amber-400/30">Diseño y Producción</span>
-                                <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-wide leading-tight mb-2 drop-shadow-md">BORDADO INDUSTRIAL</h2>
-                                <p class="text-gray-200 text-xs md:text-sm mb-5 max-w-lg font-medium drop-shadow-sm">Digitalizamos y producimos escudos institucionales con la más alta fidelidad y durabilidad para todo tipo de prendas.</p>
-                                <a href="https://wa.me/240555267985?text=Hola,%20quisiera%20cotizar%20bordados%20industriales" target="_blank" class="inline-block bg-amber-500 text-brand-dark px-5 py-2.5 rounded font-bold text-xs md:text-sm hover:bg-amber-400 transition-colors shadow-lg">COTIZAR BORDADOS</a>
+                                <span class="inline-block bg-amber-500/30 backdrop-blur-md text-amber-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 border border-amber-400/30" data-translate="slide2_tag">Diseño y Producción</span>
+                                <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-wide leading-tight mb-2 drop-shadow-md" data-translate="slide2_title">BORDADO INDUSTRIAL</h2>
+                                <p class="text-gray-200 text-xs md:text-sm mb-5 max-w-lg font-medium drop-shadow-sm" data-translate="slide2_desc">Digitalizamos y producimos escudos institucionales con la más alta fidelidad y durabilidad para todo tipo de prendas.</p>
+                                <a href="https://wa.me/240555267985?text=Hola,%20quisiera%20cotizar%20bordados%20industriales" target="_blank" class="inline-block bg-amber-500 text-brand-dark px-5 py-2.5 rounded font-bold text-xs md:text-sm hover:bg-amber-400 transition-colors shadow-lg" data-translate="slide2_button">COTIZAR BORDADOS</a>
                             </div>
                         </div>
                         <div class="flex justify-center items-center">
@@ -132,15 +150,15 @@
 
         <!-- Título de Sección con Espaciado Ajustado -->
         <section class="text-center py-16 md:py-20 px-5">
-            <h2 class="text-4xl md:text-5xl font-serif italic mb-4">Colección en Venta.</h2>
-            <p class="text-[10px] tracking-[0.4em] uppercase font-bold text-muted">Disponibilidad inmediata — Piezas exclusivas para el hombre y la mujer de hoy.</p>
+            <h2 class="text-4xl md:text-5xl font-serif italic mb-4" data-translate="collection_title">Colección en Venta.</h2>
+            <p class="text-[10px] tracking-[0.4em] uppercase font-bold text-muted" data-translate="collection_subtitle">Disponibilidad inmediata — Piezas exclusivas para el hombre y la mujer de hoy.</p>
         </section>
 
         <!-- Productos en Venta -->
         <div class="max-w-7xl mx-auto px-5 pb-16 md:pb-24 space-y-16">
             <!-- Men's Essentials -->
             <section>
-                <h3 class="text-center text-xl font-semibold tracking-widest uppercase text-carbon border-b border-carbon/10 pb-3 inline-block w-full mb-12">Men's Essentials</h3>
+                <h3 class="text-center text-xl font-semibold tracking-widest uppercase text-carbon border-b border-carbon/10 pb-3 inline-block w-full mb-12" data-translate="men_collection">Men's Essentials</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
                     <div class="group">
                         <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
@@ -183,7 +201,7 @@
 
             <!-- Women's Collection -->
             <section>
-                <h3 class="text-center text-xl font-semibold tracking-widest uppercase text-carbon border-b border-carbon/10 pb-3 inline-block w-full mb-12">Women's Collection</h3>
+                <h3 class="text-center text-xl font-semibold tracking-widest uppercase text-carbon border-b border-carbon/10 pb-3 inline-block w-full mb-12" data-translate="women_collection">Women's Collection</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
                     <div class="group">
                         <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
@@ -229,8 +247,8 @@
     <!-- Footer -->
     <footer class="bg-brand-dark text-gray-400 py-8 px-5 text-center text-sm">
         <div class="max-w-7xl mx-auto">
-            <p>&copy; 2026 GRUPO MNOHA. Todos los derechos reservados.</p>
-            <p class="text-xs mt-1">Soluciones Integrales: Taxis | Sastrería | Educación | Rastreo GPS</p>
+            <p data-translate="footer_copyright">&copy; 2026 GRUPO MNOHA. Todos los derechos reservados.</p>
+            <p class="text-xs mt-1" data-translate="footer_services">Soluciones Integrales: Taxis | Sastrería | Educación | Rastreo GPS</p>
         </div>
     </footer>
 
@@ -244,7 +262,7 @@
         });
     </script>
     
-    <!-- Slider JavaScript -->
+    <!-- Slider & Translation JavaScript -->
     <script>
         let slideIndex = 0;
         const slides = document.querySelectorAll('.sastreria-slide');
@@ -273,6 +291,122 @@
             slideTimer = setInterval(() => { moveSlide(1); }, 6000);
         }
         showSlide(0); // Iniciar el carrusel
+    </script>
+
+    <script>
+        // --- Translation Script ---
+        const translations = {
+            es: {
+                slogan: "Soluciones Integrales",
+                nav_home: "Inicio",
+                nav_portfolios: "Portafolios",
+                nav_about: "Nosotros",
+                nav_contact: "Contacto",
+                cta_button: "SOLICITAR SERVICIO",
+                nav_home_mobile: "Inicio",
+                nav_portfolios_mobile: "Portafolios",
+                nav_about_mobile: "Nosotros",
+                nav_contact_mobile: "Contacto",
+                lang_switcher_title_mobile: "Idioma",
+                slide1_tag: "Servicio Institucional",
+                slide1_title: "CONTRATOS ESCOLARES",
+                slide1_desc: "Confección masiva de uniformes y producción de escudos con bordado industrial de alta definición.",
+                slide1_button: "COTIZAR UNIFORMES",
+                slide2_tag: "Diseño y Producción",
+                slide2_title: "BORDADO INDUSTRIAL",
+                slide2_desc: "Digitalizamos y producimos escudos institucionales con la más alta fidelidad y durabilidad para todo tipo de prendas.",
+                slide2_button: "COTIZAR BORDADOS",
+                collection_title: "Colección en Venta.",
+                collection_subtitle: "Disponibilidad inmediata — Piezas exclusivas para el hombre y la mujer de hoy.",
+                men_collection: "Men's Essentials",
+                women_collection: "Women's Collection",
+                footer_copyright: "© 2026 GRUPO MNOHA. Todos los derechos reservados.",
+                footer_services: "Soluciones Integrales: Taxis | Sastrería | Educación | Rastreo GPS",
+            },
+            en: {
+                slogan: "Integral Solutions",
+                nav_home: "Home",
+                nav_portfolios: "Portfolios",
+                nav_about: "About Us",
+                nav_contact: "Contact",
+                cta_button: "REQUEST SERVICE",
+                nav_home_mobile: "Home",
+                nav_portfolios_mobile: "Portfolios",
+                nav_about_mobile: "About Us",
+                nav_contact_mobile: "Contact",
+                lang_switcher_title_mobile: "Language",
+                slide1_tag: "Institutional Service",
+                slide1_title: "SCHOOL CONTRACTS",
+                slide1_desc: "Mass production of uniforms and high-definition industrial embroidery of shields.",
+                slide1_button: "QUOTE UNIFORMS",
+                slide2_tag: "Design & Production",
+                slide2_title: "INDUSTRIAL EMBROIDERY",
+                slide2_desc: "We digitize and produce institutional shields with the highest fidelity and durability for all types of garments.",
+                slide2_button: "QUOTE EMBROIDERY",
+                collection_title: "Collection for Sale.",
+                collection_subtitle: "Immediate availability — Exclusive pieces for today's man and woman.",
+                men_collection: "Men's Essentials",
+                women_collection: "Women's Collection",
+                footer_copyright: "© 2026 GRUPO MNOHA. All rights reserved.",
+                footer_services: "Integral Solutions: Taxis | Tailoring | Education | GPS Tracking",
+            },
+            fr: {
+                slogan: "Solutions Intégrales",
+                nav_home: "Accueil",
+                nav_portfolios: "Portefeuilles",
+                nav_about: "À Propos",
+                nav_contact: "Contact",
+                cta_button: "DEMANDER UN SERVICE",
+                nav_home_mobile: "Accueil",
+                nav_portfolios_mobile: "Portefeuilles",
+                nav_about_mobile: "À Propos",
+                nav_contact_mobile: "Contact",
+                lang_switcher_title_mobile: "Langue",
+                slide1_tag: "Service Institutionnel",
+                slide1_title: "CONTRATS SCOLAIRES",
+                slide1_desc: "Production en série d'uniformes et broderie industrielle haute définition d'écussons.",
+                slide1_button: "DEVIS UNIFORMES",
+                slide2_tag: "Conception et Production",
+                slide2_title: "BRODERIE INDUSTRIELLE",
+                slide2_desc: "Nous numérisons et produisons des écussons institutionnels avec la plus haute fidélité et durabilité pour tous types de vêtements.",
+                slide2_button: "DEVIS BRODERIE",
+                collection_title: "Collection en Vente.",
+                collection_subtitle: "Disponibilité immédiate — Pièces exclusives pour l'homme et la femme d'aujourd'hui.",
+                men_collection: "Essentiels Homme",
+                women_collection: "Collection Femme",
+                footer_copyright: "© 2026 GRUPO MNOHA. Tous droits réservés.",
+                footer_services: "Solutions Intégrales: Taxis | Couture | Éducation | Suivi GPS",
+            },
+        };
+
+        const langSwitcherBtn = document.getElementById('lang-switcher-btn');
+        const langDropdown = document.getElementById('lang-dropdown');
+        const currentLangText = document.getElementById('current-lang-text');
+
+        const setLanguage = (lang) => {
+            const translation = translations[lang];
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translation[key]) el.innerHTML = translation[key];
+            });
+            document.documentElement.lang = lang;
+            if(currentLangText) currentLangText.textContent = lang.toUpperCase();
+            if(langDropdown) langDropdown.classList.add('hidden');
+            if(mobileMenu) mobileMenu.classList.add('hidden');
+        };
+
+        if(langSwitcherBtn) langSwitcherBtn.addEventListener('click', () => langDropdown.classList.toggle('hidden'));
+        document.addEventListener('click', (e) => {
+            if (langSwitcherBtn && !langSwitcherBtn.contains(e.target) && langDropdown && !langDropdown.contains(e.target)) langDropdown.classList.add('hidden');
+            if (e.target.hasAttribute('data-lang')) { e.preventDefault(); setLanguage(e.target.getAttribute('data-lang')); }
+            if (e.target.hasAttribute('data-lang-mobile')) { e.preventDefault(); setLanguage(e.target.getAttribute('data-lang-mobile')); }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const userLang = navigator.language.slice(0, 2);
+            const initialLang = translations[userLang] ? userLang : 'es';
+            setLanguage(initialLang);
+        });
     </script>
 
 </body>
