@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
   <!-- Google tag (gtag.js) -->
+=======
+>>>>>>> 6f92837 (Estructura modular: separacion de HTML, CSS y JS para optimizar rendimiento)
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KXKTSW3TM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,7 +17,6 @@
   <title>GRUPO MNOHA — Estandar Global de Servicios</title>
   <meta name="description" content="GRUPO MNOHA: Servicios premium en Transporte, Sastrería, Educación y Rastreo Satelital.">
   
-  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -44,6 +46,7 @@
       }
     }
   </script>
+<<<<<<< HEAD
   <style type="text/tailwindcss">
     @layer components {
       .glass-card { 
@@ -65,6 +68,9 @@
       }
     }
   </style>
+=======
+  <link rel="stylesheet" href="css/style.css">
+>>>>>>> 6f92837 (Estructura modular: separacion de HTML, CSS y JS para optimizar rendimiento)
 </head>
 
 <body class="font-inter bg-slate-light text-gray-800 antialiased overflow-x-hidden">
@@ -72,7 +78,11 @@
   <!-- Header Navigation Único -->
   <header class="bg-white shadow-lg sticky top-0 z-50">
       <div class="max-w-7xl mx-auto flex justify-between items-center p-4 px-5">
+<<<<<<< HEAD
           <a href="#home" onclick="navigateTo('home')" class="flex items-center gap-3 no-underline">
+=======
+          <a href="index.html" class="flex items-center gap-3 no-underline">
+>>>>>>> 6f92837 (Estructura modular: separacion de HTML, CSS y JS para optimizar rendimiento)
               <div class="w-11 h-11 bg-gradient-to-br from-[#1e3c72] to-[#2a5298] rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">M</div>
               <div>
                   <h1 class="text-lg font-extrabold text-brand-dark tracking-wider uppercase" data-translate="main_title">GRUPO MNOHA</h1>
@@ -81,6 +91,7 @@
           </a>
           <div class="flex items-center gap-6">
             <nav class="hidden md:flex items-center list-none gap-6">
+<<<<<<< HEAD
                 <li><a href="#home" onclick="navigateTo('home')" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_home">Inicio</a></li>
                 <li><a href="#home" onclick="navigateTo('home'); setTimeout(() => document.getElementById('proyectos').scrollIntoView({behavior: 'smooth'}), 100);" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_portfolios">Portafolios</a></li>
                 <li id="nav-cart-link" class="hidden"><a href="#cart" onclick="navigateTo('cart')" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_cart">Carrito</a></li>
@@ -90,6 +101,16 @@
             </nav>
             
             <!-- Language Switcher -->
+=======
+                <li><a href="index.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_home">Inicio</a></li>
+                <li><a href="index.html#proyectos" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_portfolios">Portafolios</a></li>
+                <li id="nav-cart-link" class="hidden"><a href="index.html#cart" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_cart">Carrito</a></li>
+                <li><a href="sastreria.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Sastrería</a></li>
+                <li><a href="taxis.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Taxis</a></li>
+                <li><a href="gps.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">GPS</a></li>
+            </nav>
+            
+>>>>>>> 6f92837 (Estructura modular: separacion de HTML, CSS y JS para optimizar rendimiento)
             <div class="relative hidden md:block">
                 <button id="lang-switcher-btn" class="flex items-center gap-1 text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">
                     <span id="current-lang-text">ES</span>
@@ -102,7 +123,10 @@
                 </div>
             </div>
 
+<<<<<<< HEAD
             <!-- Botón Login / Estado Sesión -->
+=======
+>>>>>>> 6f92837 (Estructura modular: separacion de HTML, CSS y JS para optimizar rendimiento)
             <div id="auth-container" class="flex items-center gap-4">
                 <a href="https://wa.me/240555267985" target="_blank" class="hidden md:inline-block bg-brand-dark text-white px-6 py-2.5 rounded-full no-underline font-bold text-xs tracking-widest hover:bg-brand-blue hover:-translate-y-0.5 transition-all shadow-lg" data-translate="cta_button">SOLICITAR SERVICIO</a>
                 <button id="login-modal-btn" type="button" class="bg-transparent border border-brand-dark text-brand-dark px-6 py-2 rounded-full font-bold text-xs tracking-widest hover:bg-brand-dark hover:text-white transition-colors cursor-pointer" data-translate="login_register_btn">LOGIN / REGISTRO</button>
@@ -112,9 +136,13 @@
       </div>
   </header>
 
+<<<<<<< HEAD
   <!-- ==================== VISTA 1: INICIO / PORTAFOLIOS ==================== -->
   <div id="view-home" class="page-view">
     <main>
+=======
+  <main>
+>>>>>>> 6f92837 (Estructura modular: separacion de HTML, CSS y JS para optimizar rendimiento)
       <!-- Hero Banner Slider -->
       <section class="relative max-w-7xl mx-auto my-5 h-[420px] rounded-2xl overflow-hidden shadow-2xl">
           <div class="w-full h-full relative">
@@ -129,7 +157,11 @@
                   <div class="text-center text-white max-w-3xl px-5 z-10">
                       <h2 class="text-4xl font-black uppercase tracking-wide mb-3 shadow-2xl" data-translate="slide2_title">Elegancia y Estilo <span class="text-brand-orange">A Medida</span></h2>
                       <p class="text-lg mb-6 font-light shadow-2xl" data-translate="slide2_desc">Diseños exclusivos y confección de alta costura para cada ocasión.</p>
+<<<<<<< HEAD
                       <button onclick="navigateTo('sastreria')" class="bg-brand-blue-light text-white px-8 py-3 rounded-full font-bold text-sm tracking-wider hover:bg-[#1e5bb0] transition-all shadow-lg">VER SASTRERÍA</button>
+=======
+                      <a href="sastreria.html" class="inline-block bg-brand-blue-light text-white px-8 py-3 rounded-full no-underline font-bold text-sm tracking-wider hover:bg-[#1e5bb0] transition-all shadow-lg">VER SASTRERÍA</a>
+>>>>>>> 6f92837 (Estructura modular: separacion de HTML, CSS y JS para optimizar rendimiento)
                   </div>
               </div>
               <a href="https://pilarmomosale.com/" target="_blank" class="slide absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-700 ease-in-out bg-cover bg-center flex items-center justify-center" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('assets/banner-2.jpg');">
@@ -143,6 +175,7 @@
                   <div class="text-center text-white max-w-3xl px-5 z-10">
                       <h2 class="text-4xl font-black uppercase tracking-wide mb-3 shadow-2xl" data-translate="slide4_title">Rastreo y Seguridad <span class="text-brand-orange">GPS</span></h2>
                       <p class="text-lg mb-6 font-light shadow-2xl" data-translate="slide4_desc">Monitoreo en tiempo real y control total para tu vehículo o flota.</p>
+<<<<<<< HEAD
                       <button onclick="navigateTo('gps')" class="bg-brand-blue-light text-white px-8 py-3 rounded-full font-bold text-sm tracking-wider hover:bg-[#1e5bb0] transition-all shadow-lg">VER RASTREO GPS</button>
                   </div>
               </div>
@@ -168,6 +201,29 @@
       <section class="max-w-7xl mx-auto mb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-5">
           <!-- Card 1: Taxi -->
           <div onclick="navigateTo('taxi')" class="bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer">
+=======
+                      <a href="gps.html" class="inline-block bg-brand-blue-light text-white px-8 py-3 rounded-full no-underline font-bold text-sm tracking-wider hover:bg-[#1e5bb0] transition-all shadow-lg">VER RASTREO GPS</a>
+                  </div>
+              </div>
+          </div>
+          <button class="slider-btn absolute top-1/2 -translate-y-1/2 left-5 bg-white/25 text-white border-none w-11 h-11 rounded-full cursor-pointer text-xl flex items-center justify-center backdrop-blur-sm hover:bg-white/50 transition-colors z-20" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="slider-btn absolute top-1/2 -translate-y-1/2 right-5 bg-white/25 text-white border-none w-11 h-11 rounded-full cursor-pointer text-xl flex items-center justify-center backdrop-blur-sm hover:bg-white/50 transition-colors z-20" onclick="moveSlide(1)">&#10095;</button>
+          <div class="dots-container absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2.5 z-20">
+              <span class="dot w-3 h-3 bg-white/50 rounded-full cursor-pointer transition-all duration-300" onclick="currentSlide(0)"></span>
+              <span class="dot w-3 h-3 bg-white/50 rounded-full cursor-pointer transition-all duration-300" onclick="currentSlide(1)"></span>
+              <span class="dot w-3 h-3 bg-white/50 rounded-full cursor-pointer transition-all duration-300" onclick="currentSlide(2)"></span>
+              <span class="dot w-3 h-3 bg-white/50 rounded-full cursor-pointer transition-all duration-300" onclick="currentSlide(3)"></span>
+          </div>
+      </section>
+
+      <div id="proyectos" class="text-center my-10 pt-5">
+          <h2 class="text-3xl font-extrabold text-brand-dark uppercase tracking-wider" data-translate="portfolios_title">Nuestros Portafolios</h2>
+      </div>
+
+      <section class="max-w-7xl mx-auto mb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-5">
+          <!-- Card 1: Taxi -->
+          <a href="taxis.html" class="bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl no-underline text-gray-800">
+>>>>>>> 6f92837 (Estructura modular: separacion de HTML, CSS y JS para optimizar rendimiento)
               <div class="relative h-44 overflow-hidden">
                   <img src="img/taxis/un taxi.png" alt="Servicio de Taxis" class="w-full h-full object-cover">
                   <div class="absolute bottom-[-24px] left-1/2 -translate-x-1/2 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl border-4 border-white shadow-lg bg-yellow-500">🚖</div>
@@ -177,6 +233,7 @@
                   <p class="text-sm text-gray-500 leading-relaxed mb-4 flex-grow" data-translate="card1_desc">Logística de transporte inteligente y servicios VIP con flota moderna.</p>
                   <div class="block w-full mt-auto px-4 py-2.5 rounded-full font-bold text-xs tracking-wider text-white bg-brand-dark hover:opacity-90 transition-opacity" data-translate="card1_button">VER MÁS - TAXIS</div>
               </div>
+<<<<<<< HEAD
           </div>
 
           <!-- Card 2: Sastrería -->
@@ -538,11 +595,54 @@
   </div>
 
   <!-- Footer Unificado -->
+=======
+          </a>
+          <!-- Card 2: Sastrería -->
+          <a href="sastreria.html" class="bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl no-underline text-gray-800">
+              <div class="relative h-44 overflow-hidden">
+                  <img src="img/sastrería/listado de servicios.png" alt="Sastrería y Moda" class="w-full h-full object-cover">
+                  <div class="absolute bottom-[-24px] left-1/2 -translate-x-1/2 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl border-4 border-white shadow-lg bg-purple-600">🧵</div>
+              </div>
+              <div class="p-5 pt-8 text-center flex flex-col flex-grow">
+                  <h3 class="text-lg font-bold text-brand-dark mb-2" data-translate="card2_title">Elegancia a Medida</h3>
+                  <p class="text-sm text-gray-500 leading-relaxed mb-4 flex-grow" data-translate="card2_desc">Alta costura y diseño exclusivo con acabados de precisión artesanal.</p>
+                  <div class="block w-full mt-auto px-4 py-2.5 rounded-full font-bold text-xs tracking-wider text-white bg-brand-dark hover:opacity-90 transition-opacity" data-translate="card2_button">VER MÁS - SASTRERÍA</div>
+              </div>
+          </a>
+          <!-- Card 3: Educación -->
+          <a href="https://pilarmomosale.com/" target="_blank" class="bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl no-underline text-gray-800">
+              <div class="relative h-44 overflow-hidden">
+                  <img src="/img/centro/centro.jpeg" alt="Servicios Educativos" class="w-full h-full object-cover">
+                  <div class="absolute bottom-[-24px] left-1/2 -translate-x-1/2 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl border-4 border-white shadow-lg bg-orange-600">🏫</div>
+              </div>
+              <div class="p-5 pt-8 text-center flex flex-col flex-grow">
+                  <h3 class="text-lg font-bold text-brand-dark mb-2" data-translate="card3_title">Pilar Momo Sale</h3>
+                  <p class="text-sm text-gray-500 leading-relaxed mb-4 flex-grow" data-translate="card3_desc">Forjando el futuro académico con excelencia y valores integrales.</p>
+                  <div class="block w-full mt-auto px-4 py-2.5 rounded-full font-bold text-xs tracking-wider text-white bg-brand-dark hover:opacity-90 transition-opacity" data-translate="card3_button">VER PORTAL ↗</div>
+              </div>
+          </a>
+          <!-- Card 4: GPS -->
+          <a href="gps.html" class="bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl no-underline text-gray-800">
+              <div class="relative h-44 overflow-hidden">
+                  <img src="img/gps/fondo.png" alt="Rastreo GPS" class="w-full h-full object-cover">
+                  <div class="absolute bottom-[-24px] left-1/2 -translate-x-1/2 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl border-4 border-white shadow-lg bg-cyan-600">🛰️</div>
+              </div>
+              <div class="p-5 pt-8 text-center flex flex-col flex-grow">
+                  <h3 class="text-lg font-bold text-brand-dark mb-2" data-translate="card4_title">Control y Seguridad GPS</h3>
+                  <p class="text-sm text-gray-500 leading-relaxed mb-4 flex-grow" data-translate="card4_desc">Monitoreo en tiempo real para vehículos, flotas y activos con seguridad avanzada.</p>
+                  <div class="block w-full mt-auto px-4 py-2.5 rounded-full font-bold text-xs tracking-wider text-white bg-brand-dark hover:opacity-90 transition-opacity" data-translate="card4_button">VER MÁS - GPS</div>
+              </div>
+          </a>
+      </section>
+  </main>
+
+>>>>>>> 6f92837 (Estructura modular: separacion de HTML, CSS y JS para optimizar rendimiento)
   <footer class="bg-brand-dark text-gray-400 py-8 px-5 text-center text-sm">
       <p data-translate="footer_copyright">&copy; 2026 GRUPO MNOHA. Todos los derechos reservados.</p>
       <p class="text-xs mt-1" data-translate="footer_services">Soluciones Integrales: Taxis | Sastrería | Educación | Rastreo GPS</p>
   </footer>
 
+<<<<<<< HEAD
   <!-- Chat Flotante -->
   <div id="chat-widget" class="fixed bottom-5 right-5 z-[105] flex flex-col items-end gap-3">
       <div id="chat-panel" class="hidden w-80 max-w-[90vw] bg-white border border-slate-200 shadow-2xl rounded-3xl overflow-hidden text-sm">
@@ -1551,5 +1651,9 @@
         setLanguage('es');
     });
   </script>
+=======
+  <script type="module" src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+>>>>>>> 6f92837 (Estructura modular: separacion de HTML, CSS y JS para optimizar rendimiento)
 </body>
 </html>
