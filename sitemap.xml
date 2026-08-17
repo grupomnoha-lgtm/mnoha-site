@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://grupomnoha-lgtm.github.io/mnoha-site/</loc>
+    <lastmod>2025-11-24</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://grupomnoha-lgtm.github.io/mnoha-site/taxi.html</loc>
+    <lastmod>2025-11-24</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://grupomnoha-lgtm.github.io/mnoha-site/sastreria.html</loc>
+    <lastmod>2025-11-24</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://grupomnoha-lgtm.github.io/mnoha-site/centro.html</loc>
+    <lastmod>2025-11-24</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://grupomnoha-lgtm.github.io/mnoha-site/gps.html</loc>
+    <lastmod>2025-11-24</lastmod>
+    <priority>0.80</priority>
+  </url>
+</urlset>

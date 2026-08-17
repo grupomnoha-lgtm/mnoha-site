@@ -1,0 +1,28 @@
+{
+  "name": "mnoha.com",
+  "version": "1.0.0",
+  "description": "Descripción corta: Sitio web de mnoha.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grupomnoha-lgtm/mnoha-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/grupomnoha-lgtm/mnoha-site/issues"
+  },
+  "homepage": "https://github.com/grupomnoha-lgtm/mnoha-site#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "prettier": "^3.8.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwindcss": "^4.2.2"
+  }
+}

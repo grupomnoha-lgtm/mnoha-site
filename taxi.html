@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KXKTSW3TM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-9KXKTSW3TM');
+  </script>
+  <title>LOGI & TAXI — MNOHA Elite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 
+            'brand-dark': '#1a2530',
+            'brand-blue': '#2a5298',
+            'slate-light': '#f4f6f9',
+            mnohaDark: '#020617', 
+            mnohaBlue: '#3b82f6', 
+            taxiYellow: '#f59e0b' 
+          },
+          fontFamily: { inter: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer components {
+      .glass-card { 
+        background-color: #ffffff;
+        box-shadow: 0 10px 25px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        border: 1px solid rgb(0 0 0 / 0.05);
+        border-radius: 40px;
+        overflow: hidden;
+      }
+      .tech-border { 
+        border-left-width: 4px;
+        border-color: #f59e0b;
+        padding-left: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-light text-brand-dark font-inter antialiased overflow-x-hidden selection:bg-taxiYellow selection:text-black">
+
+  <!-- Header Navigation (Unified) -->
+  <header class="bg-white shadow-lg sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto flex justify-between items-center p-4 px-5">
+          <a href="index.html" class="flex items-center gap-3 no-underline">
+              <div class="w-11 h-11 bg-gradient-to-br from-[#1e3c72] to-[#2a5298] rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">M</div>
+              <div>
+                  <h1 class="text-lg font-extrabold text-brand-dark tracking-wider uppercase" data-translate="main_title">GRUPO MNOHA</h1>
+                  <p class="text-xs text-gray-500 font-medium" data-translate="slogan">Soluciones Integrales</p>
+              </div>
+          </a>
+          <div class="hidden md:flex items-center gap-6">
+            <nav class="flex items-center list-none gap-6">
+                <li><a href="index.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-taxiYellow transition-colors" data-translate="nav_home">Inicio</a></li>
+                <li><a href="index.html#proyectos" class="no-underline text-gray-600 font-semibold text-sm hover:text-taxiYellow transition-colors" data-translate="nav_portfolios">Portafolios</a></li>
+                <li><a href="#" class="no-underline text-gray-600 font-semibold text-sm hover:text-taxiYellow transition-colors" data-translate="nav_about">Nosotros</a></li>
+                <li><a href="#" class="no-underline text-gray-600 font-semibold text-sm hover:text-taxiYellow transition-colors" data-translate="nav_contact">Contacto</a></li>
+            </nav>
+            <div class="relative">
+                <button id="lang-switcher-btn" class="flex items-center gap-1 text-gray-600 font-semibold text-sm hover:text-taxiYellow transition-colors">
+                    <span id="current-lang-text">ES</span>
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div id="lang-dropdown" class="absolute right-0 mt-2 w-28 bg-white rounded-md shadow-lg py-1 z-50 hidden">
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="es">Español</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="en">English</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="fr">Français</a>
+                </div>
+            </div>
+            <a href="https://wa.me/240555267985" target="_blank" class="hidden md:inline-block bg-taxiYellow text-black px-6 py-2.5 rounded-full no-underline font-bold text-xs tracking-widest hover:bg-yellow-400 hover:-translate-y-0.5 transition-all shadow-lg" data-translate="cta_button">SOLICITAR SERVICIO</a>
+          </div>
+      </div>
+  </header>
+
+  <!-- Header Section -->
+  <section class="relative h-[50vh] flex items-center justify-center text-center px-6 overflow-hidden bg-white">
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-light via-transparent to-transparent z-10"></div>
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
+    
+    <div class="container mx-auto relative z-20">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-7xl md:text-9xl font-[1000] text-brand-dark tracking-tighter uppercase leading-[0.8] py-4" data-translate="hero_title">
+          LOGÍSTICA <br> <span class="text-taxiYellow">TAXI</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-600 font-bold mt-6 tracking-wide" data-translate="hero_subtitle">Movilidad corporativa de alto rendimiento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cuerpo de Información Visual -->
+  <main class="container mx-auto px-6 py-32 space-y-32">
+    
+    <!-- GRID DE SERVICIOS -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+      
+      <div class="space-y-12">
+        <div class="tech-border">
+          <h2 class="text-xs font-black text-taxiYellow tracking-[0.5em] uppercase mb-4" data-translate="section1_tag">División de Transporte</h2>
+          <p class="text-4xl text-brand-dark font-[900] tracking-tighter leading-none uppercase" data-translate="section1_title">Eficiencia en el <br> Asfalto Urbano</p>
+        </div>
+        
+        <p class="text-lg text-gray-600 font-medium leading-relaxed" data-translate="section1_desc">
+          Nuestra flota está diseñada para el ejecutivo moderno. Puntualidad, seguridad y confort son los pilares de cada trayecto gestionado por MNOHA LOGI-TAXI.
+        </p>
+
+        <!-- Stats Visuales -->
+        <div class="grid grid-cols-2 gap-8">
+          <div class="glass-card p-8 group text-center">
+            <div class="text-taxiYellow font-black text-5xl mb-3 transition-transform group-hover:scale-110" data-translate="stat1_value">24/7</div>
+            <div class="text-xs uppercase tracking-widest font-black text-gray-500" data-translate="stat1_label">Disponibilidad Total</div>
+          </div>
+          <div class="glass-card p-8 group text-center">
+            <div class="text-taxiYellow font-black text-5xl mb-3 transition-transform group-hover:scale-110" data-translate="stat2_value">100%</div>
+            <div class="text-xs uppercase tracking-widest font-black text-gray-500" data-translate="stat2_label">Seguridad Garantizada</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="glass-card relative z-10 p-1">
+           <div class="h-96 w-full bg-cover bg-center rounded-[38px]" style="background-image: url('https://images.unsplash.com/photo-1574621100236-d25b64cfd647?q=80&w=1974&auto=format&fit=crop');"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-brand-dark py-20 text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-10 leading-none" data-translate="footer_title">Tu Destino <br> Bajo Control</h2>
+      <a href="https://wa.me/240555267985" class="inline-flex items-center gap-4 bg-taxiYellow px-12 py-6 rounded-full font-[900] text-black tracking-widest hover:bg-yellow-400 hover:scale-110 hover:shadow-[0_0_50px_rgba(245,158,11,0.4)] transition-all duration-500 uppercase" data-translate="footer_button">
+        Solicitar Flota 🚕
+      </a>
+      <div class="mt-20 text-gray-500 text-[10px] font-black tracking-[0.5em] uppercase" data-translate="footer_copyright">
+        © 2026 GRUPO MNOHA — Excelencia en cada división.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // --- Translation Script ---
+    const translations = {
+        es: {
+            slogan: "Soluciones Integrales",
+            nav_home: "Inicio",
+            nav_portfolios: "Portafolios",
+            nav_about: "Nosotros",
+            nav_contact: "Contacto",
+            cta_button: "SOLICITAR SERVICIO",
+            hero_title: 'LOGÍSTICA <br> <span class="text-taxiYellow">TAXI</span>',
+            hero_subtitle: "Movilidad corporativa de alto rendimiento.",
+            section1_tag: "División de Transporte",
+            section1_title: "Eficiencia en el <br> Asfalto Urbano",
+            section1_desc: "Nuestra flota está diseñada para el ejecutivo moderno. Puntualidad, seguridad y confort son los pilares de cada trayecto gestionado por MNOHA LOGI-TAXI.",
+            stat1_value: "24/7",
+            stat1_label: "Disponibilidad Total",
+            stat2_value: "100%",
+            stat2_label: "Seguridad Garantizada",
+            footer_title: "Tu Destino <br> Bajo Control",
+            footer_button: "Solicitar Flota 🚕",
+            footer_copyright: "© 2026 GRUPO MNOHA — Excelencia en cada división.",
+        },
+        en: {
+            slogan: "Integral Solutions",
+            nav_home: "Home",
+            nav_portfolios: "Portfolios",
+            nav_about: "About Us",
+            nav_contact: "Contact",
+            cta_button: "REQUEST SERVICE",
+            hero_title: 'LOGISTICS <br> <span class="text-taxiYellow">TAXI</span>',
+            hero_subtitle: "High-performance corporate mobility.",
+            section1_tag: "Transportation Division",
+            section1_title: "Efficiency on the <br> Urban Asphalt",
+            section1_desc: "Our fleet is designed for the modern executive. Punctuality, safety, and comfort are the pillars of every journey managed by MNOHA LOGI-TAXI.",
+            stat1_value: "24/7",
+            stat1_label: "Total Availability",
+            stat2_value: "100%",
+            stat2_label: "Guaranteed Safety",
+            footer_title: "Your Destination <br> Under Control",
+            footer_button: "Request Fleet 🚕",
+            footer_copyright: "© 2026 GRUPO MNOHA — Excellence in every division.",
+        },
+        fr: {
+            slogan: "Solutions Intégrales",
+            nav_home: "Accueil",
+            nav_portfolios: "Portefeuilles",
+            nav_about: "À Propos",
+            nav_contact: "Contact",
+            cta_button: "DEMANDER UN SERVICE",
+            hero_title: 'LOGISTIQUE <br> <span class="text-taxiYellow">TAXI</span>',
+            hero_subtitle: "Mobilité d'entreprise haute performance.",
+            section1_tag: "Division des Transports",
+            section1_title: "Efficacité sur <br> l'Asphalte Urbain",
+            section1_desc: "Notre flotte est conçue pour le cadre moderne. Ponctualité, sécurité et confort sont les piliers de chaque trajet géré par MNOHA LOGI-TAXI.",
+            stat1_value: "24/7",
+            stat1_label: "Disponibilité Totale",
+            stat2_value: "100%",
+            stat2_label: "Sécurité Garantie",
+            footer_title: "Votre Destination <br> Sous Contrôle",
+            footer_button: "Demander une Flotte 🚕",
+            footer_copyright: "© 2026 GRUPO MNOHA — L'excellence dans chaque division.",
+        },
+    };
+
+    const langSwitcherBtn = document.getElementById('lang-switcher-btn');
+    const langDropdown = document.getElementById('lang-dropdown');
+    const currentLangText = document.getElementById('current-lang-text');
+
+    const setLanguage = (lang) => {
+        const translation = translations[lang];
+        document.querySelectorAll('[data-translate]').forEach(el => {
+            const key = el.getAttribute('data-translate');
+            if (translation[key]) el.innerHTML = translation[key];
+        });
+        document.documentElement.lang = lang;
+        if(currentLangText) currentLangText.textContent = lang.toUpperCase();
+        if(langDropdown) langDropdown.classList.add('hidden');
+    };
+
+    if(langSwitcherBtn) langSwitcherBtn.addEventListener('click', () => langDropdown.classList.toggle('hidden'));
+    document.addEventListener('click', (e) => {
+        if (langSwitcherBtn && !langSwitcherBtn.contains(e.target) && langDropdown && !langDropdown.contains(e.target)) langDropdown.classList.add('hidden');
+        if (e.target.hasAttribute('data-lang')) { e.preventDefault(); setLanguage(e.target.getAttribute('data-lang')); }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const userLang = navigator.language.slice(0, 2);
+        const initialLang = translations[userLang] ? userLang : 'es';
+        setLanguage(initialLang);
+    });
+  </script>
+
+</body>
+</html>
