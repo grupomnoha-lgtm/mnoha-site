@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
+    <link rel="stylesheet" href="css/chat.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KXKTSW3TM"></script>
@@ -41,6 +42,7 @@
     }
   </script>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/chat.css">
 </head>
 
 <body class="font-inter bg-slate-light text-gray-800 antialiased overflow-x-hidden">
@@ -62,6 +64,21 @@
                 <li><a href="taxis.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Taxis</a></li>
                 <li><a href="gps.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">GPS</a></li>
             </nav>
+            
+            <button id="mobile-menu-btn" class="md:hidden text-brand-dark p-2.5 rounded-full hover:bg-slate-100 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+            <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg md:hidden">
+                <nav class="flex flex-col p-5 gap-4">
+                    <a href="index.html" class="no-underline text-gray-600 font-semibold hover:text-brand-blue transition-colors" data-translate="nav_home">Inicio</a>
+                    <a href="index.html#proyectos" class="no-underline text-gray-600 font-semibold hover:text-brand-blue transition-colors" data-translate="nav_portfolios">Portafolios</a>
+                    <a href="sastreria.html" class="no-underline text-brand-blue font-bold">Sastrería</a>
+                    <a href="taxis.html" class="no-underline text-gray-600 font-semibold hover:text-brand-blue transition-colors">Taxis</a>
+                    <a href="gps.html" class="no-underline text-gray-600 font-semibold hover:text-brand-blue transition-colors">GPS</a>
+                    <div class="border-t my-2"></div>
+                    <a href="https://wa.me/240555267985" target="_blank" class="text-center bg-brand-dark text-white px-6 py-2.5 rounded-full no-underline font-bold text-xs tracking-widest hover:bg-brand-blue transition-all shadow-lg">PEDIDO A MEDIDA</a>
+                </nav>
+            </div>
             
             <button id="cart-toggle-btn" class="relative bg-slate-100 hover:bg-slate-200 text-brand-dark p-2.5 rounded-full transition-colors">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
@@ -121,10 +138,10 @@
           <h2 class="text-3xl font-extrabold text-brand-dark tracking-tight">Colección en Venta</h2>
           <p class="text-gray-500 text-sm mt-2">Prendas confeccionadas listas para entrega inmediata</p>
       </div>
-
-      <!-- Men's Essentials con imágenes individuales -->
+<!-- Men's Essentials -->
       <h3 class="text-xl font-bold text-brand-dark mb-6 border-b pb-2">Men's Essentials</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <!-- Item 1 -->
           <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
               <div class="h-60 bg-gray-200 overflow-hidden">
                   <img src="img/sastrería/ropa en venta/hombre.jpeg" alt="Traje Executive Blue" class="w-full h-full object-cover">
@@ -135,6 +152,7 @@
                   <button onclick="addToCart('Traje Executive Blue', 120000)" class="mt-auto pt-3 w-full bg-brand-dark text-white text-xs font-bold py-2.5 rounded-lg hover:bg-brand-blue transition-colors">Añadir al carrito</button>
               </div>
           </div>
+          <!-- Item 2 -->
           <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
               <div class="h-60 bg-gray-200 overflow-hidden">
                   <img src="img/sastrería/ropa en venta/hombre1.jpeg" alt="Blazer Charcoal" class="w-full h-full object-cover">
@@ -145,6 +163,7 @@
                   <button onclick="addToCart('Blazer Charcoal', 85000)" class="mt-auto pt-3 w-full bg-brand-dark text-white text-xs font-bold py-2.5 rounded-lg hover:bg-brand-blue transition-colors">Añadir al carrito</button>
               </div>
           </div>
+          <!-- Item 3 -->
           <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
               <div class="h-60 bg-gray-200 overflow-hidden">
                   <img src="img/sastrería/ropa en venta/hombre2.jpeg" alt="Camisa Slim Fit Pure" class="w-full h-full object-cover">
@@ -155,6 +174,7 @@
                   <button onclick="addToCart('Camisa Slim Fit Pure', 35000)" class="mt-auto pt-3 w-full bg-brand-dark text-white text-xs font-bold py-2.5 rounded-lg hover:bg-brand-blue transition-colors">Añadir al carrito</button>
               </div>
           </div>
+          <!-- Item 4 -->
           <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
               <div class="h-60 bg-gray-200 overflow-hidden">
                   <img src="img/sastrería/ropa en venta/hombre3.jpeg" alt="Pantalón Taylor-Cut" class="w-full h-full object-cover">
@@ -167,9 +187,10 @@
           </div>
       </div>
 
-      <!-- Women's Collection con imágenes individuales -->
+      <!-- Women's Collection -->
       <h3 class="text-xl font-bold text-brand-dark mb-6 border-b pb-2">Women's Collection</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Item 1 -->
           <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
               <div class="h-60 bg-gray-200 overflow-hidden">
                   <img src="img/sastrería/ropa en venta/mujer.jpeg" alt="Vestido Gala Silk" class="w-full h-full object-cover">
@@ -180,6 +201,7 @@
                   <button onclick="addToCart('Vestido Gala Silk', 95000)" class="mt-auto pt-3 w-full bg-brand-dark text-white text-xs font-bold py-2.5 rounded-lg hover:bg-brand-blue transition-colors">Añadir al carrito</button>
               </div>
           </div>
+          <!-- Item 2 -->
           <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
               <div class="h-60 bg-gray-200 overflow-hidden">
                   <img src="img/sastrería/ropa en venta/mujer1.jpeg" alt="Blusa Satin Ivory" class="w-full h-full object-cover">
@@ -189,31 +211,10 @@
                   <p class="text-brand-blue font-extrabold mt-1">20.000 FCFA</p>
                   <button onclick="addToCart('Blusa Satin Ivory', 20000)" class="mt-auto pt-3 w-full bg-brand-dark text-white text-xs font-bold py-2.5 rounded-lg hover:bg-brand-blue transition-colors">Añadir al carrito</button>
               </div>
-          </div>
-          <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
-              <div class="h-60 bg-gray-200 overflow-hidden">
-                  <img src="img/sastrería/ropa en venta/mujer2.jpeg" alt="Conjunto Office Chic" class="w-full h-full object-cover">
-              </div>
-              <div class="p-5 flex flex-col flex-grow">
-                  <h4 class="font-bold text-brand-dark">Conjunto Office Chic</h4>
-                  <p class="text-brand-blue font-extrabold mt-1">18.000 FCFA</p>
-                  <button onclick="addToCart('Conjunto Office Chic', 18000)" class="mt-auto pt-3 w-full bg-brand-dark text-white text-xs font-bold py-2.5 rounded-lg hover:bg-brand-blue transition-colors">Añadir al carrito</button>
-              </div>
-          </div>
-          <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
-              <div class="h-60 bg-gray-200 overflow-hidden">
-                  <img src="img/sastrería/ropa en venta/mujer3.jpeg" alt="Falda Midi Studio" class="w-full h-full object-cover">
-              </div>
-              <div class="p-5 flex flex-col flex-grow">
-                  <h4 class="font-bold text-brand-dark">Falda Midi Studio</h4>
-                  <p class="text-brand-blue font-extrabold mt-1">25.000 FCFA</p>
-                  <button onclick="addToCart('Falda Midi Studio', 25000)" class="mt-auto pt-3 w-full bg-brand-dark text-white text-xs font-bold py-2.5 rounded-lg hover:bg-brand-blue transition-colors">Añadir al carrito</button>
-              </div>
-          </div>
-      </div>
+ 
+      
   </main>
 
-  <!-- Carrito Drawer -->
   <div id="cart-drawer" class="fixed inset-0 bg-black bg-opacity-50 z-[120] hidden transition-opacity">
       <div class="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl p-6 flex flex-col overflow-y-auto">
           <div class="flex items-center justify-between border-b pb-4 mb-4">
@@ -235,7 +236,6 @@
       </div>
   </div>
 
-  <!-- Modal Auth -->
   <div id="auth-modal" class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex justify-center items-center z-[100] hidden">
       <div id="modal-container" class="bg-white rounded-2xl shadow-2xl p-8 md:p-10 w-11/12 max-w-md relative transform transition-all duration-300 scale-95 opacity-0 max-h-[90vh] overflow-hidden">
           <button id="close-modal-btn" type="button" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 text-3xl font-bold cursor-pointer">&times;</button>
@@ -304,60 +304,39 @@
       <p class="text-xs mt-1" data-translate="footer_services">Soluciones Integrales: Taxis | Sastrería | Educación | Rastreo GPS</p>
   </footer>
 
-  <script>
-      let cart = [];
-      const cartCount = document.getElementById('cart-count');
-      const cartDrawer = document.getElementById('cart-drawer');
-      const cartItemsContainer = document.getElementById('cart-items-container');
-      const cartTotalPrice = document.getElementById('cart-total-price');
-      const checkoutBtn = document.getElementById('checkout-whatsapp-btn');
-
-      window.addToCart = function(name, price) {
-          const item = cart.find(i => i.name === name);
-          if (item) {
-              item.qty += 1;
-          } else {
-              cart.push({ name, price, qty: 1 });
-          }
-          updateCartUI();
-          cartDrawer.classList.remove('hidden');
-      };
-
-      function updateCartUI() {
-          const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
-          const totalAmount = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-          cartCount.textContent = totalCount;
-          cartTotalPrice.textContent = totalAmount.toLocaleString('es-ES') + ' FCFA';
-
-          if (cart.length === 0) {
-              cartItemsContainer.innerHTML = '<p class="text-gray-500 text-sm text-center my-8">Tu carrito está vacío.</p>';
-              checkoutBtn.href = "#";
-              return;
-          }
-
-          cartItemsContainer.innerHTML = cart.map((item, idx) => `
-              <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-200">
-                  <div>
-                      <p class="font-bold text-sm text-brand-dark">${item.name}</p>
-                      <p class="text-xs text-gray-500">${item.qty} x ${item.price.toLocaleString('es-ES')} FCFA</p>
-                  </div>
-                  <button onclick="removeFromCart(${idx})" class="text-red-500 hover:text-red-700 font-bold text-xs">Eliminar</button>
+  <!-- Widget de Chat -->
+  <div id="chat-widget-container">
+      <div id="chat-window" class="hidden">
+          <div id="chat-header">
+              <p>Soporte en Línea</p>
+              <button id="close-chat-btn">&times;</button>
+          </div>
+          <div id="chat-messages">
+              <div class="message received">¡Hola! ¿Cómo podemos ayudarte hoy?</div>
+          </div>
+          <form id="chat-form" class="p-4 border-t border-slate-200">
+              <div class="relative">
+                  <input type="text" id="chat-input" placeholder="Escribe tu mensaje..." class="w-full py-2 pl-4 pr-12 text-sm border border-slate-300 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-blue" autocomplete="off" required>
+                  <button type="submit" id="chat-send-btn" class="absolute inset-y-0 right-0 flex items-center justify-center w-10 h-10 text-white bg-brand-blue rounded-full hover:bg-brand-blue-light transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+                  </button>
               </div>
-          `).join('');
+          </form>
+      </div>
+      <button id="chat-toggle-btn" title="Abrir Chat">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+      </button>
+  </div>
 
-          const orderDetails = cart.map(i => `${i.qty}x ${i.name} (${i.price * i.qty} FCFA)`).join('%0A');
-          checkoutBtn.href = `https://wa.me/240555267985?text=Hola,%20deseo%20realizar%20el%20siguiente%20pedido%20de%20sastrería:%0A${orderDetails}%0ATotal:%20${totalAmount.toLocaleString('es-ES')}%20FCFA`;
-      }
-
-      window.removeFromCart = function(idx) {
-          cart.splice(idx, 1);
-          updateCartUI();
-      };
-
-      document.getElementById('cart-toggle-btn').addEventListener('click', () => cartDrawer.classList.remove('hidden'));
-      document.getElementById('cart-close-btn').addEventListener('click', () => cartDrawer.classList.add('hidden'));
+  <script>
+      document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+          document.getElementById('mobile-menu').classList.toggle('hidden');
+      });
   </script>
 
+  <!-- Script central de la web -->
   <script type="module" src="main.js"></script>
+  <!-- Script del chat en tiempo real -->
+  <script type="module" src="js/chat.js"></script> 
 </body>
 </html>

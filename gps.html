@@ -45,6 +45,7 @@
     }
   </script>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/chat.css">
 </head>
 
 <body class="font-inter bg-slate-light text-gray-800 antialiased overflow-x-hidden">
@@ -138,26 +139,27 @@
       <p class="text-xs mt-1" data-translate="footer_services">Soluciones Integrales: Taxis | Sastrería | Educación | Rastreo GPS</p>
   </footer>
 
-  <!-- Chat Flotante -->
-  <div id="chat-widget" class="fixed bottom-5 right-5 z-[105] flex flex-col items-end gap-3">
-      <div id="chat-panel" class="hidden w-80 max-w-[90vw] bg-white border border-slate-200 shadow-2xl rounded-3xl overflow-hidden text-sm">
-          <div class="flex items-center justify-between bg-brand-dark text-white px-4 py-3">
-              <span class="font-semibold">Chat de ayuda</span>
-              <button id="chat-close-btn" class="text-white text-xl leading-none">&times;</button>
+  <!-- Widget de Chat -->
+  <div id="chat-widget-container">
+      <div id="chat-window" class="hidden">
+          <div id="chat-header">
+              <p>Soporte en Línea</p>
+              <button id="close-chat-btn">&times;</button>
           </div>
-          <div id="chat-messages" class="max-h-72 overflow-y-auto p-4 space-y-3 bg-slate-50">
-              <div class="text-xs text-gray-500">¿En qué podemos ayudarte hoy?</div>
+          <div id="chat-messages">
+              <div class="message received">¡Hola! ¿Cómo podemos ayudarte hoy?</div>
           </div>
-          <div class="border-t border-slate-200 p-4 bg-white">
-              <form id="chat-form" class="flex gap-2">
-                  <input id="chat-input" type="text" placeholder="Escribe tu mensaje..." class="flex-1 rounded-full border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-blue" />
-                  <button type="submit" class="rounded-full bg-brand-blue px-4 py-2 text-white font-semibold hover:bg-brand-dark transition-colors">Enviar</button>
-              </form>
-          </div>
+          <form id="chat-form" class="p-4 border-t border-slate-200">
+              <div class="relative">
+                  <input type="text" id="chat-input" placeholder="Escribe tu mensaje..." class="w-full py-2 pl-4 pr-12 text-sm border border-slate-300 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-blue" autocomplete="off" required>
+                  <button type="submit" id="chat-send-btn" class="absolute inset-y-0 right-0 flex items-center justify-center w-10 h-10 text-white bg-brand-blue rounded-full hover:bg-brand-blue-light transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+                  </button>
+              </div>
+          </form>
       </div>
-      <button id="chat-toggle-btn" class="flex items-center gap-2 bg-brand-blue text-white px-4 py-3 rounded-full shadow-2xl hover:bg-brand-dark transition-colors">
-          <span class="text-lg">💬</span>
-          <span>Chat</span>
+      <button id="chat-toggle-btn" title="Abrir Chat">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
       </button>
   </div>
 
@@ -254,10 +256,9 @@
       </div>
   </div>
 
-  <!-- Script de Conexión Firebase Authentication -->
-  <script type="module" src="js/auth.js"></script>
-
-  <!-- Script de Enrutamiento SPA, Modales y Carruseles -->
-  <script src="js/app.js"></script>
+  <!-- Script central de la web -->
+  <script type="module" src="main.js"></script>
+  <!-- Script del chat en tiempo real -->
+  <script type="module" src="js/chat.js"></script> 
 </body>
 </html>

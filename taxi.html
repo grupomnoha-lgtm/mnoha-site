@@ -80,7 +80,21 @@
             </div>
             <a href="https://wa.me/240555267985" target="_blank" class="hidden md:inline-block bg-taxiYellow text-black px-6 py-2.5 rounded-full no-underline font-bold text-xs tracking-widest hover:bg-yellow-400 hover:-translate-y-0.5 transition-all shadow-lg" data-translate="cta_button">SOLICITAR SERVICIO</a>
           </div>
+          <button id="mobile-menu-btn" class="md:hidden text-brand-dark p-2.5 rounded-full hover:bg-slate-100 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
       </div>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg md:hidden">
+        <nav class="flex flex-col p-5 gap-4">
+            <a href="index.html" class="no-underline text-gray-600 font-semibold hover:text-brand-blue transition-colors" data-translate="nav_home">Inicio</a>
+            <a href="index.html#proyectos" class="no-underline text-gray-600 font-semibold hover:text-brand-blue transition-colors" data-translate="nav_portfolios">Portafolios</a>
+            <a href="sastreria.html" class="no-underline text-brand-blue font-bold">Sastrería</a>
+            <a href="taxis.html" class="no-underline text-gray-600 font-semibold hover:text-brand-blue transition-colors">Taxis</a>
+            <a href="gps.html" class="no-underline text-gray-600 font-semibold hover:text-brand-blue transition-colors">GPS</a>
+            <div class="border-t my-2"></div>
+            <a href="https://wa.me/240555267985" target="_blank" class="text-center bg-brand-dark text-white px-6 py-2.5 rounded-full no-underline font-bold text-xs tracking-widest hover:bg-brand-blue transition-all shadow-lg">PEDIDO A MEDIDA</a>
+        </nav>
+    </div>
   </header>
 
   <!-- Header Section -->
@@ -238,6 +252,10 @@
         const userLang = navigator.language.slice(0, 2);
         const initialLang = translations[userLang] ? userLang : 'es';
         setLanguage(initialLang);
+    });
+
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
     });
   </script>
 
