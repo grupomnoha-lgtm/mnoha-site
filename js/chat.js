@@ -14,6 +14,7 @@ import {
 document.addEventListener('DOMContentLoaded', () => {
     let currentUser = null;
     let unsubscribeMessages = null;
+    let activeSessionId;
 
     // Elementos del DOM del chat (estos sí son seguros de buscar al cargar)
     const chatToggleBtn = document.getElementById('chat-toggle-btn');
@@ -89,6 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const updateChatAuthState = (user) => {
+        const nextSessionId = user?.uid || null;
+        if (nextSessionId === activeSessionId) return;
+
+        activeSessionId = nextSessionId;
         currentUser = user;
         if (user) {
             if (chatInput) {
@@ -166,6 +171,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 chatMessages.appendChild(msgDiv);
             });
             chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, (error) => {
+            console.error('Error al escuchar los mensajes del chat:', error);
+            if (chatMessages) {
+                chatMessages.innerHTML = '<p class="text-sm text-red-600 text-center">No se pudieron cargar los mensajes.</p>';
+            }
         });
     }
 
