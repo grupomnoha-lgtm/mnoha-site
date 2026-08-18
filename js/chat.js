@@ -1,4 +1,4 @@
-// chat.js - Chat vinculado a Firebase Authentication con apertura directa de modales
+// chat.js - Chat vinculado a Firebase Authentication
 import { auth, db } from './firebase-config.js';
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { 
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentUser = null;
     let unsubscribeMessages = null;
 
-    // Elementos del DOM del chat
+    // Elementos del DOM del chat (estos sí son seguros de buscar al cargar)
     const chatToggleBtn = document.getElementById('chat-toggle-btn');
     const chatCloseBtn = document.getElementById('close-chat-btn') || document.getElementById('chat-close-btn');
     const chatPanel = document.getElementById('chat-window') || document.getElementById('chat-panel');
@@ -24,13 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatMessages = document.getElementById('chat-messages');
     const chatSubmitBtn = chatForm ? chatForm.querySelector('button[type="submit"]') : null;
 
-    // Elementos del Modal de Autenticación de la página web
-    const authModal = document.getElementById('auth-modal');
-    const modalContainer = document.getElementById('modal-container') || (authModal ? authModal.querySelector('div') : null);
-    const loginForm = document.getElementById('login-form');
-    const registerForm = document.getElementById('register-form');
-
-    // Funciones explícitas para abrir / cerrar la ventana de chat
+    // --- Control de apertura y cierre del panel de chat ---
     const openChat = () => {
         if (chatPanel) {
             chatPanel.classList.remove('hidden');
@@ -59,52 +53,46 @@ document.addEventListener('DOMContentLoaded', () => {
     if (chatToggleBtn) chatToggleBtn.addEventListener('click', toggleChat);
     if (chatCloseBtn) chatCloseBtn.addEventListener('click', closeChat);
 
-    // Función definitiva para abrir el modal desde los botones del chat
+    // --- Función para abrir el modal desde los botones del chat ---
     const openAuthModal = (isLogin) => {
-        closeChat(); // Cerramos el chat para despejar la pantalla
+        // 1. Cerramos el chat para despejar la vista
+        closeChat(); 
 
-        if (authModal) {
-            // 1. Forzar visibilidad y capa superior máxima
-            authModal.classList.remove('hidden');
-            authModal.style.display = 'flex';
-            authModal.style.zIndex = '99999';
+        // 2. Buscamos los elementos del modal AHORA MISMO, para asegurarnos de que existen
+        const authModal = document.getElementById('auth-modal');
+        const modalContainer = document.getElementById('modal-container');
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
 
-            // 2. Asegurar que el contenedor interno sea visible
-            if (modalContainer) {
-                modalContainer.classList.remove('scale-95', 'opacity-0');
-                modalContainer.classList.add('scale-100', 'opacity-100');
-                modalContainer.style.opacity = '1';
-                modalContainer.style.transform = 'scale(1)';
-                modalContainer.style.display = 'block';
-            }
-
-            // 3. Alternar entre formulario de Login o Registro
-            if (isLogin) {
-                if (loginForm) {
-                    loginForm.classList.remove('hidden');
-                    loginForm.style.display = 'block';
-                }
-                if (registerForm) {
-                    registerForm.classList.add('hidden');
-                    registerForm.style.display = 'none';
-                }
-            } else {
-                if (loginForm) {
-                    loginForm.classList.add('hidden');
-                    loginForm.style.display = 'none';
-                }
-                if (registerForm) {
-                    registerForm.classList.remove('hidden');
-                    registerForm.style.display = 'block';
-                }
-            }
+        if (!authModal || !modalContainer) {
+            console.error("Error: No se encontró el modal de autenticación en el HTML.");
+            return;
         }
+
+        // 3. Mostramos el contenedor principal del modal
+        authModal.classList.remove('hidden');
+        
+        // 4. Alternamos entre Login y Registro antes de animar
+        if (isLogin) {
+            if (loginForm) loginForm.classList.remove('hidden');
+            if (registerForm) registerForm.classList.add('hidden');
+        } else {
+            if (loginForm) loginForm.classList.add('hidden');
+            if (registerForm) registerForm.classList.remove('hidden');
+        }
+
+        // 5. Aplicamos la animación (igual que en auth.js)
+        setTimeout(() => {
+            modalContainer.classList.remove('scale-95', 'opacity-0');
+            modalContainer.classList.add('scale-100', 'opacity-100');
+        }, 10);
     };
 
-    // 1. Escuchar el estado de autenticación
+    // --- Escuchar el estado de autenticación ---
     onAuthStateChanged(auth, (user) => {
         currentUser = user;
         if (user) {
+            // Usuario logueado: habilitamos el chat
             if (chatInput) {
                 chatInput.placeholder = "Escribe tu mensaje...";
                 chatInput.disabled = false;
@@ -113,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             loadChatHistory(user.uid);
         } else {
+            // Usuario no logueado: mostramos los botones
             if (unsubscribeMessages) unsubscribeMessages();
             
             if (chatInput) {
@@ -129,13 +118,28 @@ document.addEventListener('DOMContentLoaded', () => {
                         <button id="chat-register-btn" type="button" class="bg-transparent border border-[#2a5298] text-[#2a5298] px-6 py-2.5 rounded-full font-bold text-xs hover:bg-slate-100 w-4/5 transition-colors cursor-pointer">REGISTRARSE</button>
                     </div>`;
                 
-                document.getElementById('chat-login-btn')?.addEventListener('click', () => openAuthModal(true));
-                document.getElementById('chat-register-btn')?.addEventListener('click', () => openAuthModal(false));
+                // Añadimos los event listeners a los botones recién inyectados
+                const loginBtn = document.getElementById('chat-login-btn');
+                const registerBtn = document.getElementById('chat-register-btn');
+                
+                if (loginBtn) {
+                    loginBtn.addEventListener('click', (e) => {
+                        e.preventDefault(); // Evita comportamientos extraños del botón
+                        openAuthModal(true);
+                    });
+                }
+                
+                if (registerBtn) {
+                    registerBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        openAuthModal(false);
+                    });
+                }
             }
         }
     });
 
-    // Cargar historial de mensajes
+    // --- Cargar historial de mensajes ---
     function loadChatHistory(uid) {
         const messagesRef = collection(db, "chats");
         const q = query(messagesRef, where("sessionId", "==", uid), orderBy("createdAt", "asc"));
@@ -160,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Enviar mensaje
+    // --- Enviar mensaje ---
     if (chatForm) {
         chatForm.addEventListener('submit', async (e) => {
             e.preventDefault();
