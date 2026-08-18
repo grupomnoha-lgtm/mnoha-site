@@ -9,6 +9,31 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+// --- Elementos del DOM y funciones del Modal (Nivel Superior) ---
+const authModal = document.getElementById('auth-modal');
+const modalContainer = document.getElementById('modal-container');
+
+/**
+ * Abre el modal de autenticación.
+ * Se exporta para que pueda ser llamado desde otros módulos (ej. chat.js).
+ */
+export const openModal = () => {
+    if (!authModal) return;
+    authModal.classList.remove('hidden');
+    setTimeout(() => {
+        if (modalContainer) {
+            modalContainer.classList.remove('scale-95', 'opacity-0');
+            modalContainer.classList.add('scale-100', 'opacity-100');
+        }
+    }, 10);
+};
+
+const closeModal = () => {
+    if (!authModal || !modalContainer) return;
+    modalContainer.classList.add('scale-95', 'opacity-0');
+    setTimeout(() => authModal.classList.add('hidden'), 300);
+};
+
 export function initializeAuth() {
     // Elementos del DOM para autenticación
     const authContainer = document.getElementById('auth-container');
@@ -17,32 +42,12 @@ export function initializeAuth() {
     const formRegister = document.getElementById('form-register');
 
     // Elementos del DOM para el modal
-    const authModal = document.getElementById('auth-modal');
-    const modalContainer = document.getElementById('modal-container');
     const loginModalBtn = document.getElementById('login-modal-btn');
     const closeModalBtn = document.getElementById('close-modal-btn');
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
     const showRegisterLink = document.getElementById('show-register-form');
     const showLoginLink = document.getElementById('show-login-form');
-
-    // --- Funciones del Modal ---
-    export const openModal = () => {
-        if (!authModal) return;
-        authModal.classList.remove('hidden');
-        setTimeout(() => {
-            if (modalContainer) {
-                modalContainer.classList.remove('scale-95', 'opacity-0');
-                modalContainer.classList.add('scale-100', 'opacity-100');
-            }
-        }, 10);
-    };
-
-    const closeModal = () => {
-        if (!authModal || !modalContainer) return;
-        modalContainer.classList.add('scale-95', 'opacity-0');
-        setTimeout(() => authModal.classList.add('hidden'), 300);
-    };
 
     // --- Event Listeners del Modal ---
     if (loginModalBtn) loginModalBtn.addEventListener('click', openModal);
@@ -110,6 +115,10 @@ export function initializeAuth() {
     }
 
     onAuthStateChanged(auth, (user) => {
+        window.dispatchEvent(new CustomEvent('mnoha-auth-state-changed', {
+            detail: { user }
+        }));
+
         if (!authContainer || !userSessionContainer) return;
         if (user) {
             authContainer.classList.add('hidden');

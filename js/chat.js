@@ -88,20 +88,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 10);
     };
 
-    // --- Escuchar el estado de autenticación ---
-    onAuthStateChanged(auth, (user) => {
+    const updateChatAuthState = (user) => {
         currentUser = user;
         if (user) {
-            // Usuario logueado: habilitamos el chat
             if (chatInput) {
                 chatInput.placeholder = "Escribe tu mensaje...";
                 chatInput.disabled = false;
             }
             if (chatSubmitBtn) chatSubmitBtn.disabled = false;
+            if (chatForm) chatForm.classList.remove('pointer-events-none', 'opacity-60');
             
             loadChatHistory(user.uid);
         } else {
-            // Usuario no logueado: mostramos los botones
             if (unsubscribeMessages) unsubscribeMessages();
             
             if (chatInput) {
@@ -109,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 chatInput.disabled = true;
             }
             if (chatSubmitBtn) chatSubmitBtn.disabled = true;
+            if (chatForm) chatForm.classList.add('pointer-events-none', 'opacity-60');
             
             if (chatMessages) {
                 chatMessages.innerHTML = `
@@ -137,7 +136,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
+    };
+
+    // Firebase notifica tanto el inicio como el cierre de sesión sin recargar la página.
+    window.addEventListener('mnoha-auth-state-changed', (event) => {
+        updateChatAuthState(event.detail?.user || null);
     });
+    onAuthStateChanged(auth, updateChatAuthState);
 
     // --- Cargar historial de mensajes ---
     function loadChatHistory(uid) {
@@ -168,7 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (chatForm) {
         chatForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            if (!currentUser) return;
+            const user = currentUser || auth.currentUser;
+            if (!user || !chatInput) return;
 
             const text = chatInput.value.trim();
             if (!text) return;
@@ -177,9 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             try {
                 await addDoc(collection(db, "chats"), {
-                    sessionId: currentUser.uid,            
-                    userName: currentUser.displayName || 'Cliente', 
-                    userEmail: currentUser.email,          
+                    sessionId: user.uid,
+                    userName: user.displayName || 'Cliente',
+                    userEmail: user.email,
                     text: text,
                     sender: 'client',
                     createdAt: serverTimestamp()
