@@ -1,418 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-<<<<<<< HEAD
-    <meta charset="UTF-8">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KXKTSW3TM"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-9KXKTSW3TM');
-    </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MNOHA Sastrería | Grupo MNOHA</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'brand-dark': '#1a2530',
-              'brand-blue': '#2a5298',
-              'brand-blue-light': '#2a75d3',
-              'brand-orange': '#ff8c00',
-              'slate-light': '#f4f6f9',
-              crema: '#F9F8F6',
-              carbon: '#2D2D2D',
-              muted: '#717171'
-            },
-            fontFamily: {
-              serif: ['"Playfair Display"', 'serif'],
-              inter: ['Inter', 'sans-serif'],
-            }
-          }
-        }
-      }
-    </script>
-</head>
-<body class="bg-crema text-carbon font-inter antialiased selection:bg-carbon selection:text-crema">
-
-    <!-- Header / Navbar Compacto -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto flex justify-between items-center p-4 px-5">
-            <a href="index.html" class="flex items-center gap-3 no-underline">
-                <div class="w-10 h-10 bg-gradient-to-br from-[#1e3c72] to-[#2a5298] rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-md">M</div>
-                <div>
-                    <h1 class="text-base font-extrabold text-brand-dark tracking-wider uppercase" data-translate="main_title">GRUPO MNOHA</h1>
-                    <p class="text-xs text-gray-500 font-medium" data-translate="slogan">Soluciones Integrales</p>
-                </div>
-            </a>
-            <div class="hidden md:flex items-center gap-6">
-                <nav class="flex items-center gap-6">
-                    <li><a href="index.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_home">Inicio</a></li>
-                    <li><a href="index.html#proyectos" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_portfolios">Portafolios</a></li>
-                    <li><a href="#" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_about">Nosotros</a></li>
-                    <li><a href="#" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_contact">Contacto</a></li>
-                </nav>
-                <!-- Language Switcher -->
-                <div class="relative">
-                    <button id="lang-switcher-btn" class="flex items-center gap-1 text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">
-                        <span id="current-lang-text">ES</span>
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </button>
-                    <div id="lang-dropdown" class="absolute right-0 mt-2 w-28 bg-white rounded-md shadow-lg py-1 z-50 hidden">
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="es">Español</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="en">English</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-lang="fr">Français</a>
-                    </div>
-                </div>
-                <a href="https://wa.me/240555267985" target="_blank" class="inline-block bg-brand-dark text-white px-6 py-2.5 rounded-full no-underline font-bold text-xs tracking-widest hover:bg-brand-blue hover:-translate-y-0.5 transition-all shadow-lg" data-translate="cta_button">SOLICITAR SERVICIO</a>
-            </div>
-            <!-- Botón de Menú Móvil (Hamburguesa) -->
-            <div class="md:hidden">
-                <button id="menu-btn" class="text-brand-dark focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </div>
-        </div>
-        <!-- Menú Desplegable para Móvil -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
-            <a href="index.html" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav_home_mobile">Inicio</a>
-            <a href="index.html#proyectos" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav_portfolios_mobile">Portafolios</a>
-            <a href="#" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav_about_mobile">Nosotros</a>
-            <a href="#" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav_contact_mobile">Contacto</a>
-            <div class="border-t border-gray-200 my-2"></div>
-            <span class="px-5 text-xs text-gray-400 font-bold uppercase" data-translate="lang_switcher_title_mobile">Idioma</span>
-            <a href="#" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100" data-lang-mobile="es">Español</a>
-            <a href="#" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100" data-lang-mobile="en">English</a>
-            <a href="#" class="block py-2 px-5 text-sm text-gray-700 hover:bg-gray-100" data-lang-mobile="fr">Français</a>
-        </div>
-    </header>
-
-    <main>
-        <!-- Carrusel de Banners de Servicios -->
-        <section class="relative bg-gradient-to-r from-[#1e293b] to-[#0f172a] text-white overflow-hidden">
-            <div class="relative min-h-[600px] md:min-h-[550px]">
-                <!-- Slide 1: Contratos Escolares (1 y 1a) -->
-                <div class="sastreria-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-700 ease-in-out">
-                    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-5 py-8 h-full">
-                        <div class="flex justify-center items-center">
-                            <img src="img/sastrería/contratos_escolares/1.jpg" alt="Uniforme escolar completo" class="max-h-[500px] w-auto object-contain rounded-xl shadow-2xl" onerror="this.src='img/sastrería/contratos_escolares/1.png'">
-                        </div>
-                        <div class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-white/10 group min-h-[380px] md:min-h-[440px] flex items-end">
-                            <img src="img/sastrería/contratos_escolares/1a.png" alt="Uniformes escolares" class="absolute inset-0 w-full h-full object-cover block">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/95 via-[#0f172a]/75 to-[#0f172a]/40"></div>
-                            <div class="relative z-10 p-6 md:p-8 flex flex-col items-start w-full">
-                                <span class="inline-block bg-sky-500/30 backdrop-blur-md text-sky-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 border border-sky-400/30" data-translate="slide1_tag">Servicio Institucional</span>
-                                <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-wide leading-tight mb-2 drop-shadow-md" data-translate="slide1_title">CONTRATOS ESCOLARES</h2>
-                                <p class="text-gray-200 text-xs md:text-sm mb-5 max-w-lg font-medium drop-shadow-sm" data-translate="slide1_desc">Confección masiva de uniformes y producción de escudos con bordado industrial de alta definición.</p>
-                                <a href="https://wa.me/240555267985?text=Hola,%20quisiera%20cotizar%20uniformes%20escolares" target="_blank" class="inline-block bg-sky-500 text-brand-dark px-5 py-2.5 rounded font-bold text-xs md:text-sm hover:bg-sky-400 transition-colors shadow-lg" data-translate="slide1_button">COTIZAR UNIFORMES</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2: Bordado Industrial (2 y 2a) -->
-                <div class="sastreria-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-700 ease-in-out">
-                    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-5 py-8 h-full">
-                        <div class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-white/10 group min-h-[380px] md:min-h-[440px] flex items-end order-last md:order-first">
-                            <img src="img/sastrería/contratos_escolares/2a.png" alt="Detalle de bordado" class="absolute inset-0 w-full h-full object-cover block">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/95 via-[#0f172a]/75 to-[#0f172a]/40"></div>
-                            <div class="relative z-10 p-6 md:p-8 flex flex-col items-start w-full">
-                                <span class="inline-block bg-amber-500/30 backdrop-blur-md text-amber-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 border border-amber-400/30" data-translate="slide2_tag">Diseño y Producción</span>
-                                <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-wide leading-tight mb-2 drop-shadow-md" data-translate="slide2_title">BORDADO INDUSTRIAL</h2>
-                                <p class="text-gray-200 text-xs md:text-sm mb-5 max-w-lg font-medium drop-shadow-sm" data-translate="slide2_desc">Digitalizamos y producimos escudos institucionales con la más alta fidelidad y durabilidad para todo tipo de prendas.</p>
-                                <a href="https://wa.me/240555267985?text=Hola,%20quisiera%20cotizar%20bordados%20industriales" target="_blank" class="inline-block bg-amber-500 text-brand-dark px-5 py-2.5 rounded font-bold text-xs md:text-sm hover:bg-amber-400 transition-colors shadow-lg" data-translate="slide2_button">COTIZAR BORDADOS</a>
-                            </div>
-                        </div>
-                        <div class="flex justify-center items-center">
-                            <img src="img/sastrería/contratos_escolares/2.png" alt="Catálogo de uniforme escolar" class="max-h-[500px] w-auto object-contain rounded-xl shadow-2xl">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Navigation Arrows -->
-            <button class="slider-btn absolute top-1/2 -translate-y-1/2 left-5 bg-white/25 text-white border-none w-11 h-11 rounded-full cursor-pointer text-xl flex items-center justify-center backdrop-blur-sm hover:bg-white/50 transition-colors z-20" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="slider-btn absolute top-1/2 -translate-y-1/2 right-5 bg-white/25 text-white border-none w-11 h-11 rounded-full cursor-pointer text-xl flex items-center justify-center backdrop-blur-sm hover:bg-white/50 transition-colors z-20" onclick="moveSlide(1)">&#10095;</button>
-
-            <!-- Pagination Dots -->
-            <div class="dots-container absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2.5 z-20">
-                <span class="sastreria-dot w-3 h-3 bg-white/50 rounded-full cursor-pointer transition-all duration-300" onclick="currentSlide(0)"></span>
-                <span class="sastreria-dot w-3 h-3 bg-white/50 rounded-full cursor-pointer transition-all duration-300" onclick="currentSlide(1)"></span>
-            </div>
-        </section>
-
-        <!-- Título de Sección con Espaciado Ajustado -->
-        <section class="text-center py-16 md:py-20 px-5">
-            <h2 class="text-4xl md:text-5xl font-serif italic mb-4" data-translate="collection_title">Colección en Venta.</h2>
-            <p class="text-[10px] tracking-[0.4em] uppercase font-bold text-muted" data-translate="collection_subtitle">Disponibilidad inmediata — Piezas exclusivas para el hombre y la mujer de hoy.</p>
-        </section>
-
-        <!-- Productos en Venta -->
-        <div class="max-w-7xl mx-auto px-5 pb-16 md:pb-24 space-y-16">
-            <!-- Men's Essentials -->
-            <section>
-                <h3 class="text-center text-xl font-semibold tracking-widest uppercase text-carbon border-b border-carbon/10 pb-3 inline-block w-full mb-12" data-translate="men_collection">Men's Essentials</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
-                    <div class="group">
-                        <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                            <img src="img/sastrería/ropa en venta/hombre.jpeg" alt="Traje Executive Blue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="text-center mt-4">
-                            <h4 class="text-sm tracking-widest uppercase font-semibold">Traje Executive Blue</h4>
-                            <p class="text-sm text-muted italic mt-1">120.000 FCFA</p>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                            <img src="img/sastrería/ropa en venta/hombre1.jpeg" alt="Blazer Charcoal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="text-center mt-4">
-                            <h4 class="text-sm tracking-widest uppercase font-semibold">Blazer Charcoal</h4>
-                            <p class="text-sm text-muted italic mt-1">85.000 FCFA</p>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                            <img src="img/sastrería/ropa en venta/hombre2.jpeg" alt="Camisa Slim Fit Pure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="text-center mt-4">
-                            <h4 class="text-sm tracking-widest uppercase font-semibold">Camisa Slim Fit Pure</h4>
-                            <p class="text-sm text-muted italic mt-1">35.000 FCFA</p>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                            <img src="img/sastrería/ropa en venta/hombre3.jpeg" alt="Pantalón Taylor-Cut" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="text-center mt-4">
-                            <h4 class="text-sm tracking-widest uppercase font-semibold">Pantalón Taylor-Cut</h4>
-                            <p class="text-sm text-muted italic mt-1">45.000 FCFA</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Women's Collection -->
-            <section>
-                <h3 class="text-center text-xl font-semibold tracking-widest uppercase text-carbon border-b border-carbon/10 pb-3 inline-block w-full mb-12" data-translate="women_collection">Women's Collection</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
-                    <div class="group">
-                        <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                            <img src="img/sastrería/ropa en venta/mujer.jpeg" alt="Vestido Gala Silk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="text-center mt-4">
-                            <h4 class="text-sm tracking-widest uppercase font-semibold">Vestido Gala Silk</h4>
-                            <p class="text-sm text-muted italic mt-1">95.000 FCFA</p>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                            <img src="img/sastrería/ropa en venta/mujer1.jpeg" alt="Blusa Satin Ivory" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="text-center mt-4">
-                            <h4 class="text-sm tracking-widest uppercase font-semibold">Blusa Satin Ivory</h4>
-                            <p class="text-sm text-muted italic mt-1">20.000 FCFA</p>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                            <img src="img/sastrería/ropa en venta/mujer2.jpeg" alt="Conjunto Office Chic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="text-center mt-4">
-                            <h4 class="text-sm tracking-widest uppercase font-semibold">Conjunto Office Chic</h4>
-                            <p class="text-sm text-muted italic mt-1">18.000 FCFA</p>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                            <img src="img/sastrería/ropa en venta/mujer3.jpeg" alt="Falda Midi Studio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="text-center mt-4">
-                            <h4 class="text-sm tracking-widest uppercase font-semibold">Falda Midi Studio</h4>
-                            <p class="text-sm text-muted italic mt-1">25.000 FCFA</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-brand-dark text-gray-400 py-8 px-5 text-center text-sm">
-        <div class="max-w-7xl mx-auto">
-            <p data-translate="footer_copyright">&copy; 2026 GRUPO MNOHA. Todos los derechos reservados.</p>
-            <p class="text-xs mt-1" data-translate="footer_services">Soluciones Integrales: Taxis | Sastrería | Educación | Rastreo GPS</p>
-        </div>
-    </footer>
-
-    <script>
-        // Script para el menú móvil
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
-    
-    <!-- Slider & Translation JavaScript -->
-    <script>
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.sastreria-slide');
-        const dots = document.querySelectorAll('.sastreria-dot');
-        let slideTimer;
-
-        function showSlide(index) {
-            if (index >= slides.length) slideIndex = 0;
-            else if (index < 0) slideIndex = slides.length - 1;
-            else slideIndex = index;
-
-            slides.forEach(slide => slide.classList.remove('opacity-100'));
-            dots.forEach(dot => dot.classList.remove('w-7', 'bg-white', 'rounded-lg'));
-
-            slides[slideIndex].classList.add('opacity-100');
-            dots[slideIndex].classList.add('w-7', 'bg-white', 'rounded-lg');
-
-            resetTimer();
-        }
-
-        function moveSlide(step) { showSlide(slideIndex + step); }
-        function currentSlide(index) { showSlide(index); }
-
-        function resetTimer() {
-            clearInterval(slideTimer);
-            slideTimer = setInterval(() => { moveSlide(1); }, 6000);
-        }
-        showSlide(0); // Iniciar el carrusel
-    </script>
-
-    <script>
-        // --- Translation Script ---
-        const translations = {
-            es: {
-                slogan: "Soluciones Integrales",
-                nav_home: "Inicio",
-                nav_portfolios: "Portafolios",
-                nav_about: "Nosotros",
-                nav_contact: "Contacto",
-                cta_button: "SOLICITAR SERVICIO",
-                nav_home_mobile: "Inicio",
-                nav_portfolios_mobile: "Portafolios",
-                nav_about_mobile: "Nosotros",
-                nav_contact_mobile: "Contacto",
-                lang_switcher_title_mobile: "Idioma",
-                slide1_tag: "Servicio Institucional",
-                slide1_title: "CONTRATOS ESCOLARES",
-                slide1_desc: "Confección masiva de uniformes y producción de escudos con bordado industrial de alta definición.",
-                slide1_button: "COTIZAR UNIFORMES",
-                slide2_tag: "Diseño y Producción",
-                slide2_title: "BORDADO INDUSTRIAL",
-                slide2_desc: "Digitalizamos y producimos escudos institucionales con la más alta fidelidad y durabilidad para todo tipo de prendas.",
-                slide2_button: "COTIZAR BORDADOS",
-                collection_title: "Colección en Venta.",
-                collection_subtitle: "Disponibilidad inmediata — Piezas exclusivas para el hombre y la mujer de hoy.",
-                men_collection: "Men's Essentials",
-                women_collection: "Women's Collection",
-                footer_copyright: "© 2026 GRUPO MNOHA. Todos los derechos reservados.",
-                footer_services: "Soluciones Integrales: Taxis | Sastrería | Educación | Rastreo GPS",
-            },
-            en: {
-                slogan: "Integral Solutions",
-                nav_home: "Home",
-                nav_portfolios: "Portfolios",
-                nav_about: "About Us",
-                nav_contact: "Contact",
-                cta_button: "REQUEST SERVICE",
-                nav_home_mobile: "Home",
-                nav_portfolios_mobile: "Portfolios",
-                nav_about_mobile: "About Us",
-                nav_contact_mobile: "Contact",
-                lang_switcher_title_mobile: "Language",
-                slide1_tag: "Institutional Service",
-                slide1_title: "SCHOOL CONTRACTS",
-                slide1_desc: "Mass production of uniforms and high-definition industrial embroidery of shields.",
-                slide1_button: "QUOTE UNIFORMS",
-                slide2_tag: "Design & Production",
-                slide2_title: "INDUSTRIAL EMBROIDERY",
-                slide2_desc: "We digitize and produce institutional shields with the highest fidelity and durability for all types of garments.",
-                slide2_button: "QUOTE EMBROIDERY",
-                collection_title: "Collection for Sale.",
-                collection_subtitle: "Immediate availability — Exclusive pieces for today's man and woman.",
-                men_collection: "Men's Essentials",
-                women_collection: "Women's Collection",
-                footer_copyright: "© 2026 GRUPO MNOHA. All rights reserved.",
-                footer_services: "Integral Solutions: Taxis | Tailoring | Education | GPS Tracking",
-            },
-            fr: {
-                slogan: "Solutions Intégrales",
-                nav_home: "Accueil",
-                nav_portfolios: "Portefeuilles",
-                nav_about: "À Propos",
-                nav_contact: "Contact",
-                cta_button: "DEMANDER UN SERVICE",
-                nav_home_mobile: "Accueil",
-                nav_portfolios_mobile: "Portefeuilles",
-                nav_about_mobile: "À Propos",
-                nav_contact_mobile: "Contact",
-                lang_switcher_title_mobile: "Langue",
-                slide1_tag: "Service Institutionnel",
-                slide1_title: "CONTRATS SCOLAIRES",
-                slide1_desc: "Production en série d'uniformes et broderie industrielle haute définition d'écussons.",
-                slide1_button: "DEVIS UNIFORMES",
-                slide2_tag: "Conception et Production",
-                slide2_title: "BRODERIE INDUSTRIELLE",
-                slide2_desc: "Nous numérisons et produisons des écussons institutionnels avec la plus haute fidélité et durabilité pour tous types de vêtements.",
-                slide2_button: "DEVIS BRODERIE",
-                collection_title: "Collection en Vente.",
-                collection_subtitle: "Disponibilité immédiate — Pièces exclusives pour l'homme et la femme d'aujourd'hui.",
-                men_collection: "Essentiels Homme",
-                women_collection: "Collection Femme",
-                footer_copyright: "© 2026 GRUPO MNOHA. Tous droits réservés.",
-                footer_services: "Solutions Intégrales: Taxis | Couture | Éducation | Suivi GPS",
-            },
-        };
-
-        const langSwitcherBtn = document.getElementById('lang-switcher-btn');
-        const langDropdown = document.getElementById('lang-dropdown');
-        const currentLangText = document.getElementById('current-lang-text');
-
-        const setLanguage = (lang) => {
-            const translation = translations[lang];
-            document.querySelectorAll('[data-translate]').forEach(el => {
-                const key = el.getAttribute('data-translate');
-                if (translation[key]) el.innerHTML = translation[key];
-            });
-            document.documentElement.lang = lang;
-            if(currentLangText) currentLangText.textContent = lang.toUpperCase();
-            if(langDropdown) langDropdown.classList.add('hidden');
-            if(mobileMenu) mobileMenu.classList.add('hidden');
-        };
-
-        if(langSwitcherBtn) langSwitcherBtn.addEventListener('click', () => langDropdown.classList.toggle('hidden'));
-        document.addEventListener('click', (e) => {
-            if (langSwitcherBtn && !langSwitcherBtn.contains(e.target) && langDropdown && !langDropdown.contains(e.target)) langDropdown.classList.add('hidden');
-            if (e.target.hasAttribute('data-lang')) { e.preventDefault(); setLanguage(e.target.getAttribute('data-lang')); }
-            if (e.target.hasAttribute('data-lang-mobile')) { e.preventDefault(); setLanguage(e.target.getAttribute('data-lang-mobile')); }
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const userLang = navigator.language.slice(0, 2);
-            const initialLang = translations[userLang] ? userLang : 'es';
-            setLanguage(initialLang);
-        });
-    </script>
-=======
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KXKTSW3TM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -420,10 +10,9 @@
     gtag('js', new Date());
     gtag('config', 'G-9KXKTSW3TM');
   </script>
-  <title>GRUPO MNOHA — Sastrería</title>
-  <meta name="description" content="GRUPO MNOHA: Servicios premium en Sastrería y alta costura.">
+  <title>GRUPO MNOHA — Sastrería & Alta Costura</title>
+  <meta name="description" content="Alta costura a medida, uniformes escolares y bordado industrial de alta definición por GRUPO MNOHA.">
   
-  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -441,9 +30,7 @@
             'slate-light': '#f4f6f9',
             crema: '#F9F8F6',
             carbon: '#2D2D2D',
-            muted: '#717171',
-            taxiYellow: '#f59e0b',
-            gpsGreen: '#22c55e'
+            muted: '#717171'
           },
           fontFamily: {
             inter: ['Inter', 'sans-serif'],
@@ -454,12 +41,10 @@
     }
   </script>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="assets/banner.css">
 </head>
 
 <body class="font-inter bg-slate-light text-gray-800 antialiased overflow-x-hidden">
 
-  <!-- Header Navigation Único -->
   <header class="bg-white shadow-lg sticky top-0 z-50">
       <div class="max-w-7xl mx-auto flex justify-between items-center p-4 px-5">
           <a href="index.html" class="flex items-center gap-3 no-underline">
@@ -473,13 +58,16 @@
             <nav class="hidden md:flex items-center list-none gap-6">
                 <li><a href="index.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_home">Inicio</a></li>
                 <li><a href="index.html#proyectos" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_portfolios">Portafolios</a></li>
-                <li id="nav-cart-link" class="hidden"><a href="index.html#cart" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors" data-translate="nav_cart">Carrito</a></li>
-                <li><a href="sastreria.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Sastrería</a></li>
+                <li><a href="sastreria.html" class="no-underline text-brand-blue font-bold text-sm">Sastrería</a></li>
                 <li><a href="taxis.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">Taxis</a></li>
                 <li><a href="gps.html" class="no-underline text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">GPS</a></li>
             </nav>
             
-            <!-- Language Switcher -->
+            <button id="cart-toggle-btn" class="relative bg-slate-100 hover:bg-slate-200 text-brand-dark p-2.5 rounded-full transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                <span id="cart-count" class="absolute -top-1 -right-1 bg-brand-orange text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+            </button>
+
             <div class="relative hidden md:block">
                 <button id="lang-switcher-btn" class="flex items-center gap-1 text-gray-600 font-semibold text-sm hover:text-brand-blue transition-colors">
                     <span id="current-lang-text">ES</span>
@@ -492,295 +80,280 @@
                 </div>
             </div>
 
-            <!-- Botón Login / Estado Sesión -->
             <div id="auth-container" class="flex items-center gap-4">
-                <a href="https://wa.me/240555267985" target="_blank" class="hidden md:inline-block bg-brand-dark text-white px-6 py-2.5 rounded-full no-underline font-bold text-xs tracking-widest hover:bg-brand-blue hover:-translate-y-0.5 transition-all shadow-lg" data-translate="cta_button">SOLICITAR SERVICIO</a>
-                <button id="login-modal-btn" type="button" class="bg-transparent border border-brand-dark text-brand-dark px-6 py-2 rounded-full font-bold text-xs tracking-widest hover:bg-brand-dark hover:text-white transition-colors cursor-pointer" data-translate="login_register_btn">LOGIN / REGISTRO</button>
+                <a href="https://wa.me/240555267985" target="_blank" class="hidden md:inline-block bg-brand-dark text-white px-6 py-2.5 rounded-full no-underline font-bold text-xs tracking-widest hover:bg-brand-blue transition-all shadow-lg">PEDIDO A MEDIDA</a>
+                <button id="login-modal-btn" type="button" class="bg-transparent border border-brand-dark text-brand-dark px-6 py-2 rounded-full font-bold text-xs tracking-widest hover:bg-brand-dark hover:text-white transition-colors cursor-pointer">LOGIN</button>
             </div>
             <div id="user-session-container" class="hidden flex items-center gap-4"></div>
           </div>
       </div>
   </header>
 
-  <!-- ==================== VISTA 2: SASTRERÍA ==================== -->
-  <div id="view-sastreria" class="page-view">
-    <main>
-      <!-- Banner Carrusel Restaurado para Sastrería -->
-      <section class="photo-banner" data-autoplay="true" data-interval="6000">
-        <div class="banner">
-            <div class="banner__viewport">
-                <ul class="banner__track">
-                    <li class="banner__slide">
-                        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-5 py-8 h-full">
-                            <div class="flex justify-center items-center">
-                                <img src="img/sastrería/contratos_escolares/1.png" alt="Uniforme escolar completo" class="max-h-[500px] w-auto object-contain rounded-xl shadow-2xl">
-                            </div>
-                            <div class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-white/10 group min-h-[380px] md:min-h-[440px] flex items-end">
-                                <img src="img/sastrería/contratos_escolares/1a.png" alt="Uniformes escolares" class="absolute inset-0 w-full h-full object-cover block">
-                                <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/95 via-[#0f172a]/75 to-[#0f172a]/40"></div>
-                                <div class="relative z-10 p-6 md:p-8 flex flex-col items-start w-full">
-                                    <span class="inline-block bg-sky-500/30 backdrop-blur-md text-sky-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 border border-sky-400/30">Servicio Institucional</span>
-                                    <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-wide leading-tight mb-2 drop-shadow-md">CONTRATOS ESCOLARES</h2>
-                                    <p class="text-gray-200 text-xs md:text-sm mb-5 max-w-lg font-medium drop-shadow-sm">Confección masiva de uniformes y producción de escudos con bordado industrial de alta definición.</p>
-                                    <a href="https://wa.me/240555267985?text=Hola,%20quisiera%20cotizar%20uniformes%20escolares" target="_blank" class="inline-block bg-sky-500 text-brand-dark px-5 py-2.5 rounded font-bold text-xs md:text-sm hover:bg-sky-400 transition-colors shadow-lg">COTIZAR UNIFORMES</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="banner__slide">
-                        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-5 py-8 h-full">
-                            <div class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-white/10 group min-h-[380px] md:min-h-[440px] flex items-end order-last md:order-first">
-                                <img src="img/sastrería/contratos_escolares/2a.png" alt="Detalle de bordado" class="absolute inset-0 w-full h-full object-cover block">
-                                <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/95 via-[#0f172a]/75 to-[#0f172a]/40"></div>
-                                <div class="relative z-10 p-6 md:p-8 flex flex-col items-start w-full">
-                                    <span class="inline-block bg-amber-500/30 backdrop-blur-md text-amber-300 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3 border border-amber-400/30">Diseño y Producción</span>
-                                    <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-wide leading-tight mb-2 drop-shadow-md">BORDADO INDUSTRIAL</h2>
-                                    <p class="text-gray-200 text-xs md:text-sm mb-5 max-w-lg font-medium drop-shadow-sm">Digitalizamos y producimos escudos institucionales con la más alta fidelidad y durabilidad para todo tipo de prendas.</p>
-                                    <a href="https://wa.me/240555267985?text=Hola,%20quisiera%20cotizar%20bordados%20industriales" target="_blank" class="inline-block bg-amber-500 text-brand-dark px-5 py-2.5 rounded font-bold text-xs md:text-sm hover:bg-amber-400 transition-colors shadow-lg">COTIZAR BORDADOS</a>
-                                </div>
-                            </div>
-                            <div class="flex justify-center items-center">
-                                <img src="img/sastrería/contratos_escolares/2.png" alt="Catálogo de uniforme escolar" class="max-h-[500px] w-auto object-contain rounded-xl shadow-2xl">
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <button class="banner__nav banner__nav--prev" type="button">&#10094;</button>
-            <button class="banner__nav banner__nav--next" type="button">&#10095;</button>
-            <div class="banner__dots" role="tablist"></div>
-        </div>
-      </section>
-
-      <!-- Título de Sección con Espaciado Ajustado -->
-      <section class="text-center py-16 md:py-20 px-5">
-          <h2 class="text-4xl md:text-5xl font-serif italic mb-4">Colección en Venta.</h2>
-          <p class="text-[10px] tracking-[0.4em] uppercase font-bold text-muted">Disponibilidad inmediata — Piezas exclusivas para el hombre y la mujer de hoy.</p>
-      </section>
-
-      <!-- Productos en Venta -->
-      <div class="max-w-7xl mx-auto px-5 pb-16 md:pb-24 space-y-16">
-          <section>
-              <h3 class="text-center text-xl font-semibold tracking-widest uppercase text-carbon border-b border-carbon/10 pb-3 inline-block w-full mb-12">Men's Essentials</h3>
-              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
-                  <div class="group">
-                      <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                          <img src="img/sastrería/ropa en venta/hombre.jpeg" alt="Traje Executive Blue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                      </div>
-                      <div class="text-center mt-4">
-                          <h4 class="text-sm tracking-widest uppercase font-semibold">Traje Executive Blue</h4>
-                          <p class="text-sm text-muted italic mt-1">120.000 FCFA</p>
-                          <button type="button" class="add-to-cart mt-4 w-full bg-brand-blue text-white py-3 rounded-full font-bold text-sm hover:bg-brand-dark transition-colors" data-product-sku="executive-blue" data-product-name="Traje Executive Blue" data-product-price="120000" data-product-img="img/sastrería/ropa en venta/hombre.jpeg">Añadir al carrito</button>
-                      </div>
-                  </div>
-                  <div class="group">
-                      <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                          <img src="img/sastrería/ropa en venta/hombre1.jpeg" alt="Blazer Charcoal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                      </div>
-                      <div class="text-center mt-4">
-                          <h4 class="text-sm tracking-widest uppercase font-semibold">Blazer Charcoal</h4>
-                          <p class="text-sm text-muted italic mt-1">85.000 FCFA</p>
-                          <button type="button" class="add-to-cart mt-4 w-full bg-brand-blue text-white py-3 rounded-full font-bold text-sm hover:bg-brand-dark transition-colors" data-product-sku="blazer-charcoal" data-product-name="Blazer Charcoal" data-product-price="85000" data-product-img="img/sastrería/ropa en venta/hombre1.jpeg">Añadir al carrito</button>
-                      </div>
-                  </div>
-                  <div class="group">
-                      <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                          <img src="img/sastrería/ropa en venta/hombre2.jpeg" alt="Camisa Slim Fit Pure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                      </div>
-                      <div class="text-center mt-4">
-                          <h4 class="text-sm tracking-widest uppercase font-semibold">Camisa Slim Fit Pure</h4>
-                          <p class="text-sm text-muted italic mt-1">35.000 FCFA</p>
-                          <button type="button" class="add-to-cart mt-4 w-full bg-brand-blue text-white py-3 rounded-full font-bold text-sm hover:bg-brand-dark transition-colors" data-product-sku="camisa-slim-fit-pure" data-product-name="Camisa Slim Fit Pure" data-product-price="35000" data-product-img="img/sastrería/ropa en venta/hombre2.jpeg">Añadir al carrito</button>
-                      </div>
-                  </div>
-                  <div class="group">
-                      <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                          <img src="img/sastrería/ropa en venta/hombre3.jpeg" alt="Pantalón Taylor-Cut" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                      </div>
-                      <div class="text-center mt-4">
-                          <h4 class="text-sm tracking-widest uppercase font-semibold">Pantalón Taylor-Cut</h4>
-                          <p class="text-sm text-muted italic mt-1">45.000 FCFA</p>
-                          <button type="button" class="add-to-cart mt-4 w-full bg-brand-blue text-white py-3 rounded-full font-bold text-sm hover:bg-brand-dark transition-colors" data-product-sku="pantalon-taylor-cut" data-product-name="Pantalón Taylor-Cut" data-product-price="45000" data-product-img="img/sastrería/ropa en venta/hombre3.jpeg">Añadir al carrito</button>
-                      </div>
-                  </div>
-              </div>
-          </section>
-
-          <section>
-              <h3 class="text-center text-xl font-semibold tracking-widest uppercase text-carbon border-b border-carbon/10 pb-3 inline-block w-full mb-12">Women's Collection</h3>
-              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
-                  <div class="group">
-                      <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                          <img src="img/sastrería/ropa en venta/mujer.jpeg" alt="Vestido Gala Silk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                      </div>
-                      <div class="text-center mt-4">
-                          <h4 class="text-sm tracking-widest uppercase font-semibold">Vestido Gala Silk</h4>
-                          <p class="text-sm text-muted italic mt-1">95.000 FCFA</p>
-                          <button type="button" class="add-to-cart mt-4 w-full bg-brand-blue text-white py-3 rounded-full font-bold text-sm hover:bg-brand-dark transition-colors" data-product-sku="vestido-gala-silk" data-product-name="Vestido Gala Silk" data-product-price="95000" data-product-img="img/sastrería/ropa en venta/mujer.jpeg">Añadir al carrito</button>
-                      </div>
-                  </div>
-                  <div class="group">
-                      <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                          <img src="img/sastrería/ropa en venta/mujer1.jpeg" alt="Blusa Satin Ivory" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                      </div>
-                      <div class="text-center mt-4">
-                          <h4 class="text-sm tracking-widest uppercase font-semibold">Blusa Satin Ivory</h4>
-                          <p class="text-sm text-muted italic mt-1">20.000 FCFA</p>
-                          <button type="button" class="add-to-cart mt-4 w-full bg-brand-blue text-white py-3 rounded-full font-bold text-sm hover:bg-brand-dark transition-colors" data-product-sku="blusa-satin-ivory" data-product-name="Blusa Satin Ivory" data-product-price="20000" data-product-img="img/sastrería/ropa en venta/mujer1.jpeg">Añadir al carrito</button>
-                      </div>
-                  </div>
-                  <div class="group">
-                      <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                          <img src="img/sastrería/ropa en venta/mujer2.jpeg" alt="Conjunto Office Chic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                      </div>
-                      <div class="text-center mt-4">
-                          <h4 class="text-sm tracking-widest uppercase font-semibold">Conjunto Office Chic</h4>
-                          <p class="text-sm text-muted italic mt-1">18.000 FCFA</p>
-                          <button type="button" class="add-to-cart mt-4 w-full bg-brand-blue text-white py-3 rounded-full font-bold text-sm hover:bg-brand-dark transition-colors" data-product-sku="conjunto-office-chic" data-product-name="Conjunto Office Chic" data-product-price="18000" data-product-img="img/sastrería/ropa en venta/mujer2.jpeg">Añadir al carrito</button>
-                      </div>
-                  </div>
-                  <div class="group">
-                      <div class="aspect-[3/4] overflow-hidden bg-white border border-gray-200/50 rounded-lg shadow-sm">
-                          <img src="img/sastrería/ropa en venta/mujer3.jpeg" alt="Falda Midi Studio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                      </div>
-                      <div class="text-center mt-4">
-                          <h4 class="text-sm tracking-widest uppercase font-semibold">Falda Midi Studio</h4>
-                          <p class="text-sm text-muted italic mt-1">25.000 FCFA</p>
-                          <button type="button" class="add-to-cart mt-4 w-full bg-brand-blue text-white py-3 rounded-full font-bold text-sm hover:bg-brand-dark transition-colors" data-product-sku="falda-midi-studio" data-product-name="Falda Midi Studio" data-product-price="25000" data-product-img="img/sastrería/ropa en venta/mujer3.jpeg">Añadir al carrito</button>
-                      </div>
-                  </div>
-              </div>
-          </section>
-      </div>
-    </main>
-  </div>
-
-  <!-- Footer Unificado -->
-  <footer class="bg-brand-dark text-gray-400 py-8 px-5 text-center text-sm">
-      <p data-translate="footer_copyright">&copy; 2026 GRUPO MNOHA. Todos los derechos reservados.</p>
-      <p class="text-xs mt-1" data-translate="footer_services">Soluciones Integrales: Taxis | Sastrería | Educación | Rastreo GPS</p>
-  </footer>
->>>>>>> 6f92837 (Estructura modular: separacion de HTML, CSS y JS para optimizar rendimiento)
-
-  <!-- Chat Flotante -->
-  <div id="chat-widget" class="fixed bottom-5 right-5 z-[105] flex flex-col items-end gap-3">
-      <div id="chat-panel" class="hidden w-80 max-w-[90vw] bg-white border border-slate-200 shadow-2xl rounded-3xl overflow-hidden text-sm">
-          <div class="flex items-center justify-between bg-brand-dark text-white px-4 py-3">
-              <span class="font-semibold">Chat de ayuda</span>
-              <button id="chat-close-btn" class="text-white text-xl leading-none">&times;</button>
+  <main class="max-w-7xl mx-auto px-5 py-10">
+      
+      <div class="mb-16 bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
+          <div class="text-center max-w-3xl mx-auto mb-10">
+              <span class="text-brand-orange font-bold text-xs tracking-widest uppercase">Servicio Corporativo & Colegios</span>
+              <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mt-2">Confección y Bordado Industrial</h2>
+              <p class="text-gray-600 mt-3 text-sm md:text-base">Producción masiva de uniformes escolares, prendas corporativas y digitalización de escudos bordados de alta definición.</p>
           </div>
-          <div id="chat-messages" class="max-h-72 overflow-y-auto p-4 space-y-3 bg-slate-50">
-              <div class="text-xs text-gray-500">¿En qué podemos ayudarte hoy?</div>
-          </div>
-          <div class="border-t border-slate-200 p-4 bg-white">
-              <form id="chat-form" class="flex gap-2">
-                  <input id="chat-input" type="text" placeholder="Escribe tu mensaje..." class="flex-1 rounded-full border border-slate-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-blue" />
-                  <button type="submit" class="rounded-full bg-brand-blue px-4 py-2 text-white font-semibold hover:bg-brand-dark transition-colors">Enviar</button>
-              </form>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                  <div>
+                      <h3 class="text-xl font-bold text-brand-dark mb-2">Contratos Escolares e Institucionales</h3>
+                      <p class="text-sm text-gray-600 mb-4">Confección por volumen de uniformes completos para centros educativos, empresas y entidades públicas con tejidos duraderos y acabados profesionales.</p>
+                  </div>
+                  <a href="https://wa.me/240555267985?text=Hola,%20solicito%20presupuesto%20para%20contrato%20escolar%20o%20uniformes." target="_blank" class="text-center bg-brand-dark text-white font-bold py-3 px-6 rounded-xl hover:bg-brand-blue transition-colors text-sm">COTIZAR UNIFORMES</a>
+              </div>
+
+              <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                  <div>
+                      <h3 class="text-xl font-bold text-brand-dark mb-2">Bordado Industrial Computarizado</h3>
+                      <p class="text-sm text-gray-600 mb-4">Digitalización de logos, escudos y personalización de camisas, polos, gorras y trajes con maquinaria de precisión industrial.</p>
+                  </div>
+                  <a href="https://wa.me/240555267985?text=Hola,%20solicito%20cotización%20para%20servicio%20de%20bordado%20industrial." target="_blank" class="text-center bg-brand-blue text-white font-bold py-3 px-6 rounded-xl hover:bg-brand-dark transition-colors text-sm">COTIZAR BORDADOS</a>
+              </div>
           </div>
       </div>
-      <button id="chat-toggle-btn" class="flex items-center gap-2 bg-brand-blue text-white px-4 py-3 rounded-full shadow-2xl hover:bg-brand-dark transition-colors">
-          <span class="text-lg">💬</span>
-          <span>Chat</span>
-      </button>
+
+      <div class="text-center mb-10">
+          <h2 class="text-3xl font-extrabold text-brand-dark tracking-tight">Colección en Venta</h2>
+          <p class="text-gray-500 text-sm mt-2">Prendas confeccionadas listas para entrega inmediata</p>
+      </div>
+
+      <h3 class="text-xl font-bold text-brand-dark mb-6 border-b pb-2">Men's Essentials</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
+              <div class="h-60 bg-gray-200 overflow-hidden">
+                  <img src="img/sastrería/listado de servicios.png" alt="Traje Executive Blue" class="w-full h-full object-cover">
+              </div>
+              <div class="p-5 flex flex-col flex-grow">
+                  <h4 class="font-bold text-brand-dark">Traje Executive Blue</h4>
+                  <p class="text-brand-blue font-extrabold mt-1">120.000 FCFA</p>
+                  <button onclick="addToCart('Traje Executive Blue', 120000)" class="mt-auto pt-3 w-full bg-brand-dark text-white text-xs font-bold py-2.5 rounded-lg hover:bg-brand-blue transition-colors">Añadir al carrito</button>
+              </div>
+          </div>
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
+              <div class="h-60 bg-gray-200 overflow-hidden">
+                  <img src="img/sastrería/listado de servicios.png" alt="Blazer Charcoal" class="w-full h-full object-cover">
+              </div>
+              <div class="p-5 flex flex-col flex-grow">
+                  <h4 class="font-bold text-brand-dark">Blazer Charcoal</h4>
+                  <p class="text-brand-blue font-extrabold mt-1">85.000 FCFA</p>
+                  <button onclick="addToCart('Blazer Charcoal', 85000)" class="mt-auto pt-3 w-full bg-brand-dark text-white text-xs font-bold py-2.5 rounded-lg hover:bg-brand-blue transition-colors">Añadir al carrito</button>
+              </div>
+          </div>
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
+              <div class="h-60 bg-gray-200 overflow-hidden">
+                  <img src="img/sastrería/listado de servicios.png" alt="Camisa Slim Fit Pure" class="w-full h-full object-cover">
+              </div>
+              <div class="p-5 flex flex-col flex-grow">
+                  <h4 class="font-bold text-brand-dark">Camisa Slim Fit Pure</h4>
+                  <p class="text-brand-blue font-extrabold mt-1">35.000 FCFA</p>
+                  <button onclick="addToCart('Camisa Slim Fit Pure', 35000)" class="mt-auto pt-3 w-full bg-brand-dark text-white text-xs font-bold py-2.5 rounded-lg hover:bg-brand-blue transition-colors">Añadir al carrito</button>
+              </div>
+          </div>
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
+              <div class="h-60 bg-gray-200 overflow-hidden">
+                  <img src="img/sastrería/listado de servicios.png" alt="Pantalón Taylor-Cut" class="w-full h-full object-cover">
+              </div>
+              <div class="p-5 flex flex-col flex-grow">
+                  <h4 class="font-bold text-brand-dark">Pantalón Taylor-Cut</h4>
+                  <p class="text-brand-blue font-extrabold mt-1">45.000 FCFA</p>
+                  <button onclick="addToCart('Pantalón Taylor-Cut', 45000)" class="mt-auto pt-3 w-full bg-brand-dark text-white text-xs font-bold py-2.5 rounded-lg hover:bg-brand-blue transition-colors">Añadir al carrito</button>
+              </div>
+          </div>
+      </div>
+
+      <h3 class="text-xl font-bold text-brand-dark mb-6 border-b pb-2">Women's Collection</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
+              <div class="h-60 bg-gray-200 overflow-hidden">
+                  <img src="img/sastrería/listado de servicios.png" alt="Vestido Gala Silk" class="w-full h-full object-cover">
+              </div>
+              <div class="p-5 flex flex-col flex-grow">
+                  <h4 class="font-bold text-brand-dark">Vestido Gala Silk</h4>
+                  <p class="text-brand-blue font-extrabold mt-1">95.000 FCFA</p>
+                  <button onclick="addToCart('Vestido Gala Silk', 95000)" class="mt-auto pt-3 w-full bg-brand-dark text-white text-xs font-bold py-2.5 rounded-lg hover:bg-brand-blue transition-colors">Añadir al carrito</button>
+              </div>
+          </div>
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
+              <div class="h-60 bg-gray-200 overflow-hidden">
+                  <img src="img/sastrería/listado de servicios.png" alt="Blusa Satin Ivory" class="w-full h-full object-cover">
+              </div>
+              <div class="p-5 flex flex-col flex-grow">
+                  <h4 class="font-bold text-brand-dark">Blusa Satin Ivory</h4>
+                  <p class="text-brand-blue font-extrabold mt-1">20.000 FCFA</p>
+                  <button onclick="addToCart('Blusa Satin Ivory', 20000)" class="mt-auto pt-3 w-full bg-brand-dark text-white text-xs font-bold py-2.5 rounded-lg hover:bg-brand-blue transition-colors">Añadir al carrito</button>
+              </div>
+          </div>
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
+              <div class="h-60 bg-gray-200 overflow-hidden">
+                  <img src="img/sastrería/listado de servicios.png" alt="Conjunto Office Chic" class="w-full h-full object-cover">
+              </div>
+              <div class="p-5 flex flex-col flex-grow">
+                  <h4 class="font-bold text-brand-dark">Conjunto Office Chic</h4>
+                  <p class="text-brand-blue font-extrabold mt-1">18.000 FCFA</p>
+                  <button onclick="addToCart('Conjunto Office Chic', 18000)" class="mt-auto pt-3 w-full bg-brand-dark text-white text-xs font-bold py-2.5 rounded-lg hover:bg-brand-blue transition-colors">Añadir al carrito</button>
+              </div>
+          </div>
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col">
+              <div class="h-60 bg-gray-200 overflow-hidden">
+                  <img src="img/sastrería/listado de servicios.png" alt="Falda Midi Studio" class="w-full h-full object-cover">
+              </div>
+              <div class="p-5 flex flex-col flex-grow">
+                  <h4 class="font-bold text-brand-dark">Falda Midi Studio</h4>
+                  <p class="text-brand-blue font-extrabold mt-1">25.000 FCFA</p>
+                  <button onclick="addToCart('Falda Midi Studio', 25000)" class="mt-auto pt-3 w-full bg-brand-dark text-white text-xs font-bold py-2.5 rounded-lg hover:bg-brand-blue transition-colors">Añadir al carrito</button>
+              </div>
+          </div>
+      </div>
+  </main>
+
+  <div id="cart-drawer" class="fixed inset-0 bg-black bg-opacity-50 z-[120] hidden transition-opacity">
+      <div class="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl p-6 flex flex-col overflow-y-auto">
+          <div class="flex items-center justify-between border-b pb-4 mb-4">
+              <h3 class="text-xl font-bold text-brand-dark">Tu Carrito</h3>
+              <button id="cart-close-btn" class="text-gray-400 hover:text-gray-800 text-2xl font-bold">&times;</button>
+          </div>
+
+          <div id="cart-items-container" class="flex-grow space-y-4 overflow-y-auto">
+              <p class="text-gray-500 text-sm text-center my-8">Tu carrito está vacío.</p>
+          </div>
+
+          <div class="border-t pt-4 mt-4">
+              <div class="flex justify-between items-center mb-4">
+                  <span class="font-bold text-gray-700">Total:</span>
+                  <span id="cart-total-price" class="text-xl font-extrabold text-brand-blue">0 FCFA</span>
+              </div>
+              <a id="checkout-whatsapp-btn" href="#" target="_blank" class="block text-center bg-green-600 text-white font-bold py-3 rounded-xl hover:bg-green-700 transition-colors">PROCESAR PEDIDO POR WHATSAPP</a>
+          </div>
+      </div>
   </div>
 
-  <!-- Login/Register Modal Unificado -->
   <div id="auth-modal" class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex justify-center items-center z-[100] hidden">
       <div id="modal-container" class="bg-white rounded-2xl shadow-2xl p-8 md:p-10 w-11/12 max-w-md relative transform transition-all duration-300 scale-95 opacity-0 max-h-[90vh] overflow-hidden">
           <button id="close-modal-btn" type="button" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 text-3xl font-bold cursor-pointer">&times;</button>
           <div class="max-h-[82vh] overflow-y-auto pr-2">
-          
-          <!-- Login Form -->
-          <div id="login-form">
-              <h2 class="text-2xl font-bold text-brand-dark mb-2" data-translate="login_title">Iniciar Sesión</h2>
-              <p class="text-sm text-gray-500 mb-6" data-translate="login_subtitle">Accede a tu cuenta para continuar.</p>
-              <form id="form-login">
-                  <div class="mb-4">
-                      <label for="login-email" class="block text-sm font-bold text-gray-700 mb-1" data-translate="form_email">Email</label>
-                      <input type="email" id="login-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue" required>
-                  </div>
-                  <div class="mb-6">
-                      <label for="login-password" class="block text-sm font-bold text-gray-700 mb-1" data-translate="form_password">Contraseña</label>
-                      <input type="password" id="login-password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue" required>
-                  </div>
-                  <button type="submit" id="login-submit-btn" class="w-full bg-brand-blue text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors cursor-pointer" data-translate="login_btn">ACCEDER</button>
-              </form>
-              <p class="text-center text-sm text-gray-600 mt-6">
-                  <span data-translate="no_account">¿No tienes una cuenta?</span>
-                  <a href="#" id="show-register-form" class="font-bold text-brand-blue hover:underline" data-translate="register_now">Regístrate ahora</a>
-              </p>
-          </div>
+              <div id="login-form">
+                  <h2 class="text-2xl font-bold text-brand-dark mb-2" data-translate="login_title">Iniciar Sesión</h2>
+                  <p class="text-sm text-gray-500 mb-6" data-translate="login_subtitle">Accede a tu cuenta para continuar.</p>
+                  <form id="form-login">
+                      <div class="mb-4">
+                          <label for="login-email" class="block text-sm font-bold text-gray-700 mb-1" data-translate="form_email">Email</label>
+                          <input type="email" id="login-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue" required>
+                      </div>
+                      <div class="mb-6">
+                          <label for="login-password" class="block text-sm font-bold text-gray-700 mb-1" data-translate="form_password">Contraseña</label>
+                          <input type="password" id="login-password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue" required>
+                      </div>
+                      <button type="submit" id="login-submit-btn" class="w-full bg-brand-blue text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors cursor-pointer" data-translate="login_btn">ACCEDER</button>
+                  </form>
+                  <p class="text-center text-sm text-gray-600 mt-6">
+                      <span data-translate="no_account">¿No tienes una cuenta?</span>
+                      <a href="#" id="show-register-form" class="font-bold text-brand-blue hover:underline" data-translate="register_now">Regístrate ahora</a>
+                  </p>
+              </div>
 
-          <!-- Register Form -->
-          <div id="register-form" class="hidden">
-              <h2 class="text-2xl font-bold text-brand-dark mb-2" data-translate="register_title">Crear Cuenta</h2>
-              <p class="text-sm text-gray-500 mb-6" data-translate="register_subtitle">Únete a la comunidad MNOHA.</p>
-              <form id="form-register">
-                  <div class="mb-4">
-                      <label for="register-username" class="block text-sm font-bold text-gray-700 mb-1" data-translate="form_username">Nombre de Usuario</label>
-                      <input type="text" id="register-username" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue" required>
-                  </div>
-                  <div class="mb-4">
-                      <label for="register-photo" class="block text-sm font-bold text-gray-700 mb-1">Foto de perfil</label>
-                      <input type="file" id="register-photo" accept="image/*" class="w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-brand-blue file:text-white hover:file:bg-brand-dark" />
-                      <div class="mt-4">
-                          <div id="avatar-crop-preview" class="w-40 h-40 rounded-full overflow-hidden bg-slate-100 border border-gray-300 mx-auto mb-4"></div>
-                          <div class="grid gap-3">
-                              <div>
-                                  <label class="block text-xs font-semibold text-gray-600 mb-1">Ajustar horizontal</label>
-                                  <input type="range" id="avatar-pos-x" data-croptype="x" min="0" max="100" value="50" class="w-full" />
-                              </div>
-                              <div>
-                                  <label class="block text-xs font-semibold text-gray-600 mb-1">Ajustar vertical</label>
-                                  <input type="range" id="avatar-pos-y" data-croptype="y" min="0" max="100" value="50" class="w-full" />
-                              </div>
-                              <div>
-                                  <label class="block text-xs font-semibold text-gray-600 mb-1">Zoom</label>
-                                  <input type="range" id="avatar-zoom" data-croptype="zoom" min="100" max="200" value="100" class="w-full" />
-                              </div>
+              <div id="register-form" class="hidden">
+                  <h2 class="text-2xl font-bold text-brand-dark mb-2" data-translate="register_title">Crear Cuenta</h2>
+                  <p class="text-sm text-gray-500 mb-6" data-translate="register_subtitle">Únete a la comunidad MNOHA.</p>
+                  <form id="form-register">
+                      <div class="mb-4">
+                          <label for="register-username" class="block text-sm font-bold text-gray-700 mb-1" data-translate="form_username">Nombre de Usuario</label>
+                          <input type="text" id="register-username" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue" required>
+                      </div>
+                      <div class="mb-4">
+                          <label for="register-email" class="block text-sm font-bold text-gray-700 mb-1" data-translate="form_email">Email</label>
+                          <input type="email" id="register-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue" required>
+                      </div>
+                      <div class="mb-4">
+                          <label for="register-phone" class="block text-sm font-bold text-gray-700 mb-1" data-translate="form_phone">Teléfono</label>
+                          <div class="flex">
+                              <select id="country-code" class="border border-r-0 border-gray-300 rounded-l-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-blue px-2 text-sm py-2">
+                                  <option value="+240">GQ +240</option>
+                                  <option value="+34">ES +34</option>
+                                  <option value="+1">US +1</option>
+                                  <option value="+33">FR +33</option>
+                              </select>
+                              <input type="tel" id="register-phone" class="w-full px-4 py-2 border border-gray-300 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-brand-blue" required>
                           </div>
                       </div>
-                  </div>
-                  <div class="mb-4">
-                      <label for="register-email" class="block text-sm font-bold text-gray-700 mb-1" data-translate="form_email">Email</label>
-                      <input type="email" id="register-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue" required>
-                  </div>
-                  <div class="mb-4">
-                      <label for="register-birthday" class="block text-sm font-bold text-gray-700 mb-1">Fecha de Nacimiento</label>
-                      <input type="date" id="register-birthday" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue">
-                  </div>
-                  <div class="mb-4">
-                      <label for="register-phone" class="block text-sm font-bold text-gray-700 mb-1" data-translate="form_phone">Teléfono</label>
-                      <div class="flex">
-                          <select id="country-code" class="border border-r-0 border-gray-300 rounded-l-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-blue px-2 text-sm py-2">
-                              <option value="+240">GQ +240</option>
-                              <option value="+34">ES +34</option>
-                              <option value="+1">US +1</option>
-                              <option value="+33">FR +33</option>
-                              <option value="+237">CM +237</option>
-                              <option value="+241">GA +241</option>
-                          </select>
-                          <input type="tel" id="register-phone" class="w-full px-4 py-2 border border-gray-300 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-brand-blue" required>
+                      <div class="mb-6">
+                          <label for="register-password" class="block text-sm font-bold text-gray-700 mb-1" data-translate="form_password">Contraseña</label>
+                          <input type="password" id="register-password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue" required minlength="6">
                       </div>
-                  </div>
-                  <div class="mb-6">
-                      <label for="register-password" class="block text-sm font-bold text-gray-700 mb-1" data-translate="form_password">Contraseña</label>
-                      <input type="password" id="register-password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue" required minlength="6">
-                  </div>
-                  <button type="submit" id="register-submit-btn" class="w-full bg-brand-dark text-white py-3 rounded-lg font-bold hover:bg-gray-800 transition-colors cursor-pointer" data-translate="register_btn">CREAR CUENTA</button>
-              </form>
-              <p class="text-center text-sm text-gray-600 mt-6">
-                  <span data-translate="has_account">¿Ya tienes una cuenta?</span>
-                  <a href="#" id="show-login-form" class="font-bold text-brand-blue hover:underline" data-translate="login_now">Inicia sesión</a>
-              </p>
+                      <button type="submit" id="register-submit-btn" class="w-full bg-brand-dark text-white py-3 rounded-lg font-bold hover:bg-gray-800 transition-colors cursor-pointer" data-translate="register_btn">CREAR CUENTA</button>
+                  </form>
+                  <p class="text-center text-sm text-gray-600 mt-6">
+                      <span data-translate="has_account">¿Ya tienes una cuenta?</span>
+                      <a href="#" id="show-login-form" class="font-bold text-brand-blue hover:underline" data-translate="login_now">Inicia sesión</a>
+                  </p>
+              </div>
           </div>
       </div>
   </div>
 
-  <!-- Script de Enrutamiento SPA, Modales y Carruseles -->
-  <script type="module" src="js/auth.js"></script>
-  <script src="js/app.js"></script>
-  <script src="assets/banner.js"></script>
+  <footer class="bg-brand-dark text-gray-400 py-8 px-5 text-center text-sm">
+      <p data-translate="footer_copyright">&copy; 2026 GRUPO MNOHA. Todos los derechos reservados.</p>
+      <p class="text-xs mt-1" data-translate="footer_services">Soluciones Integrales: Taxis | Sastrería | Educación | Rastreo GPS</p>
+  </footer>
+
+  <script>
+      let cart = [];
+      const cartCount = document.getElementById('cart-count');
+      const cartDrawer = document.getElementById('cart-drawer');
+      const cartItemsContainer = document.getElementById('cart-items-container');
+      const cartTotalPrice = document.getElementById('cart-total-price');
+      const checkoutBtn = document.getElementById('checkout-whatsapp-btn');
+
+      window.addToCart = function(name, price) {
+          const item = cart.find(i => i.name === name);
+          if (item) {
+              item.qty += 1;
+          } else {
+              cart.push({ name, price, qty: 1 });
+          }
+          updateCartUI();
+          cartDrawer.classList.remove('hidden');
+      };
+
+      function updateCartUI() {
+          const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+          const totalAmount = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+          cartCount.textContent = totalCount;
+          cartTotalPrice.textContent = totalAmount.toLocaleString('es-ES') + ' FCFA';
+
+          if (cart.length === 0) {
+              cartItemsContainer.innerHTML = '<p class="text-gray-500 text-sm text-center my-8">Tu carrito está vacío.</p>';
+              checkoutBtn.href = "#";
+              return;
+          }
+
+          cartItemsContainer.innerHTML = cart.map((item, idx) => `
+              <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-200">
+                  <div>
+                      <p class="font-bold text-sm text-brand-dark">${item.name}</p>
+                      <p class="text-xs text-gray-500">${item.qty} x ${item.price.toLocaleString('es-ES')} FCFA</p>
+                  </div>
+                  <button onclick="removeFromCart(${idx})" class="text-red-500 hover:text-red-700 font-bold text-xs">Eliminar</button>
+              </div>
+          `).join('');
+
+          const orderDetails = cart.map(i => `${i.qty}x ${i.name} (${i.price * i.qty} FCFA)`).join('%0A');
+          checkoutBtn.href = `https://wa.me/240555267985?text=Hola,%20deseo%20realizar%20el%20siguiente%20pedido%20de%20sastrería:%0A${orderDetails}%0ATotal:%20${totalAmount.toLocaleString('es-ES')}%20FCFA`;
+      }
+
+      window.removeFromCart = function(idx) {
+          cart.splice(idx, 1);
+          updateCartUI();
+      };
+
+      document.getElementById('cart-toggle-btn').addEventListener('click', () => cartDrawer.classList.remove('hidden'));
+      document.getElementById('cart-close-btn').addEventListener('click', () => cartDrawer.classList.add('hidden'));
+  </script>
+
+  <script type="module" src="main.js"></script>
 </body>
 </html>
