@@ -1,4 +1,4 @@
-// chat.js - Chat vinculado a Firebase Authentication
+// chat.js - Chat vinculado a Firebase Authentication con apertura directa de modales
 import { auth, db } from './firebase-config.js';
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { 
@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Elementos del Modal de Autenticación de la página web
     const authModal = document.getElementById('auth-modal');
-    const modalContainer = document.getElementById('modal-container');
+    const modalContainer = document.getElementById('modal-container') || (authModal ? authModal.querySelector('div') : null);
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
 
-    // Funciones explícitas para abrir / cerrar la ventana
+    // Funciones explícitas para abrir / cerrar la ventana de chat
     const openChat = () => {
         if (chatPanel) {
             chatPanel.classList.remove('hidden');
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const closeChat = (e) => {
-        if (e) e.stopPropagation();
+        if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
         if (chatPanel) {
             chatPanel.classList.add('hidden');
             chatPanel.style.display = 'none';
@@ -56,39 +56,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Asignar eventos de apertura y cierre
-    if (chatToggleBtn) {
-        chatToggleBtn.addEventListener('click', toggleChat);
-    }
-    if (chatCloseBtn) {
-        chatCloseBtn.addEventListener('click', closeChat);
-    }
+    if (chatToggleBtn) chatToggleBtn.addEventListener('click', toggleChat);
+    if (chatCloseBtn) chatCloseBtn.addEventListener('click', closeChat);
 
-    // Función para abrir el modal desde los botones del chat
+    // Función definitiva para abrir el modal desde los botones del chat
     const openAuthModal = (isLogin) => {
-        if (authModal && modalContainer) {
+        closeChat(); // Cerramos el chat para despejar la pantalla
+
+        if (authModal) {
+            // 1. Forzar visibilidad y capa superior máxima
             authModal.classList.remove('hidden');
-            setTimeout(() => {
+            authModal.style.display = 'flex';
+            authModal.style.zIndex = '99999';
+
+            // 2. Asegurar que el contenedor interno sea visible
+            if (modalContainer) {
                 modalContainer.classList.remove('scale-95', 'opacity-0');
                 modalContainer.classList.add('scale-100', 'opacity-100');
-            }, 10);
-            
-            // Mostrar formulario de Login o Registro
+                modalContainer.style.opacity = '1';
+                modalContainer.style.transform = 'scale(1)';
+                modalContainer.style.display = 'block';
+            }
+
+            // 3. Alternar entre formulario de Login o Registro
             if (isLogin) {
-                if (loginForm) loginForm.classList.remove('hidden');
-                if (registerForm) registerForm.classList.add('hidden');
+                if (loginForm) {
+                    loginForm.classList.remove('hidden');
+                    loginForm.style.display = 'block';
+                }
+                if (registerForm) {
+                    registerForm.classList.add('hidden');
+                    registerForm.style.display = 'none';
+                }
             } else {
-                if (loginForm) loginForm.classList.add('hidden');
-                if (registerForm) registerForm.classList.remove('hidden');
+                if (loginForm) {
+                    loginForm.classList.add('hidden');
+                    loginForm.style.display = 'none';
+                }
+                if (registerForm) {
+                    registerForm.classList.remove('hidden');
+                    registerForm.style.display = 'block';
+                }
             }
         }
     };
 
-    // 1. Escuchar si el usuario inicia o cierra sesión
+    // 1. Escuchar el estado de autenticación
     onAuthStateChanged(auth, (user) => {
         currentUser = user;
         if (user) {
-            // Usuario conectado
             if (chatInput) {
                 chatInput.placeholder = "Escribe tu mensaje...";
                 chatInput.disabled = false;
@@ -97,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
             
             loadChatHistory(user.uid);
         } else {
-            // Usuario no conectado
             if (unsubscribeMessages) unsubscribeMessages();
             
             if (chatInput) {
@@ -108,10 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (chatMessages) {
                 chatMessages.innerHTML = `
-                    <div class="flex flex-col items-center justify-center h-full space-y-4 mt-8">
+                    <div class="flex flex-col items-center justify-center h-full space-y-4 my-auto py-8">
                         <p class="text-sm text-gray-600 text-center px-4">Debes acceder a tu cuenta para contactar con soporte.</p>
-                        <button id="chat-login-btn" type="button" class="bg-[#2a5298] text-white px-6 py-2 rounded-full font-bold text-xs hover:bg-[#1e3c72] w-4/5 transition-colors shadow-md cursor-pointer">ACCEDER</button>
-                        <button id="chat-register-btn" type="button" class="bg-transparent border border-[#2a5298] text-[#2a5298] px-6 py-2 rounded-full font-bold text-xs hover:bg-slate-100 w-4/5 transition-colors cursor-pointer">REGISTRARSE</button>
+                        <button id="chat-login-btn" type="button" class="bg-[#2a5298] text-white px-6 py-2.5 rounded-full font-bold text-xs hover:bg-[#1e3c72] w-4/5 transition-colors shadow-md cursor-pointer">ACCEDER</button>
+                        <button id="chat-register-btn" type="button" class="bg-transparent border border-[#2a5298] text-[#2a5298] px-6 py-2.5 rounded-full font-bold text-xs hover:bg-slate-100 w-4/5 transition-colors cursor-pointer">REGISTRARSE</button>
                     </div>`;
                 
                 document.getElementById('chat-login-btn')?.addEventListener('click', () => openAuthModal(true));
@@ -120,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Función para cargar los mensajes de este usuario
+    // Cargar historial de mensajes
     function loadChatHistory(uid) {
         const messagesRef = collection(db, "chats");
         const q = query(messagesRef, where("sessionId", "==", uid), orderBy("createdAt", "asc"));
@@ -145,11 +160,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Enviar mensaje a Firestore
+    // Enviar mensaje
     if (chatForm) {
         chatForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
             if (!currentUser) return;
 
             const text = chatInput.value.trim();

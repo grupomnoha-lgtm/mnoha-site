@@ -27,7 +27,7 @@ export function initializeAuth() {
     const showLoginLink = document.getElementById('show-login-form');
 
     // --- Funciones del Modal ---
-    const openModal = () => {
+    export const openModal = () => {
         if (!authModal) return;
         authModal.classList.remove('hidden');
         setTimeout(() => {
