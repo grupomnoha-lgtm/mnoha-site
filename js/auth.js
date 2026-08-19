@@ -5,7 +5,8 @@ import {
     signInWithEmailAndPassword,
     onAuthStateChanged,
     signOut,
-    updateProfile
+    updateProfile,
+    sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
@@ -48,6 +49,10 @@ export function initializeAuth() {
     const registerForm = document.getElementById('register-form');
     const showRegisterLink = document.getElementById('show-register-form');
     const showLoginLink = document.getElementById('show-login-form');
+    const passwordResetView = document.getElementById('password-reset-view');
+    const passwordResetForm = document.getElementById('password-reset-form');
+    const showPasswordResetLink = document.getElementById('show-password-reset-form');
+    const backToLoginLink = document.getElementById('back-to-login-form');
 
     // --- Event Listeners del Modal ---
     if (loginModalBtn) loginModalBtn.addEventListener('click', openModal);
@@ -57,11 +62,25 @@ export function initializeAuth() {
     });
     if (showRegisterLink) showRegisterLink.addEventListener('click', (e) => {
         e.preventDefault();
+        passwordResetView?.classList.add('hidden');
         if (loginForm) loginForm.classList.add('hidden');
         if (registerForm) registerForm.classList.remove('hidden');
     });
     if (showLoginLink) showLoginLink.addEventListener('click', (e) => {
         e.preventDefault();
+        passwordResetView?.classList.add('hidden');
+        if (registerForm) registerForm.classList.add('hidden');
+        if (loginForm) loginForm.classList.remove('hidden');
+    });
+    if (showPasswordResetLink) showPasswordResetLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (loginForm) loginForm.classList.add('hidden');
+        if (registerForm) registerForm.classList.add('hidden');
+        passwordResetView?.classList.remove('hidden');
+    });
+    if (backToLoginLink) backToLoginLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        passwordResetView?.classList.add('hidden');
         if (registerForm) registerForm.classList.add('hidden');
         if (loginForm) loginForm.classList.remove('hidden');
     });
@@ -79,6 +98,29 @@ export function initializeAuth() {
             } catch (error) {
                 console.error("Error al iniciar sesión:", error);
                 alert('Error al acceder: Comprueba que el correo y contraseña sean correctos.');
+            }
+        });
+    }
+
+    if (passwordResetForm) {
+        passwordResetForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('reset-email').value.trim();
+
+            try {
+                await sendPasswordResetEmail(auth, email);
+                alert('Te hemos enviado un correo con el enlace y código de recuperación. Revisa también la carpeta de spam.');
+                passwordResetForm.reset();
+                passwordResetView?.classList.add('hidden');
+                if (loginForm) loginForm.classList.remove('hidden');
+            } catch (error) {
+                console.error('Error al enviar la recuperación:', error);
+                const message = error.code === 'auth/user-not-found'
+                    ? 'No existe una cuenta con ese correo electrónico.'
+                    : error.code === 'auth/invalid-email'
+                        ? 'Introduce un correo electrónico válido.'
+                        : 'No se pudo enviar el correo de recuperación. Inténtalo de nuevo.';
+                alert(message);
             }
         });
     }
