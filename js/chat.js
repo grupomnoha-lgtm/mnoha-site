@@ -1,12 +1,12 @@
-// chat.js - Chat vinculado a Firebase Authentication
+// js/chat.js - Chat estructurado por documento único por usuario
 import { auth, db } from './firebase-config.js';
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { 
-    collection, 
-    addDoc, 
-    query, 
-    where, 
-    orderBy, 
+    doc, 
+    getDoc, 
+    setDoc, 
+    updateDoc, 
+    arrayUnion, 
     onSnapshot, 
     serverTimestamp 
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let unsubscribeMessages = null;
     let activeSessionId;
 
-    // Elementos del DOM del chat (estos sí son seguros de buscar al cargar)
+    // Elementos del DOM del chat
     const chatToggleBtn = document.getElementById('chat-toggle-btn');
     const chatCloseBtn = document.getElementById('close-chat-btn') || document.getElementById('chat-close-btn');
     const chatPanel = document.getElementById('chat-window') || document.getElementById('chat-panel');
@@ -56,24 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Función para abrir el modal desde los botones del chat ---
     const openAuthModal = (isLogin) => {
-        // 1. Cerramos el chat para despejar la vista
         closeChat(); 
-
-        // 2. Buscamos los elementos del modal AHORA MISMO, para asegurarnos de que existen
         const authModal = document.getElementById('auth-modal');
         const modalContainer = document.getElementById('modal-container');
         const loginForm = document.getElementById('login-form');
         const registerForm = document.getElementById('register-form');
 
-        if (!authModal || !modalContainer) {
-            console.error("Error: No se encontró el modal de autenticación en el HTML.");
-            return;
-        }
+        if (!authModal || !modalContainer) return;
 
-        // 3. Mostramos el contenedor principal del modal
         authModal.classList.remove('hidden');
-        
-        // 4. Alternamos entre Login y Registro antes de animar
         if (isLogin) {
             if (loginForm) loginForm.classList.remove('hidden');
             if (registerForm) registerForm.classList.add('hidden');
@@ -82,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (registerForm) registerForm.classList.remove('hidden');
         }
 
-        // 5. Aplicamos la animación (igual que en auth.js)
         setTimeout(() => {
             modalContainer.classList.remove('scale-95', 'opacity-0');
             modalContainer.classList.add('scale-100', 'opacity-100');
@@ -103,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (chatSubmitBtn) chatSubmitBtn.disabled = false;
             if (chatForm) chatForm.classList.remove('pointer-events-none', 'opacity-60');
             
-            loadChatHistory(user.uid);
+            loadChatHistory(user);
         } else {
             if (unsubscribeMessages) unsubscribeMessages();
             
@@ -122,64 +112,66 @@ document.addEventListener('DOMContentLoaded', () => {
                         <button id="chat-register-btn" type="button" class="bg-transparent border border-[#2a5298] text-[#2a5298] px-6 py-2.5 rounded-full font-bold text-xs hover:bg-slate-100 w-4/5 transition-colors cursor-pointer">REGISTRARSE</button>
                     </div>`;
                 
-                // Añadimos los event listeners a los botones recién inyectados
-                const loginBtn = document.getElementById('chat-login-btn');
-                const registerBtn = document.getElementById('chat-register-btn');
+                document.getElementById('chat-login-btn')?.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openAuthModal(true);
+                });
                 
-                if (loginBtn) {
-                    loginBtn.addEventListener('click', (e) => {
-                        e.preventDefault(); // Evita comportamientos extraños del botón
-                        openAuthModal(true);
-                    });
-                }
-                
-                if (registerBtn) {
-                    registerBtn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        openAuthModal(false);
-                    });
-                }
+                document.getElementById('chat-register-btn')?.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openAuthModal(false);
+                });
             }
         }
     };
 
-    // Firebase notifica tanto el inicio como el cierre de sesión sin recargar la página.
     window.addEventListener('mnoha-auth-state-changed', (event) => {
         updateChatAuthState(event.detail?.user || null);
     });
     onAuthStateChanged(auth, updateChatAuthState);
 
-    // --- Cargar historial de mensajes ---
-    function loadChatHistory(uid) {
-        const messagesRef = collection(db, "chats");
-        const q = query(messagesRef, where("sessionId", "==", uid), orderBy("createdAt", "asc"));
+    // --- Cargar historial desde el documento único del usuario ---
+    function loadChatHistory(user) {
+        const docRef = doc(db, "conversations", user.uid);
 
         if (unsubscribeMessages) unsubscribeMessages();
 
-        unsubscribeMessages = onSnapshot(q, (snapshot) => {
+        unsubscribeMessages = onSnapshot(docRef, async (docSnap) => {
             if (!chatMessages) return;
             
             chatMessages.innerHTML = '<div class="text-xs text-gray-500 text-center my-2">Canal de soporte directo MNOHA</div>';
             
-            snapshot.forEach((doc) => {
-                const data = doc.data();
-                const isClient = data.sender === 'client';
-                
-                const msgDiv = document.createElement('div');
-                msgDiv.className = `message ${isClient ? 'sent' : 'received'}`;
-                msgDiv.innerHTML = `<p>${data.text}</p>`;
-                chatMessages.appendChild(msgDiv);
-            });
+            if (docSnap.exists()) {
+                const data = docSnap.data();
+                const messages = data.messages || [];
+
+                messages.forEach((msg) => {
+                    const isClient = msg.sender === 'client';
+                    const msgDiv = document.createElement('div');
+                    msgDiv.className = `message ${isClient ? 'sent' : 'received'}`;
+                    msgDiv.innerHTML = `<p>${msg.text}</p>`;
+                    chatMessages.appendChild(msgDiv);
+                });
+            } else {
+                // Si el documento aún no existe, lo inicializamos vacío
+                await setDoc(docRef, {
+                    sessionId: user.uid,
+                    userName: user.displayName || 'Cliente',
+                    userEmail: user.email,
+                    messages: [],
+                    updatedAt: serverTimestamp()
+                }, { merge: true });
+            }
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }, (error) => {
-            console.error('Error al escuchar los mensajes del chat:', error);
+            console.error('Error al escuchar la conversación:', error);
             if (chatMessages) {
                 chatMessages.innerHTML = '<p class="text-sm text-red-600 text-center">No se pudieron cargar los mensajes.</p>';
             }
         });
     }
 
-    // --- Enviar mensaje ---
+    // --- Enviar mensaje (Añade al array dentro del documento del usuario) ---
     if (chatForm) {
         chatForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -191,14 +183,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             chatInput.value = ''; 
             
+            const docRef = doc(db, "conversations", user.uid);
+
             try {
-                await addDoc(collection(db, "chats"), {
-                    sessionId: user.uid,
-                    userName: user.displayName || 'Cliente',
+                await updateDoc(docRef, {
+                    messages: arrayUnion({
+                        text: text,
+                        sender: 'client',
+                        createdAt: new Date().toISOString()
+                    }),
+                    updatedAt: serverTimestamp(),
                     userEmail: user.email,
-                    text: text,
-                    sender: 'client',
-                    createdAt: serverTimestamp()
+                    userName: user.displayName || 'Cliente'
                 });
             } catch (error) {
                 console.error("Error al enviar mensaje:", error);
