@@ -1,9 +1,8 @@
-// js/chat.js - Chat estructurado por documento único por usuario
+// js/chat.js - Chat estructurado por correo electrónico del usuario en 'conversations'
 import { auth, db } from './firebase-config.js';
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { 
     doc, 
-    getDoc, 
     setDoc, 
     updateDoc, 
     arrayUnion, 
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let unsubscribeMessages = null;
     let activeSessionId;
 
-    // Elementos del DOM del chat
     const chatToggleBtn = document.getElementById('chat-toggle-btn');
     const chatCloseBtn = document.getElementById('close-chat-btn') || document.getElementById('chat-close-btn');
     const chatPanel = document.getElementById('chat-window') || document.getElementById('chat-panel');
@@ -25,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatMessages = document.getElementById('chat-messages');
     const chatSubmitBtn = chatForm ? chatForm.querySelector('button[type="submit"]') : null;
 
-    // --- Control de apertura y cierre del panel de chat ---
     const openChat = () => {
         if (chatPanel) {
             chatPanel.classList.remove('hidden');
@@ -44,17 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleChat = () => {
         if (!chatPanel) return;
         const isHidden = chatPanel.classList.contains('hidden') || chatPanel.style.display === 'none';
-        if (isHidden) {
-            openChat();
-        } else {
-            closeChat();
-        }
+        if (isHidden) openChat(); else closeChat();
     };
 
     if (chatToggleBtn) chatToggleBtn.addEventListener('click', toggleChat);
     if (chatCloseBtn) chatCloseBtn.addEventListener('click', closeChat);
 
-    // --- Función para abrir el modal desde los botones del chat ---
     const openAuthModal = (isLogin) => {
         closeChat(); 
         const authModal = document.getElementById('auth-modal');
@@ -130,9 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     onAuthStateChanged(auth, updateChatAuthState);
 
-    // --- Cargar historial desde el documento único del usuario ---
     function loadChatHistory(user) {
-        const docRef = doc(db, "conversations", user.uid);
+        // USAMOS EL CORREO ELECTRÓNICO COMO ID DEL DOCUMENTO
+        const docRef = doc(db, "conversations", user.email);
 
         if (unsubscribeMessages) unsubscribeMessages();
 
@@ -153,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     chatMessages.appendChild(msgDiv);
                 });
             } else {
-                // Si el documento aún no existe, lo inicializamos vacío
                 await setDoc(docRef, {
                     sessionId: user.uid,
                     userName: user.displayName || 'Cliente',
@@ -165,13 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }, (error) => {
             console.error('Error al escuchar la conversación:', error);
-            if (chatMessages) {
-                chatMessages.innerHTML = '<p class="text-sm text-red-600 text-center">No se pudieron cargar los mensajes.</p>';
-            }
         });
     }
 
-    // --- Enviar mensaje (Añade al array dentro del documento del usuario) ---
     if (chatForm) {
         chatForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -183,7 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             chatInput.value = ''; 
             
-            const docRef = doc(db, "conversations", user.uid);
+            // USAMOS EL CORREO ELECTRÓNICO COMO ID DEL DOCUMENTO
+            const docRef = doc(db, "conversations", user.email);
 
             try {
                 await updateDoc(docRef, {
